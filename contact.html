@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – DRIVEPRO Premium Driving School &amp; License Training</title>
+  <meta name="description" content="Contact DRIVEPRO Driving Academy for car license training packages, DMV road test car rentals, doorstep lesson pickup coordination, and personalized driver assessments." />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Contact Page Stylesheet -->
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============================================================ -->
+  <!-- HEADER & NAVIGATION (Consistent with Home 1)                 -->
+  <!-- ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-container container">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving Academy Home">
+        <div class="logo-icon-wrapper">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" class="logo-rim" />
+            <circle cx="20" cy="20" r="6" fill="#F47732" />
+            <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="20" cy="20" r="14" stroke="#F47732" stroke-width="1.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+        <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+      </a>
+
+      <!-- Middle: Desktop Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <!-- Home Dropdown -->
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" id="home-dropdown-menu" aria-label="Home Pages Submenu">
+              <li>
+                <a href="index.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 1</strong>
+                    <small>Default Driving Academy</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+              <li>
+                <a href="home2.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 2</strong>
+                    <small>Cinematic International Style</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- About Us Link -->
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+
+          <!-- Services Link -->
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+
+          <!-- Pricing Link -->
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link">Pricing</a>
+          </li>
+
+          <!-- Journal Link -->
+          <li class="nav-item">
+            <a href="journal.html" class="nav-link">Journal</a>
+          </li>
+
+          <!-- Contact Us Link (Active) -->
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link active-nav" aria-current="page">Contact Us</a>
+          </li>
+
+          <!-- Student Dashboard Link -->
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right: Controls & Login -->
+      <div class="header-actions">
+        <!-- RTL/LTR Toggle -->
+        <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction" aria-label="Toggle text direction between LTR and RTL">
+          <span class="control-label" id="rtl-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle visual theme between light and dark">
+          <i class="fa-solid fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <!-- Login Primary Button -->
+        <a href="login.html" class="btn btn-primary header-login-btn" id="header-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-drawer-header">
+          <div class="brand-logo">
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </div>
+          <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ul class="mobile-nav-list">
+          <!-- Mobile Home Dropdown -->
+          <li class="mobile-nav-item mobile-dropdown-container">
+            <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-btn" aria-expanded="false">
+              <span>Home Options</span>
+              <i class="fa-solid fa-chevron-down mobile-arrow" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-sub-menu" id="mobile-home-submenu">
+              <a href="index.html" class="mobile-sub-link">Home 1 (Default)</a>
+              <a href="home2.html" class="mobile-sub-link">Home 2 (Cinematic)</a>
+            </div>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="services.html" class="mobile-nav-link">Services</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="journal.html" class="mobile-nav-link">Journal</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="contact.html" class="mobile-nav-link active-link" aria-current="page">Contact Us (Current)</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="mobile-drawer-footer">
+          <a href="login.html" class="btn btn-primary btn-block" id="mobile-login-btn">
+            <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+            <span>Student Portal Login</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 01 – PREMIUM HERO BANNER PAGE                        -->
+    <!-- ============================================================ -->
+    <section class="hero-section contact-hero-section" id="contact-hero">
+      <div class="hero-bg-wrapper">
+        <img 
+          src="https://images.pexels.com/photos/14139826/pexels-photo-14139826.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+          alt="DRIVEPRO training road route in tree-lined urban neighborhood" 
+          class="hero-bg-image"
+          fetchpriority="high"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="contact-hero-grid">
+          <!-- Left Column: Hero Copy & Actions -->
+          <div class="hero-content">
+            <!-- Eyebrow Tag -->
+            <div class="hero-eyebrow">
+              <span class="badge-primary">
+                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                24/7 ADMISSIONS &amp; DISPATCH DESK
+              </span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+              Let's Start Your <span class="text-gradient">Car License</span> &amp; Driving Journey.
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-description">
+              Have questions about learner permits, behind-the-wheel lesson scheduling, or reserving a dual-control vehicle for your official DMV road exam? Our admissions specialists are ready to help.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#contact-form-section" class="btn btn-primary">
+                <span>Send Us a Message</span>
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </a>
+              <a href="#training-locations" class="btn btn-secondary">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>View Training Hubs &amp; Pickup Zones</span>
+              </a>
+            </div>
+
+            <!-- Trust Rating Bar -->
+            <div class="hero-trust">
+              <div class="avatar-stack">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 1" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 2" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 3" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 4" loading="lazy" />
+              </div>
+              <div class="trust-meta">
+                <div class="star-rating" aria-label="Rated 4.9 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <span class="rating-number">4.9/5</span>
+                </div>
+                <p class="trust-text">Average response time under 15 minutes during training hours</p>
+              </div>
+            </div>
+
+            <!-- Key Contact Highlights Strip -->
+            <div class="hero-stats-wrapper">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-value">&lt; 15 Min</span>
+                  <span class="stat-label">Advisor Response</span>
+                </div>
+              </div>
+
+              <div class="stat-divider"></div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-value">7 Days</span>
+                  <span class="stat-label">7:00 AM – 8:00 PM</span>
+                </div>
+              </div>
+
+              <div class="stat-divider"></div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-value">3 Hubs</span>
+                  <span class="stat-label">+ Doorstep Pickup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Showcase Frame -->
+          <div class="contact-hero-visual">
+            <div class="hero-showcase-card">
+              <img 
+                src="https://images.pexels.com/photos/30544238/pexels-photo-30544238.jpeg?auto=compress&cs=tinysrgb&w=900" 
+                alt="DRIVEPRO practice cone course for precision driving maneuvers" 
+                class="hero-showcase-img"
+              />
+              <div class="hero-showcase-badge top-floating-badge">
+                <div class="floating-icon">
+                  <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>Direct Admissions Line</strong>
+                  <span>+1 (800) 555-DRIV</span>
+                </div>
+              </div>
+              <div class="hero-showcase-badge bottom-floating-badge">
+                <div class="floating-icon accent-bg">
+                  <i class="fa-solid fa-house-chimney-user" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>Free Doorstep Pickup</strong>
+                  <span>Home, Campus &amp; Office Zones</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 02 – DRIVING SCHOOL & LICENSE CONTACT CHANNEL CARDS  -->
+    <!-- ============================================================ -->
+    <section class="section contact-channels-section" id="contact-cards">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">DIRECT DEPARTMENT LINES</span>
+          </div>
+          <h2 class="section-title">Connect With the Right Driving School Team</h2>
+          <p class="section-subtitle">
+            Whether you are a brand-new permit holder, booking an urgent DMV road test car, or rescheduling a pickup, reach the exact desk you need.
+          </p>
+        </div>
+
+        <!-- 3 Specialized Contact Cards Grid -->
+        <div class="contact-cards-grid">
+
+          <!-- Card 01: Admissions & Course Enrollment -->
+          <article class="contact-channel-card">
+            <div class="channel-card-top">
+              <div class="channel-icon-box">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              </div>
+              <span class="channel-status-pill"><span class="pulse-dot"></span> Online Now</span>
+            </div>
+            <h3 class="channel-title">Course Admissions &amp; Tuition</h3>
+            <p class="channel-desc">
+              Get help choosing between Starter, Complete License, and VIP Fast-Track plans or setting up 0% APR installments.
+            </p>
+            <div class="channel-info-list">
+              <a href="tel:+18005553748" class="channel-detail-item">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>+1 (800) 555-3748 (Ext. 1)</span>
+              </a>
+              <a href="mailto:admissions@drivepro.com" class="channel-detail-item">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>admissions@drivepro.com</span>
+              </a>
+            </div>
+            <button class="btn btn-secondary btn-block channel-action-btn" data-topic="New Driving Course Enrollment">
+              <span>Message Admissions</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
+
+          <!-- Card 02: DMV Road Test & Car Rental Desk -->
+          <article class="contact-channel-card featured-channel-card">
+            <div class="channel-card-top">
+              <div class="channel-icon-box featured-icon">
+                <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+              </div>
+              <span class="channel-status-pill featured-pill">Priority Desk</span>
+            </div>
+            <h3 class="channel-title">DMV Road Test &amp; Car Rental</h3>
+            <p class="channel-desc">
+              Book our dual-control vehicle for your official DMV road exam, schedule a mock road evaluation, or request priority test slots.
+            </p>
+            <div class="channel-info-list">
+              <a href="tel:+18005553749" class="channel-detail-item">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>+1 (800) 555-3749 (Ext. 2)</span>
+              </a>
+              <a href="mailto:roadtest@drivepro.com" class="channel-detail-item">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>roadtest@drivepro.com</span>
+              </a>
+            </div>
+            <button class="btn btn-primary btn-block channel-action-btn" data-topic="DMV Road Test Car Rental & Booking">
+              <span>Reserve Road Test Car</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
+
+          <!-- Card 03: Lesson Dispatch & Doorstep Pickup -->
+          <article class="contact-channel-card">
+            <div class="channel-card-top">
+              <div class="channel-icon-box">
+                <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+              </div>
+              <span class="channel-status-pill"><span class="pulse-dot"></span> 7 AM – 8 PM</span>
+            </div>
+            <h3 class="channel-title">Lesson Dispatch &amp; Pickup</h3>
+            <p class="channel-desc">
+              Update your home, campus, or work pickup location, reschedule an upcoming 2-hour driving session, or request a specific instructor.
+            </p>
+            <div class="channel-info-list">
+              <a href="tel:+18005553750" class="channel-detail-item">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>+1 (800) 555-3750 (Ext. 3)</span>
+              </a>
+              <a href="mailto:dispatch@drivepro.com" class="channel-detail-item">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>dispatch@drivepro.com</span>
+              </a>
+            </div>
+            <button class="btn btn-secondary btn-block channel-action-btn" data-topic="Lesson Dispatch & Pickup Coordination">
+              <span>Contact Dispatch Desk</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 03 – DRIVING SCHOOL & LICENSE CONTACT FORM CARDS     -->
+    <!-- ============================================================ -->
+    <section class="section contact-form-section" id="contact-form-section">
+      <div class="container">
+        <div class="contact-workspace-grid">
+
+          <!-- Left Column: Interactive Inquiry & Lesson Callback Form Card -->
+          <div class="contact-form-card">
+            <div class="form-card-header">
+              <div class="section-eyebrow">
+                <span class="eyebrow-tag">ONLINE INQUIRY &amp; CALLBACK</span>
+              </div>
+              <h2 class="form-card-title">Send Us Your Driving &amp; License Inquiry</h2>
+              <p class="form-card-subtitle">
+                Fill out the form below and a certified DRIVEPRO admissions coordinator will reply or call you back within 15 minutes.
+              </p>
+            </div>
+
+            <!-- Interactive Submission Banner (Hidden until submit) -->
+            <div class="form-success-banner" id="contact-success-banner" role="status" aria-live="polite" hidden>
+              <div class="success-banner-icon">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              </div>
+              <div class="success-banner-content">
+                <h4 id="success-banner-heading">Inquiry Received Successfully!</h4>
+                <p id="success-banner-text">
+                  Our driving school coordinator has received your details and will contact you shortly.
+                </p>
+              </div>
+            </div>
+
+            <form id="driving-contact-form" class="driving-inquiry-form" novalidate>
+              <div class="form-grid-2">
+                <!-- Full Name -->
+                <div class="form-group">
+                  <label for="contact-name">Learner / Parent Full Name <span class="req-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-user input-icon" aria-hidden="true"></i>
+                    <input type="text" id="contact-name" name="fullName" placeholder="e.g. Alex Morgan" required />
+                  </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                  <label for="contact-email">Email Address <span class="req-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                    <input type="email" id="contact-email" name="email" placeholder="alex.morgan@example.com" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <label for="contact-phone">Mobile Phone Number <span class="req-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-phone input-icon" aria-hidden="true"></i>
+                    <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 234-5678" required />
+                  </div>
+                </div>
+
+                <!-- Pickup Zip / Area -->
+                <div class="form-group">
+                  <label for="contact-zip">Pickup Zip Code or Area</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-location-dot input-icon" aria-hidden="true"></i>
+                    <input type="text" id="contact-zip" name="pickupZip" placeholder="e.g. 78701 / Downtown Austin" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <!-- Inquiry Topic -->
+                <div class="form-group">
+                  <label for="contact-topic">What Can We Help You With? <span class="req-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-clipboard-list input-icon" aria-hidden="true"></i>
+                    <select id="contact-topic" name="topic" required>
+                      <option value="New Driving Course Enrollment">New Driving Course Enrollment</option>
+                      <option value="Full Car License Package ($549)">Full Car License Package ($549)</option>
+                      <option value="DMV Road Test Car Rental & Booking">DMV Road Test Car Rental &amp; Booking</option>
+                      <option value="VIP Fast-Track License Guarantee">VIP Fast-Track License Guarantee</option>
+                      <option value="Teen Permit & Theory Preparation">Teen Permit &amp; Theory Preparation</option>
+                      <option value="Lesson Dispatch & Pickup Coordination">Lesson Dispatch &amp; Pickup Coordination</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Vehicle Transmission Preference -->
+                <div class="form-group">
+                  <label for="contact-transmission">Preferred Vehicle Transmission</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-gears input-icon" aria-hidden="true"></i>
+                    <select id="contact-transmission" name="transmission">
+                      <option value="Automatic Transmission">Automatic Transmission (Most Popular)</option>
+                      <option value="Manual (Stick-Shift)">Manual (Stick-Shift) Clutch Training</option>
+                      <option value="Undecided / Need Advice">Undecided — Need Advisor Guidance</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Learner Experience Level Pills -->
+              <div class="form-group">
+                <label class="group-label">Current Driving &amp; Permit Status</label>
+                <div class="status-radio-grid">
+                  <label class="status-radio-card">
+                    <input type="radio" name="permitStatus" value="Brand New Beginner" checked />
+                    <span class="radio-card-inner">
+                      <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                      <span>Brand-New Learner</span>
+                    </span>
+                  </label>
+                  <label class="status-radio-card">
+                    <input type="radio" name="permitStatus" value="Have Learner Permit" />
+                    <span class="radio-card-inner">
+                      <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+                      <span>Have Learner Permit</span>
+                    </span>
+                  </label>
+                  <label class="status-radio-card">
+                    <input type="radio" name="permitStatus" value="Ready for DMV Road Test" />
+                    <span class="radio-card-inner">
+                      <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+                      <span>Ready for Road Test</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Message Textarea -->
+              <div class="form-group">
+                <label for="contact-message">Your Message, Preferred Days, or Questions <span class="req-star">*</span></label>
+                <div class="textarea-wrapper">
+                  <textarea 
+                    id="contact-message" 
+                    name="message" 
+                    rows="4" 
+                    placeholder="Tell us about your driving goals, preferred lesson times (mornings, evenings, weekends), or any questions about the DMV road test..." 
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Submit Row -->
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary btn-block submit-inquiry-btn">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  <span>Send Inquiry &amp; Request Callback</span>
+                </button>
+                <p class="form-privacy-note">
+                  <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                  <span>100% confidential. We never share your phone number or email with third parties.</span>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right Column: Advisor Info & Test-Day Support Sidebar Cards -->
+          <aside class="contact-sidebar-col">
+
+            <!-- Sidebar Card 01: Free 15-Minute License Roadmap Call -->
+            <div class="sidebar-info-card highlight-sidebar-card">
+              <div class="sidebar-card-badge">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>COMPLIMENTARY CONSULTATION</span>
+              </div>
+              <h3 class="sidebar-card-title">Not Sure How Many Driving Hours You Need?</h3>
+              <p class="sidebar-card-desc">
+                Speak directly with a state-certified Master Instructor for a free 15-minute road readiness evaluation before you buy a package.
+              </p>
+              <ul class="sidebar-check-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Personalized hour estimate based on your comfort level</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Guidance on local DMV test center wait times &amp; routes</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Match with a patient male or female specialist instructor</span>
+                </li>
+              </ul>
+              <a href="tel:+18005553748" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                <span>Call +1 (800) 555-DRIV Now</span>
+              </a>
+            </div>
+
+            <!-- Sidebar Card 02: Training & Dispatch Hours -->
+            <div class="sidebar-info-card">
+              <h3 class="sidebar-card-title">
+                <i class="fa-regular fa-clock text-primary" aria-hidden="true"></i>
+                <span>Academy &amp; Dispatch Hours</span>
+              </h3>
+              <p class="sidebar-card-desc">
+                We run practical behind-the-wheel lessons 7 days a week, including early mornings and evenings at no extra surcharge.
+              </p>
+              <ul class="hours-schedule-list">
+                <li>
+                  <span>Monday – Friday</span>
+                  <strong>7:00 AM – 8:00 PM</strong>
+                </li>
+                <li>
+                  <span>Saturday (Weekend Lessons)</span>
+                  <strong>7:30 AM – 7:00 PM</strong>
+                </li>
+                <li>
+                  <span>Sunday (Road Test Prep)</span>
+                  <strong>8:00 AM – 6:00 PM</strong>
+                </li>
+                <li class="emergency-row">
+                  <span>DMV Test-Day Dispatch Line</span>
+                  <strong class="text-primary">Opens 6:30 AM Daily</strong>
+                </li>
+              </ul>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 04 – REGIONAL TRAINING HUBS & INTERACTIVE MAP        -->
+    <!-- ============================================================ -->
+    <section class="section locations-section" id="training-locations">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">TRAINING CENTERS &amp; PICKUP ZONES</span>
+          </div>
+          <h2 class="section-title">Our Driving School Hubs &amp; DMV Test Routes</h2>
+          <p class="section-subtitle">
+            While we provide free doorstep pickup for all practical lessons, you can also visit any of our 3 regional training hubs or start your session directly at a metro transit station.
+          </p>
+        </div>
+
+        <!-- 3 Regional Branch Cards -->
+        <div class="branches-grid">
+
+          <!-- Branch 01 -->
+          <article class="branch-card active-branch" data-branch="central">
+            <div class="branch-card-header">
+              <span class="branch-tag">FLAGSHIP HEADQUARTERS</span>
+              <span class="branch-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9 (640+)</span>
+            </div>
+            <h3 class="branch-name">Central Austin &amp; Downtown Hub</h3>
+            <p class="branch-address">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>740 Motorway Blvd, Suite 200, Austin, TX 78701</span>
+            </p>
+            <div class="branch-meta-box">
+              <div class="branch-meta-row">
+                <strong>DMV Routes Covered:</strong>
+                <span>Central Austin Mega Center &amp; Pflugerville DMV</span>
+              </div>
+              <div class="branch-meta-row">
+                <strong>Facilities:</strong>
+                <span>Dual-Control Fleet, Simulator Lab &amp; Theory Classroom</span>
+              </div>
+            </div>
+            <div class="branch-card-actions">
+              <button class="btn btn-primary btn-block branch-book-btn" data-branch-name="Central Austin & Downtown Hub">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Book Pickup From Central Hub</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Branch 02 -->
+          <article class="branch-card" data-branch="north">
+            <div class="branch-card-header">
+              <span class="branch-tag">HIGHWAY &amp; TEST HUB</span>
+              <span class="branch-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 5.0 (410+)</span>
+            </div>
+            <h3 class="branch-name">North Metro &amp; Domain Center</h3>
+            <p class="branch-address">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>11420 North Lamar Pkwy, Building B, Austin, TX 78758</span>
+            </p>
+            <div class="branch-meta-box">
+              <div class="branch-meta-row">
+                <strong>DMV Routes Covered:</strong>
+                <span>North Lamar DPS, Round Rock &amp; Cedar Park Routes</span>
+              </div>
+              <div class="branch-meta-row">
+                <strong>Facilities:</strong>
+                <span>Protected Parallel Parking Lot &amp; Highway Merge Track</span>
+              </div>
+            </div>
+            <div class="branch-card-actions">
+              <button class="btn btn-secondary btn-block branch-book-btn" data-branch-name="North Metro & Domain Center">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Book Pickup From North Hub</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Branch 03 -->
+          <article class="branch-card" data-branch="south">
+            <div class="branch-card-header">
+              <span class="branch-tag">CAMPUS &amp; SOUTH HUB</span>
+              <span class="branch-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9 (380+)</span>
+            </div>
+            <h3 class="branch-name">South Congress &amp; Campus Hub</h3>
+            <p class="branch-address">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>3900 South Congress Ave, Suite 110, Austin, TX 78704</span>
+            </p>
+            <div class="branch-meta-box">
+              <div class="branch-meta-row">
+                <strong>DMV Routes Covered:</strong>
+                <span>South Austin DPS, Manchaca &amp; Kyle Test Centers</span>
+              </div>
+              <div class="branch-meta-row">
+                <strong>Facilities:</strong>
+                <span>University Student Shuttle &amp; Weekend Mock Test Track</span>
+              </div>
+            </div>
+            <div class="branch-card-actions">
+              <button class="btn btn-secondary btn-block branch-book-btn" data-branch-name="South Congress & Campus Hub">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Book Pickup From South Hub</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Interactive Map & Pickup Coverage Banner -->
+        <div class="map-showcase-card">
+          <div class="map-info-bar">
+            <div class="map-info-left">
+              <div class="map-pin-badge">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4>25-Mile Free Doorstep Pickup Radius</h4>
+                <p>Our dual-control cars pick you up directly from home, high school, university dorms, or work.</p>
+              </div>
+            </div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
+              <span>Open in Google Maps</span>
+            </a>
+          </div>
+          <div class="map-frame-container">
+            <iframe 
+              title="DRIVEPRO Driving Academy Headquarters Map Location"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-97.7650%2C30.2550%2C-97.7200%2C30.2850&amp;layer=mapnik&amp;marker=30.2672%2C-97.7431" 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 05 – CONTACT, BOOKING & PICKUP FAQS                  -->
+    <!-- ============================================================ -->
+    <section class="section faq-section" id="contact-faq">
+      <div class="container">
+        <div class="faq-layout-grid">
+          <!-- Left Column: Section Header & Direct Support Card -->
+          <div class="faq-info-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag">BOOKING &amp; SUPPORT FAQ</span>
+            </div>
+            <h2 class="section-title">
+              Common Questions Before <span class="text-highlight">Contacting</span> Us.
+            </h2>
+            <p class="section-subtitle">
+              Quick answers about scheduling your first behind-the-wheel lesson, doorstep pickup zones, instructor matching, and DMV road test bookings.
+            </p>
+
+            <!-- Support Card -->
+            <div class="faq-support-card">
+              <div class="support-card-header">
+                <div class="support-icon">
+                  <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4>Prefer Instant Phone Booking?</h4>
+                  <p>Our coordinators can enroll you and book your first lesson slot over the phone in 3 minutes.</p>
+                </div>
+              </div>
+              <div class="support-card-actions">
+                <a href="tel:+18005553748" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                  <span>Call +1 (800) 555-DRIV</span>
+                </a>
+                <button class="btn btn-secondary btn-block" id="faq-quick-book-btn">
+                  <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
+                  <span>Open Instant Booking Modal</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Accordion -->
+          <div class="faq-accordion-col" id="faq-accordion">
+
+            <!-- FAQ Item 01 (Open by Default) -->
+            <div class="faq-item active">
+              <button class="faq-question" aria-expanded="true">
+                <span class="faq-q-num">01</span>
+                <span class="faq-q-text">How soon can I start my first driving lesson after contacting you?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer" style="max-height: 280px;">
+                <div class="faq-answer-inner">
+                  <p>
+                    With a fleet of over 45 dual-control vehicles and 35+ certified instructors, most new students begin their first behind-the-wheel lesson within <strong>24 to 48 hours</strong> of enrollment—including evening and weekend time slots.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 02 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">02</span>
+                <span class="faq-q-text">Do I need to visit your office in person to enroll, or can I book everything online?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    You never have to commute to our office unless you want to! 100% of our enrollment, permit verification, and lesson scheduling can be completed online or by phone, and your instructor picks you up right at your front door for every practical session.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 03 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">03</span>
+                <span class="faq-q-text">Can I request a specific male or female instructor or a multilingual coach?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Yes! Simply mention your preference in the inquiry form above or tell our dispatch coordinator. We have calm, anxiety-certified male and female instructors available, as well as coaches fluent in English, Spanish, Arabic, French, and Mandarin.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 04 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">04</span>
+                <span class="faq-q-text">Can I get picked up at school or work and dropped off at home after my lesson?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Absolutely. As long as both addresses are within the same regional pickup zone, your instructor can pick you up from your high school, college campus, or office and drop you off at home at the end of your 2-hour driving session.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 05 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">05</span>
+                <span class="faq-q-text">How far in advance should I contact you to reserve a car for my DMV road test?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    We recommend contacting our <strong>DMV Road Test Desk</strong> at least <strong>5 to 7 days before your exam date</strong> so we can assign a vehicle and schedule your 1-hour pre-exam warmup. However, we also keep emergency standby vehicles for last-minute test bookings within 24 hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 06 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">06</span>
+                <span class="faq-q-text">How can parents track a teen learner's lesson schedule and progress?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Parents receive automated SMS pickup/drop-off notifications for every lesson plus full access to our digital Student Progress Scorecard, where instructors log completed maneuvers, highway hours, and mock DMV road test scores.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 06 – HIGH-IMPACT CTA CARD (Consistent with Home 1)   -->
+    <!-- ============================================================ -->
+    <section class="section cta-banner-section" id="cta-banner">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <!-- Subtle Decorative Automotive Accent -->
+          <div class="cta-decorative-svg" aria-hidden="true">
+            <svg viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-50 250 C 150 250, 200 50, 450 80 C 550 95, 620 180, 700 200" stroke="#F47732" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="6 6" />
+              <path d="M-20 280 C 180 280, 240 80, 490 110 C 590 125, 650 210, 720 230" stroke="#F47732" stroke-width="1.5" stroke-opacity="0.15" />
+              <circle cx="450" cy="80" r="4" fill="#F47732" fill-opacity="0.6" />
+            </svg>
+          </div>
+
+          <div class="cta-content-side">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag light-badge">START DRIVING THIS WEEK</span>
+            </div>
+            <h2 class="cta-heading">Ready to Book Your First Driving Lesson?</h2>
+            <p class="cta-description">
+              Lock in your behind-the-wheel schedule with free doorstep pickup and our 98% first-attempt DMV pass curriculum.
+            </p>
+            <div class="cta-buttons-group">
+              <button class="btn btn-primary cta-primary-btn" id="cta-book-btn">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Book Your First Lesson</span>
+              </button>
+              <a href="pricing.html" class="btn btn-secondary cta-secondary-btn">
+                <span>View License Packages</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-image-side">
+            <div class="cta-image-frame">
+              <img 
+                src="https://images.pexels.com/photos/4606336/pexels-photo-4606336.jpeg?auto=compress&cs=tinysrgb&w=900" 
+                alt="Smiling learner driver behind the steering wheel during training session" 
+                class="cta-img"
+                loading="lazy"
+              />
+              <div class="cta-image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER DESIGN (Consistent with Home 1)                       -->
+  <!-- ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-main">
+      <div class="footer-columns-grid">
+        <!-- COLUMN 01 – BRAND -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo" aria-label="DRIVEPRO Home">
+            <div class="logo-icon-wrapper">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="20" cy="20" r="6" fill="#F47732" />
+                <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </a>
+          <p class="footer-about-text">
+            Setting the benchmark in professional driver training, safety education, and road test certification for over 12 years.
+          </p>
+          <div class="footer-social-links" aria-label="Social media channels">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 02 – QUICK LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="index.html" class="footer-link">Home 1</a>
+            </li>
+            <li>
+              <a href="home2.html" class="footer-link">Home 2</a>
+            </li>
+            <li>
+              <a href="about.html" class="footer-link">About Us</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Services</a>
+            </li>
+            <li>
+              <a href="pricing.html" class="footer-link">Pricing</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Journal</a>
+            </li>
+            <li>
+              <a href="contact.html" class="footer-link active-footer-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 03 – SERVICES -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="service details.html?course=beginner-driving" class="footer-link">Beginner Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=car-license" class="footer-link">Car License Training</a>
+            </li>
+            <li>
+              <a href="service details.html?course=advanced-driving" class="footer-link">Advanced Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=mock-test-refresher" class="footer-link">Test Preparation</a>
+            </li>
+            <li>
+              <a href="service details.html?course=intensive-fast-track" class="footer-link">Highway Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=automatic-license" class="footer-link">Refresher Lessons</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 04 – ADDITIONAL LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Additional Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="contact.html" class="footer-link">Driving Test Booking</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Theory Test Prep</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Dual-Control Fleet</a>
+            </li>
+            <li>
+              <a href="pricing.html#pricing-faq" class="footer-link">Student FAQ Guide</a>
+            </li>
+            <li>
+              <a href="404.html" class="footer-link">404 Page</a>
+            </li>
+            <li>
+              <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 05 – CONTACT & SUPPORT -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">Contact &amp; Support</h4>
+          <ul class="contact-info-list">
+            <li class="contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+18005553748" class="contact-link">+1 (800) 555-3748</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:admissions@drivepro-academy.com" class="contact-link">admissions@drivepro-academy.com</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>742 Automotive Blvd, Metro City, ST 90210</span>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon – Sat: 7:00 AM – 8:00 PM</span>
+            </li>
+          </ul>
+          <div class="support-action">
+            <a href="#contact-form-section" class="footer-support-btn" id="contact-support-btn">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <span>Contact Support Team</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 DRIVEPRO Academy. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#" class="legal-link placeholder-link" data-page-name="Privacy Policy">Privacy Policy</a>
+          <span class="legal-separator">•</span>
+          <a href="#" class="legal-link placeholder-link" data-page-name="Terms &amp; Conditions">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL 1: LOGIN PORTAL                            -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-login-modal" aria-label="Close login modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-icon-badge">
+          <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+        </div>
+        <h3 id="login-modal-title" class="modal-title">Student &amp; Instructor Portal</h3>
+        <p class="modal-subtitle">Access your lesson schedule, road test checklist, and pickup dispatch updates.</p>
+      </div>
+      <form id="login-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email or Student ID</label>
+          <div class="input-wrapper">
+            <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+            <input type="email" id="login-email" placeholder="student@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+            <input type="password" id="login-password" placeholder="••••••••" required />
+          </div>
+        </div>
+        <div class="form-row-between">
+          <label class="checkbox-label">
+            <input type="checkbox" checked />
+            <span>Keep me signed in</span>
+          </label>
+          <a href="#" class="forgot-link" id="forgot-pass-link">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>Sign In to Portal</span>
+          <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL 2: INSTANT PICKUP & LESSON BOOKING MODAL   -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="booking-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="modal-card course-modal-card">
+      <button class="modal-close-btn" id="close-booking-modal" aria-label="Close booking modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div id="booking-modal-body">
+        <!-- Dynamically populated by contact.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Page Interactive Script -->
+  <script src="contact.js"></script>
+</body>
+</html>
+

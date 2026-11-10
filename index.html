@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRIVEPRO – Premium Driving School & License Training Academy</title>
+  <meta name="description"
+    content="Professional driving lessons, certified instructors, and practical license training to help you pass with confidence." />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="header-container container">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving Academy Home">
+        <div class="logo-icon-wrapper">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" class="logo-rim" />
+            <circle cx="20" cy="20" r="6" fill="#F47732" />
+            <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" />
+            <circle cx="20" cy="20" r="14" stroke="#F47732" stroke-width="1.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+        <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+      </a>
+
+      <!-- Middle: Desktop Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <!-- Home Dropdown -->
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle active-nav" id="home-dropdown-btn" aria-expanded="false"
+              aria-haspopup="true">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" id="home-dropdown-menu" aria-label="Home Pages Submenu">
+              <li>
+                <a href="index.html" class="dropdown-link active-dropdown-item">
+                  <span class="dot-indicator"></span>
+                  <div>
+                    <strong>Home 1</strong>
+                    <small>Default Driving Academy</small>
+                  </div>
+                  <span class="badge-active">Current</span>
+                </a>
+              </li>
+              <li>
+                <a href="home2.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 2</strong>
+                    <small>Cinematic International Style</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- About Us Page Link -->
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <!-- Services Page Link -->
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+          <!-- Pricing Page Link -->
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link">Pricing</a>
+          </li>
+          <!-- Journal Page Link -->
+          <li class="nav-item">
+            <a href="journal.html" class="nav-link">Journal</a>
+          </li>
+          <!-- Contact Us Page Link -->
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right: Controls & Login -->
+      <div class="header-actions">
+        <!-- RTL/LTR Toggle -->
+        <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction"
+          aria-label="Toggle text direction between LTR and RTL">
+          <span class="control-label" id="rtl-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme"
+          aria-label="Toggle visual theme between light and dark">
+          <i class="fa-solid fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <!-- Login Primary Button -->
+        <a href="login.html" class="btn btn-primary header-login-btn" id="header-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+        </div>
+        <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="mobile-nav-list">
+        <!-- Mobile Home Dropdown -->
+        <li class="mobile-nav-item mobile-dropdown-container">
+          <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-btn" aria-expanded="false">
+            <span>Home Options</span>
+            <i class="fa-solid fa-chevron-down mobile-arrow" aria-hidden="true"></i>
+          </button>
+          <div class="mobile-sub-menu" id="mobile-home-submenu">
+            <a href="index.html" class="mobile-sub-link active-link">Home 1 (Current)</a>
+            <a href="home2.html" class="mobile-sub-link">Home 2 (Cinematic)</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="about.html" class="mobile-nav-link">About Us</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="services.html" class="mobile-nav-link">Services</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="journal.html" class="mobile-nav-link">Journal</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+        </li>
+      </ul>
+
+      <div class="mobile-drawer-footer">
+        <a href="login.html" class="btn btn-primary btn-block mobile-login-btn" id="mobile-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Student Portal Login</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 01 – PREMIUM HERO BANNER                              -->
+    <!-- ============================================================ -->
+    <section class="hero-section" id="hero-banner">
+      <div class="hero-bg-media" aria-hidden="true">
+        <img src="home1-hero-bg.jpg"
+          alt="Modern driving school vehicle with DRIVING SCHOOL roof sign, student driver, and instructor on a training course with traffic cones"
+          class="hero-bg-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-grid-pattern"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Eyebrow Badge -->
+          <div class="hero-eyebrow animate-fade-in">
+            <span class="badge badge-primary">
+              <i class="fa-solid fa-route" aria-hidden="true"></i>
+              <span>YOUR JOURNEY STARTS HERE</span>
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="hero-title animate-fade-in">
+            Learn to Drive.
+            <span class="text-gradient">Drive with Confidence.</span>
+          </h1>
+
+          <!-- Supporting Description -->
+          <p class="hero-description animate-fade-in">
+            Professional driving lessons, expert instructors and practical training designed to get you confidently
+            behind the wheel and ready for your driving test.
+          </p>
+
+          <!-- Action CTAs -->
+          <div class="hero-actions animate-fade-in">
+            <a href="#courses" class="btn btn-primary hero-btn">
+              <span>Explore Our Courses</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <button class="btn btn-secondary hero-btn" id="hero-instructor-btn">
+              <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+              <span>Meet Our Instructors</span>
+            </button>
+          </div>
+
+          <!-- Trust Indicator -->
+          <div class="hero-trust animate-fade-in">
+            <div class="avatar-stack" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=120&auto=format&fit=crop"
+                alt="Learner graduate" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=120&auto=format&fit=crop"
+                alt="Learner graduate" />
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=120&auto=format&fit=crop"
+                alt="Learner graduate" />
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=120&auto=format&fit=crop"
+                alt="Learner graduate" />
+            </div>
+            <div class="trust-details">
+              <div class="star-rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
+                <span class="rating-number">4.9/5</span>
+              </div>
+              <p class="trust-text">Certified by Official Transport Standards & 10,000+ drivers</p>
+            </div>
+          </div>
+
+          <!-- Visual Statistics Area -->
+          <div class="hero-stats-wrapper animate-fade-in">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">95%</span>
+                <span class="stat-label">Student Pass Rate <span class="stat-badge-info"
+                    title="Editable verified metric placeholder">*</span></span>
+              </div>
+            </div>
+
+            <div class="stat-divider" aria-hidden="true"></div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">10K+</span>
+                <span class="stat-label">Successful Learners</span>
+              </div>
+            </div>
+
+            <div class="stat-divider" aria-hidden="true"></div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">15+</span>
+                <span class="stat-label">Expert Instructors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 02 – ABOUT OUR DRIVING ACADEMY                       -->
+    <!-- ============================================================ -->
+    <section class="section about-section" id="about-academy">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left: Unique Arrangement Images & Badge -->
+          <div class="about-media-col">
+            <div class="about-image-composition">
+              <div class="image-wrapper main-img-wrapper">
+                <img src="https://images.pexels.com/photos/9518021/pexels-photo-9518021.jpeg?auto=compress&cs=tinysrgb&w=900"
+                  alt="Professional driving instructor guiding student inside dual-control car" class="about-img-main"
+                  loading="lazy" />
+              </div>
+              <div class="image-wrapper overlap-img-wrapper">
+                <img src="https://images.pexels.com/photos/97079/pexels-photo-97079.jpeg?auto=compress&cs=tinysrgb&w=700"
+                  alt="Student holding car keys after successfully passing driving test" class="about-img-overlap"
+                  loading="lazy" />
+              </div>
+              <!-- Experience Floating Badge -->
+              <div class="experience-badge">
+                <div class="badge-icon-box">
+                  <i class="fa-solid fa-award" aria-hidden="true"></i>
+                </div>
+                <div class="badge-text-box">
+                  <span class="exp-number">12+</span>
+                  <span class="exp-text">Years of Excellence in Driver Education</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Narrative & Key Features -->
+          <div class="about-content-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag">ABOUT OUR ACADEMY</span>
+            </div>
+            <h2 class="section-title">
+              More Than Driving. <br>
+              <span class="text-highlight">Building Safer Drivers.</span>
+            </h2>
+            <p class="section-paragraph">
+              At DRIVEPRO, we believe driving education goes far beyond just memorizing maneuvers. We nurture mindful,
+              defensive, and self-assured motorists equipped for real-world road conditions. Our dual-control training
+              fleet, patient certified mentors, and evidence-based curriculum remove beginner anxiety from day one.
+            </p>
+
+            <!-- 4 Key Points with Icons -->
+            <div class="about-features-grid">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Certified Driving Instructors</h4>
+                  <p>Fully licensed, background-checked mentors dedicated to patient, calm coaching.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-route" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Practical Road Training</h4>
+                  <p>Real-world city, motorway, and test route driving experience under true road conditions.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Flexible Learning Schedules</h4>
+                  <p>Morning, evening, and weekend booking options custom tailored to your availability.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Safety-First Approach</h4>
+                  <p>Euro NCAP 5-star dual-control fleet with proactive defensive driving techniques.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="about-cta-wrapper">
+              <a href="about.html" class="btn btn-primary">
+                <span>Discover Our Academy</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 03 – OUR MAIN DRIVING COURSES                       -->
+    <!-- ============================================================ -->
+    <section class="section courses-section" id="courses">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">ACCREDITED TRAINING</span>
+          </div>
+          <h2 class="section-title">Find the Right Course for Your Journey.</h2>
+          <p class="section-subtitle">
+            Whether you are sitting behind the wheel for the first time or seeking advanced road confidence, our
+            targeted courses provide structured, step-by-step progress.
+          </p>
+        </div>
+
+        <!-- Exactly 3 Course Cards -->
+        <div class="courses-grid">
+          <!-- CARD 01: Beginner Driving Course -->
+          <article class="course-card">
+            <div class="course-card-image">
+              <img src="https://images.pexels.com/photos/4005057/pexels-photo-4005057.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Beginner student driver practicing steering and mirrors under guidance" loading="lazy" />
+              <span class="course-badge">Beginner</span>
+            </div>
+            <div class="course-card-body">
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 20 Hours</span>
+                <span><i class="fa-solid fa-car" aria-hidden="true"></i> Dual Control</span>
+              </div>
+              <h3 class="course-title">Beginner Driving Course</h3>
+              <p class="course-desc">
+                Learn driving fundamentals, vehicle controls, road awareness and basic traffic rules.
+              </p>
+              <ul class="course-features-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Beginner-friendly training</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Practical driving sessions</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Road safety fundamentals</span>
+                </li>
+              </ul>
+              <div class="course-card-footer">
+                <a href="service details.html?course=beginner-driving" class="btn btn-primary btn-block course-view-btn"
+                  data-course="Beginner Driving Course">
+                  <span>View Course</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 02: Car License Training -->
+          <article class="course-card course-featured">
+            <div class="course-card-image">
+              <img src="https://images.pexels.com/photos/26700346/pexels-photo-26700346.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Cockpit view of car license training on practical road test route" loading="lazy" />
+              <span class="course-badge featured-badge">Most Popular</span>
+            </div>
+            <div class="course-card-body">
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 30 Hours</span>
+                <span><i class="fa-solid fa-certificate" aria-hidden="true"></i> Test Prep</span>
+              </div>
+              <h3 class="course-title">Car License Training</h3>
+              <p class="course-desc">
+                Comprehensive practical training to prepare students for their car driving license test.
+              </p>
+              <ul class="course-features-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Professional instructor guidance</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Test preparation & mock exams</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Real-road driving practice</span>
+                </li>
+              </ul>
+              <div class="course-card-footer">
+                <a href="service details.html?course=car-license" class="btn btn-primary btn-block course-view-btn"
+                  data-course="Car License Training">
+                  <span>View Course</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 03: Advanced Driving Course -->
+          <article class="course-card">
+            <div class="course-card-image">
+              <img src="https://images.pexels.com/photos/28847738/pexels-photo-28847738.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Advanced vehicle handling and defensive multi-lane highway interchange driving" loading="lazy" />
+              <span class="course-badge">Advanced</span>
+            </div>
+            <div class="course-card-body">
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 15 Hours</span>
+                <span><i class="fa-solid fa-shield" aria-hidden="true"></i> Defensive</span>
+              </div>
+              <h3 class="course-title">Advanced Driving Course</h3>
+              <p class="course-desc">
+                Improve driving confidence, parking skills, and advanced vehicle handling.
+              </p>
+              <ul class="course-features-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Advanced driving techniques</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Parking practice</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Defensive driving basics</span>
+                </li>
+              </ul>
+              <div class="course-card-footer">
+                <a href="service details.html?course=advanced-driving" class="btn btn-primary btn-block course-view-btn"
+                  data-course="Advanced Driving Course">
+                  <span>View Course</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 04 – YOUR LEARNING JOURNEY                          -->
+    <!-- ============================================================ -->
+    <section class="section journey-section" id="learning-journey">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">STEP-BY-STEP ROADMAP</span>
+          </div>
+          <h2 class="section-title">Your Journey to Driving Freedom.</h2>
+          <p class="section-subtitle">
+            A clear, four-phase milestone system designed to take you from your first lesson to holding your official
+            driving license.
+          </p>
+        </div>
+
+        <!-- 4-Step Timeline Component -->
+        <div class="timeline-container">
+          <div class="timeline-track" aria-hidden="true">
+            <div class="timeline-progress-bar"></div>
+          </div>
+
+          <div class="timeline-steps-grid">
+            <!-- STEP 01 -->
+            <div class="timeline-step" data-step="1">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">01</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Choose Your Course</h3>
+                <p class="step-desc">
+                  Select the driving program that suits your experience and license goals.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP 02 -->
+            <div class="timeline-step" data-step="2">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">02</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Meet Your Instructor</h3>
+                <p class="step-desc">
+                  Connect with a qualified instructor and schedule your lessons.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP 03 -->
+            <div class="timeline-step" data-step="3">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">03</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-car-rear" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Learn &amp; Practice</h3>
+                <p class="step-desc">
+                  Complete practical lessons, develop confidence and track your training hours.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP 04 -->
+            <div class="timeline-step" data-step="4">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">04</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-award" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Get Test Ready</h3>
+                <p class="step-desc">
+                  Prepare for your driving test with expert guidance and a structured training plan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 05 – WHY CHOOSE OUR DRIVING ACADEMY                 -->
+    <!-- ============================================================ -->
+    <section class="section why-choose-section" id="why-choose">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">ACADEMY ADVANTAGES</span>
+          </div>
+          <h2 class="section-title">The Confidence to Drive Starts Here.</h2>
+          <p class="section-subtitle">
+            Engineered around learner confidence, road mastery, and high success rates through verified instruction
+            standards.
+          </p>
+
+          <!-- Highlighted Safety Message -->
+          <div class="safety-banner-wrapper">
+            <div class="safety-banner">
+              <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+              <span class="safety-text">"Your Safety Is Our First Priority."</span>
+              <span class="safety-subtext">— Dual-control certified vehicles &amp; comprehensive road insurance
+                included.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-layout">
+          <!-- 6 Feature Cards Grid -->
+          <div class="features-cards-grid">
+            <!-- 01. Experienced Instructors -->
+            <div class="feature-card">
+              <div class="feature-card-header">
+                <div class="feature-card-icon">
+                  <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                </div>
+                <span class="card-seq">01</span>
+              </div>
+              <h3 class="feature-card-title">Experienced Instructors</h3>
+              <p class="feature-card-desc">
+                Learn from fully licensed, background-checked, and patient coaching specialists with an average of over
+                a decade in professional driver education.
+              </p>
+            </div>
+
+            <!-- 02. Flexible Lesson Booking -->
+            <div class="feature-card">
+              <div class="feature-card-header">
+                <div class="feature-card-icon">
+                  <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+                </div>
+                <span class="card-seq">02</span>
+              </div>
+              <h3 class="feature-card-title">Flexible Lesson Booking</h3>
+              <p class="feature-card-desc">
+                Book early morning, evening, or weekend sessions seamlessly to easily fit driving practice into your
+                work or academic schedule.
+              </p>
+            </div>
+
+            <!-- 03. Modern Training Vehicles -->
+            <div class="feature-card">
+              <div class="feature-card-header">
+                <div class="feature-card-icon">
+                  <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+                </div>
+                <span class="card-seq">03</span>
+              </div>
+              <h3 class="feature-card-title">Modern Training Vehicles</h3>
+              <p class="feature-card-desc">
+                Train in modern, dual-control fitted vehicles with Euro NCAP 5-star safety ratings, rearview cameras,
+                and premium climate comfort.
+              </p>
+            </div>
+
+            <!-- 04. Personalised Learning -->
+            <div class="feature-card">
+              <div class="feature-card-header">
+                <div class="feature-card-icon">
+                  <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                </div>
+                <span class="card-seq">04</span>
+              </div>
+              <h3 class="feature-card-title">Personalised Learning</h3>
+              <p class="feature-card-desc">
+                Every student learns differently. We customize lesson speed, maneuvers, and road types to match your
+                comfort and growth areas.
+              </p>
+            </div>
+
+            <!-- 05. Transparent Pricing -->
+            <div class="feature-card">
+              <div class="feature-card-header">
+                <div class="feature-card-icon">
+                  <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+                </div>
+                <span class="card-seq">05</span>
+              </div>
+              <h3 class="feature-card-title">Transparent Pricing</h3>
+              <p class="feature-card-desc">
+                No hidden fuel surcharges, booking commissions, or test car rental surprises. Clean, straightforward
+                package pricing every time.
+              </p>
+            </div>
+
+            <!-- 06. Driving Test Preparation -->
+            <div class="feature-card">
+              <div class="feature-card-header">
+                <div class="feature-card-icon">
+                  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                </div>
+                <span class="card-seq">06</span>
+              </div>
+              <h3 class="feature-card-title">Driving Test Preparation</h3>
+              <p class="feature-card-desc">
+                Practice directly on official regional test center routes, complete realistic mock examinations, and
+                master complex junctions before your exam day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 06 – STUDENT TESTIMONIALS                           -->
+    <!-- ============================================================ -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">STUDENT SUCCESS</span>
+          </div>
+          <h2 class="section-title">Real Students. Real Driving Confidence.</h2>
+          <p class="section-subtitle">
+            Hear from recent graduates who conquered driving test anxiety and earned their driver's licenses with
+            DRIVEPRO.
+          </p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="testimonials-carousel" id="testimonials-carousel">
+          <!-- Slides Track Wrapper -->
+          <div class="carousel-viewport" id="carousel-viewport">
+            <div class="carousel-track" id="carousel-track">
+              <!-- Testimonial 01 -->
+              <div class="testimonial-slide active-slide" data-slide="0">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon" aria-hidden="true">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <div class="testimonial-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="rating-text">5.0 / 5.0</span>
+                  </div>
+                  <p class="testimonial-body">
+                    "I had immense anxiety about roundabout lane changes and busy junctions. My instructor David
+                    remained calm, broke down maneuvers into simple mental checkpoints, and boosted my self-belief. I
+                    passed my official practical test on my first attempt with only two minors!"
+                  </p>
+                  <div class="student-profile">
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                      alt="Portrait of Marcus Vance" class="student-avatar" loading="lazy" />
+                    <div class="student-info">
+                      <h4 class="student-name">Marcus Vance</h4>
+                      <span class="student-course"><i class="fa-solid fa-check-circle"></i> Car License Training
+                        Graduate</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 02 -->
+              <div class="testimonial-slide" data-slide="1">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon" aria-hidden="true">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <div class="testimonial-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="rating-text">5.0 / 5.0</span>
+                  </div>
+                  <p class="testimonial-body">
+                    "The dual-control modern vehicles made me feel safe from minute one. DRIVEPRO made understanding
+                    road theory and real clutch control completely intuitive. Their weekend flexibility allowed me to
+                    finish my training without missing a single college lecture."
+                  </p>
+                  <div class="student-profile">
+                    <img
+                      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                      alt="Portrait of Elena Rostova" class="student-avatar" loading="lazy" />
+                    <div class="student-info">
+                      <h4 class="student-name">Elena Rostova</h4>
+                      <span class="student-course"><i class="fa-solid fa-check-circle"></i> Beginner Driving Course
+                        Graduate</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 03 -->
+              <div class="testimonial-slide" data-slide="2">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon" aria-hidden="true">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <div class="testimonial-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="rating-text">5.0 / 5.0</span>
+                  </div>
+                  <p class="testimonial-body">
+                    "Even after getting my basic license, motorway driving and tight parallel bay parking still stressed
+                    me out. The Advanced Course with Sarah taught me defensive anticipation and hazard perception that
+                    made me a confident driver anywhere."
+                  </p>
+                  <div class="student-profile">
+                    <img
+                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop"
+                      alt="Portrait of James Thornton" class="student-avatar" loading="lazy" />
+                    <div class="student-info">
+                      <h4 class="student-name">James Thornton</h4>
+                      <span class="student-course"><i class="fa-solid fa-check-circle"></i> Advanced Driving Course
+                        Graduate</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls: Arrows & Dots -->
+          <div class="carousel-navigation">
+            <button class="carousel-btn prev-btn" id="carousel-prev-btn" aria-label="Previous testimonial">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            </button>
+            <div class="carousel-pagination" id="carousel-pagination" role="tablist"
+              aria-label="Testimonial navigation dots">
+              <button class="pagination-dot active-dot" data-index="0" role="tab" aria-selected="true"
+                aria-label="Slide 1"></button>
+              <button class="pagination-dot" data-index="1" role="tab" aria-selected="false"
+                aria-label="Slide 2"></button>
+              <button class="pagination-dot" data-index="2" role="tab" aria-selected="false"
+                aria-label="Slide 3"></button>
+            </div>
+            <button class="carousel-btn next-btn" id="carousel-next-btn" aria-label="Next testimonial">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 07 – PREMIUM CTA BANNER                             -->
+    <!-- ============================================================ -->
+    <section class="section cta-banner-section" id="cta-banner">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <!-- Subtle Decorative Automotive Accent -->
+          <div class="cta-decorative-svg" aria-hidden="true">
+            <svg viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-50 250 C 150 250, 200 50, 450 80 C 550 95, 620 180, 700 200" stroke="#F47732" stroke-width="2"
+                stroke-opacity="0.3" stroke-dasharray="6 6" />
+              <path d="M-20 280 C 180 280, 240 80, 490 110 C 590 125, 650 210, 720 230" stroke="#F47732"
+                stroke-width="1.5" stroke-opacity="0.15" />
+              <circle cx="450" cy="80" r="4" fill="#F47732" fill-opacity="0.6" />
+            </svg>
+          </div>
+
+          <div class="cta-content-side">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag light-badge">START TODAY</span>
+            </div>
+            <h2 class="cta-heading">Ready to Take the Driver's Seat?</h2>
+            <p class="cta-description">
+              Start your driving journey with expert instructors, structured lessons and training designed around your
+              goals.
+            </p>
+            <div class="cta-buttons-group">
+              <button class="btn btn-primary cta-primary-btn" id="cta-book-btn">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Book Your First Lesson</span>
+              </button>
+              <a href="#courses" class="btn btn-secondary cta-secondary-btn">
+                <span>Explore Driving Courses</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-image-side">
+            <div class="cta-image-frame">
+              <img src="https://images.pexels.com/photos/19477337/pexels-photo-19477337/free-photo-of-hands-holding-steering-wheel.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Hands ready on the steering wheel inside a modern training vehicle" class="cta-img"
+                loading="lazy" />
+              <div class="cta-image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- 5. FOOTER DESIGN                                             -->
+  <!-- ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-main">
+      <div class="footer-columns-grid">
+        <!-- COLUMN 01 – BRAND -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo" aria-label="DRIVEPRO Home">
+            <div class="logo-icon-wrapper">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="20" cy="20" r="6" fill="#F47732" />
+                <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </a>
+          <p class="footer-about-text">
+            Setting the benchmark in professional driver training, safety education, and road test certification for
+            over 12 years.
+          </p>
+          <div class="footer-social-links" aria-label="Social media channels">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="YouTube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 02 – QUICK LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="index.html" class="footer-link active-footer-link">Home 1</a>
+            </li>
+            <li>
+              <a href="home2.html" class="footer-link">Home 2</a>
+            </li>
+            <li>
+              <a href="about.html" class="footer-link">About Us</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Services</a>
+            </li>
+            <li>
+              <a href="pricing.html" class="footer-link">Pricing</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Journal</a>
+            </li>
+            <li>
+              <a href="contact.html" class="footer-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 03 – SERVICES -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="service details.html?course=beginner-driving" class="footer-link">Beginner Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=car-license" class="footer-link">Car License Training</a>
+            </li>
+            <li>
+              <a href="service details.html?course=advanced-driving" class="footer-link">Advanced Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=mock-test-refresher" class="footer-link">Test Preparation</a>
+            </li>
+            <li>
+              <a href="service details.html?course=intensive-fast-track" class="footer-link">Highway Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=automatic-license" class="footer-link">Refresher Lessons</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 04 – ADDITIONAL LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Additional Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="contact.html" class="footer-link">Driving Test Booking</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Theory Test Prep</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Dual-Control Fleet</a>
+            </li>
+            <li>
+              <a href="pricing.html#pricing-faq" class="footer-link">Student FAQ Guide</a>
+            </li>
+            <li>
+              <a href="404.html" class="footer-link">404 Page</a>
+            </li>
+            <li>
+              <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 05 – CONTACT & SUPPORT -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">Contact &amp; Support</h4>
+          <ul class="contact-info-list">
+            <li class="contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+18005553748" class="contact-link">+1 (800) 555-3748</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:admissions@drivepro-academy.com" class="contact-link">admissions@drivepro-academy.com</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>742 Automotive Blvd, Metro City, ST 90210</span>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon – Sat: 7:00 AM – 8:00 PM</span>
+            </li>
+          </ul>
+          <div class="support-action">
+            <a href="contact.html" class="footer-support-btn" id="contact-support-btn">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <span>Contact Support Team</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 DRIVEPRO Academy. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#" class="legal-link placeholder-link" data-page-name="Privacy Policy">Privacy Policy</a>
+          <span class="legal-separator">•</span>
+          <a href="#" class="legal-link placeholder-link" data-page-name="Terms &amp; Conditions">Terms &amp;
+            Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODALS (Ensure no dead links or dead buttons)    -->
+  <!-- ============================================================ -->
+  <!-- 1. Student Login Modal -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="login-modal-title">
+            <i class="fa-solid fa-user-shield text-primary" aria-hidden="true"></i>
+            <span>Student Portal Login</span>
+          </h3>
+          <button class="modal-close-btn" id="close-login-modal" aria-label="Close login dialog">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-description">
+            Access your lesson schedule, practice theory modules, and track certified road training hours.
+          </p>
+          <form id="student-login-form" class="modal-form">
+            <div class="form-group">
+              <label for="student-email" class="form-label">Learner Email or License ID</label>
+              <div class="input-with-icon">
+                <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                <input type="text" id="student-email" class="form-input" placeholder="e.g. learner@drivepro.com"
+                  required value="alex.learner@drivepro.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="student-password" class="form-label">Password</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+                <input type="password" id="student-password" class="form-input" placeholder="••••••••" required
+                  value="student123" />
+              </div>
+            </div>
+            <div class="form-meta-row">
+              <label class="remember-label">
+                <input type="checkbox" checked />
+                <span>Remember this device</span>
+              </label>
+              <a href="#" class="forgot-link placeholder-link" data-page-name="Password Recovery">Forgot code?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+              <span>Enter Portal</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Course Details / Booking Modal -->
+  <div class="modal-overlay" id="course-modal" aria-hidden="true" role="dialog" aria-labelledby="course-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="course-modal-title">Course Overview</h3>
+          <button class="modal-close-btn" id="close-course-modal" aria-label="Close dialog">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="course-modal-body">
+          <!-- Dynamically populated via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing &amp; Packages – DRIVEPRO Premium Driving School &amp; License Training</title>
+  <meta name="description" content="Explore DRIVEPRO's transparent driving school pricing, car license training packages, automatic and manual lesson rates, add-on road test bundles, and flexible payment plans." />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Pricing Page Stylesheet -->
+  <link rel="stylesheet" href="pricing.css" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============================================================ -->
+  <!-- HEADER & NAVIGATION (Consistent with Home 1)                 -->
+  <!-- ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-container container">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving Academy Home">
+        <div class="logo-icon-wrapper">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" class="logo-rim" />
+            <circle cx="20" cy="20" r="6" fill="#F47732" />
+            <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="20" cy="20" r="14" stroke="#F47732" stroke-width="1.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+        <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+      </a>
+
+      <!-- Middle: Desktop Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <!-- Home Dropdown -->
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" id="home-dropdown-menu" aria-label="Home Pages Submenu">
+              <li>
+                <a href="index.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 1</strong>
+                    <small>Default Driving Academy</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+              <li>
+                <a href="home2.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 2</strong>
+                    <small>Cinematic International Style</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- About Us Link -->
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+
+          <!-- Services Link -->
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+
+          <!-- Pricing Link (Active) -->
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link active-nav" aria-current="page">Pricing</a>
+          </li>
+
+          <!-- Journal Link -->
+          <li class="nav-item">
+            <a href="journal.html" class="nav-link">Journal</a>
+          </li>
+
+          <!-- Contact Us Page Link -->
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right: Controls & Login -->
+      <div class="header-actions">
+        <!-- RTL/LTR Toggle -->
+        <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction" aria-label="Toggle text direction between LTR and RTL">
+          <span class="control-label" id="rtl-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle visual theme between light and dark">
+          <i class="fa-solid fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <!-- Login Primary Button -->
+        <a href="login.html" class="btn btn-primary header-login-btn" id="header-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-drawer-header">
+          <div class="brand-logo">
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </div>
+          <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ul class="mobile-nav-list">
+          <!-- Mobile Home Dropdown -->
+          <li class="mobile-nav-item mobile-dropdown-container">
+            <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-btn" aria-expanded="false">
+              <span>Home Options</span>
+              <i class="fa-solid fa-chevron-down mobile-arrow" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-sub-menu" id="mobile-home-submenu">
+              <a href="index.html" class="mobile-sub-link">Home 1 (Default)</a>
+              <a href="home2.html" class="mobile-sub-link">Home 2 (Cinematic)</a>
+            </div>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="services.html" class="mobile-nav-link">Services</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="pricing.html" class="mobile-nav-link active-link" aria-current="page">Pricing (Current)</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="journal.html" class="mobile-nav-link">Journal</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="mobile-drawer-footer">
+          <a href="login.html" class="btn btn-primary btn-block" id="mobile-login-btn">
+            <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+            <span>Student Portal Login</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 01 – PREMIUM HERO BANNER PAGE                        -->
+    <!-- ============================================================ -->
+    <section class="hero-section pricing-hero-section" id="pricing-hero">
+      <div class="hero-bg-wrapper">
+        <img 
+          src="https://images.pexels.com/photos/6497964/pexels-photo-6497964.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+          alt="Learner studying driving syllabus and road test guidelines inside training car" 
+          class="hero-bg-image"
+          fetchpriority="high"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="pricing-hero-grid">
+          <!-- Centered Hero Copy & Actions -->
+          <div class="hero-content">
+            <!-- Eyebrow Tag -->
+            <div class="hero-eyebrow">
+              <span class="badge-primary">
+                <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                TRANSPARENT LICENSE TUITION
+              </span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+              Simple, Honest <span class="text-gradient">Pricing</span> for Your Car License.
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-description">
+              Invest in certified 1-on-1 driver training with zero hidden fuel surcharges, comprehensive learner insurance, and flexible 0% installment plans tailored to your license goals.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#pricing-packages" class="btn btn-primary">
+                <span>View License Packages</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="#package-comparison" class="btn btn-secondary">
+                <i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+                <span>Compare Plans &amp; Add-Ons</span>
+              </a>
+            </div>
+
+            <!-- Trust Rating Bar -->
+            <div class="hero-trust">
+              <div class="avatar-stack">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 1" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 2" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 3" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=120&auto=format&fit=crop" alt="Licensed Graduate 4" loading="lazy" />
+              </div>
+              <div class="trust-meta">
+                <div class="star-rating" aria-label="Rated 4.9 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <span class="rating-number">4.9/5</span>
+                </div>
+                <p class="trust-text">All-inclusive rates with 0% interest split payments</p>
+              </div>
+            </div>
+
+            <!-- Key Pricing Highlights Strip -->
+            <div class="hero-stats-wrapper">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fa-solid fa-gas-pump" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-value">$0 Extra</span>
+                  <span class="stat-label">Fuel &amp; Insurance</span>
+                </div>
+              </div>
+
+              <div class="stat-divider"></div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fa-solid fa-percent" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-value">0% APR</span>
+                  <span class="stat-label">Split Payment Plans</span>
+                </div>
+              </div>
+
+              <div class="stat-divider"></div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-value">100%</span>
+                  <span class="stat-label">Unused Hours Refund</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 02 – DRIVING SCHOOL & LICENSE PRICING CARDS          -->
+    <!-- ============================================================ -->
+    <section class="section pricing-packages-section" id="pricing-packages">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">OFFICIAL TUITION PLANS</span>
+          </div>
+          <h2 class="section-title">Driving School &amp; Car License Packages</h2>
+          <p class="section-subtitle">
+            Select your transmission type below to view all-inclusive package pricing for beginners, road test candidates, and intensive fast-track learners.
+          </p>
+
+          <!-- Transmission Type Switcher -->
+          <div class="transmission-toggle-wrapper" role="group" aria-label="Select vehicle transmission type">
+            <button type="button" class="transmission-btn active" id="btn-trans-auto" data-transmission="auto" aria-pressed="true">
+              <i class="fa-solid fa-gears" aria-hidden="true"></i>
+              <span>Automatic Transmission</span>
+              <span class="trans-pill">Most Popular</span>
+            </button>
+            <button type="button" class="transmission-btn" id="btn-trans-manual" data-transmission="manual" aria-pressed="false">
+              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+              <span>Manual (Stick-Shift)</span>
+              <span class="trans-pill">Clutch Mastery</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Tiered Pricing Cards Grid -->
+        <div class="pricing-cards-grid">
+
+          <!-- PLAN 01: STARTER PERMIT & BASICS -->
+          <article class="pricing-card" data-plan-id="starter">
+            <div class="pricing-card-top">
+              <div class="plan-header-row">
+                <span class="plan-tier-badge">STARTER PLAN</span>
+                <span class="plan-hours-tag"><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 Hours Practical</span>
+              </div>
+              <h3 class="plan-name">Beginner Permit &amp; Basics</h3>
+              <p class="plan-tagline">
+                Ideal for new permit holders building foundational steering, braking, and city traffic confidence.
+              </p>
+
+              <div class="plan-price-block">
+                <div class="price-main-row">
+                  <span class="price-currency">$</span>
+                  <span class="price-amount" data-auto-price="299" data-manual-price="329">299</span>
+                  <span class="price-period">/ package</span>
+                </div>
+                <p class="price-subtext" data-auto-sub="Automatic Car • Save $31 vs single lessons" data-manual-sub="Manual Clutch Car • Save $35 vs single lessons">
+                  Automatic Car • Save $31 vs single lessons
+                </p>
+              </div>
+            </div>
+
+            <div class="pricing-card-divider"></div>
+
+            <div class="pricing-card-body">
+              <p class="features-heading">What's Included in Starter:</p>
+              <ul class="plan-features-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span><strong>6 Hours</strong> 1-on-1 Behind-the-Wheel Training (3 × 2-hr sessions)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Dual-Control 5-Star Safety Training Car &amp; Fuel</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Online DMV Theory &amp; Hazard Perception App Access</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Free Home, School, or Work Doorstep Pickup</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Digital Student Progress &amp; Maneuver Scorecard</span>
+                </li>
+                <li class="feature-muted">
+                  <i class="fa-solid fa-circle-minus" aria-hidden="true"></i>
+                  <span>Official DMV Road Test Car Rental (Available as Add-On)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pricing-card-footer">
+              <button class="btn btn-secondary btn-block select-plan-btn" data-plan="starter">
+                <span>Enroll in Starter Plan</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+              <button class="plan-details-link" data-plan-detail="starter">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span>View Full Syllabus &amp; Payment Breakdown</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PLAN 02: COMPLETE CAR LICENSE PACKAGE (FEATURED / POPULAR) -->
+          <article class="pricing-card featured-pricing-card" data-plan-id="complete">
+            <div class="popular-ribbon">
+              <i class="fa-solid fa-crown" aria-hidden="true"></i>
+              <span>MOST POPULAR FOR LICENSE TEST</span>
+            </div>
+
+            <div class="pricing-card-top">
+              <div class="plan-header-row">
+                <span class="plan-tier-badge featured-tier-badge">COMPLETE LICENSE</span>
+                <span class="plan-hours-tag"><i class="fa-regular fa-clock" aria-hidden="true"></i> 12 Hours + Road Test</span>
+              </div>
+              <h3 class="plan-name">Full Car License Package</h3>
+              <p class="plan-tagline">
+                Our complete end-to-end program taking you from learner permit to passing your official DMV road exam.
+              </p>
+
+              <div class="plan-price-block">
+                <div class="price-main-row">
+                  <span class="price-currency">$</span>
+                  <span class="price-amount" data-auto-price="549" data-manual-price="599">549</span>
+                  <span class="price-period">/ package</span>
+                </div>
+                <p class="price-subtext" data-auto-sub="Or 3 monthly payments of $183 (0% APR)" data-manual-sub="Or 3 monthly payments of $199 (0% APR)">
+                  Or 3 monthly payments of $183 (0% APR)
+                </p>
+              </div>
+            </div>
+
+            <div class="pricing-card-divider"></div>
+
+            <div class="pricing-card-body">
+              <p class="features-heading">Everything in Starter, Plus:</p>
+              <ul class="plan-features-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span><strong>12 Hours</strong> Structured Practical Driving Instruction</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span><strong>Official DMV Road Test Car Rental</strong> + 1-Hr Warmup</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span><strong>2 Full Mock Road Exams</strong> on Official Test Center Routes</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Parallel, Reverse Bay &amp; Hill-Start Parking Mastery</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Priority DMV Road Test Appointment Concierge</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Insurance Premium Discount Certificate Upon Graduation</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pricing-card-footer">
+              <button class="btn btn-primary btn-block select-plan-btn" data-plan="complete">
+                <span>Enroll in Complete License</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+              <button class="plan-details-link" data-plan-detail="complete">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span>View Full Syllabus &amp; Payment Breakdown</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PLAN 03: VIP FAST-TRACK LICENSE GUARANTEE -->
+          <article class="pricing-card" data-plan-id="vip">
+            <div class="pricing-card-top">
+              <div class="plan-header-row">
+                <span class="plan-tier-badge">VIP INTENSIVE</span>
+                <span class="plan-hours-tag"><i class="fa-regular fa-clock" aria-hidden="true"></i> 20 Hours + Guarantee</span>
+              </div>
+              <h3 class="plan-name">VIP Fast-Track Guarantee</h3>
+              <p class="plan-tagline">
+                Accelerated zero-to-highway mastery with evening/weekend priority and our First-Time Pass Guarantee.
+              </p>
+
+              <div class="plan-price-block">
+                <div class="price-main-row">
+                  <span class="price-currency">$</span>
+                  <span class="price-amount" data-auto-price="849" data-manual-price="899">849</span>
+                  <span class="price-period">/ package</span>
+                </div>
+                <p class="price-subtext" data-auto-sub="Or 3 monthly payments of $283 (0% APR)" data-manual-sub="Or 3 monthly payments of $299 (0% APR)">
+                  Or 3 monthly payments of $283 (0% APR)
+                </p>
+              </div>
+            </div>
+
+            <div class="pricing-card-divider"></div>
+
+            <div class="pricing-card-body">
+              <p class="features-heading">Everything in Complete, Plus:</p>
+              <ul class="plan-features-list">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span><strong>20 Hours</strong> Comprehensive Practical Instruction (City + Highway)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span><strong>Pass Protection Guarantee:</strong> 2 Free Remedial Hours if Needed</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Dedicated Master Instructor &amp; Fast-Track 14-Day Schedule</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Night-Time Glare, Rain &amp; Multi-Lane Expressway Module</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>Flexible Same-Day Lesson Rescheduling Waiver</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <span>VIP DMV Road Test Escort &amp; Official Vehicle Included</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pricing-card-footer">
+              <button class="btn btn-secondary btn-block select-plan-btn" data-plan="vip">
+                <span>Enroll in VIP Fast-Track</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+              <button class="plan-details-link" data-plan-detail="vip">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span>View Full Syllabus &amp; Payment Breakdown</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 03 – ABOUT DRIVING SCHOOL & LICENSE PRICING VALUE    -->
+    <!-- ============================================================ -->
+    <section class="section about-section" id="about-pricing-value">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Column: Visual Image Composition -->
+          <div class="about-image-composition">
+            <div class="image-wrapper main-img-wrapper">
+              <img 
+                src="https://images.pexels.com/photos/35113495/pexels-photo-35113495.jpeg?auto=compress&cs=tinysrgb&w=900" 
+                alt="Happy driver seated inside modern training car during practical lesson" 
+                class="about-img-main"
+                loading="lazy"
+              />
+            </div>
+            <div class="image-wrapper overlap-img-wrapper">
+              <img 
+                src="https://images.pexels.com/photos/14408753/pexels-photo-14408753.jpeg?auto=compress&cs=tinysrgb&w=700" 
+                alt="Modern automatic gear console inside DRIVEPRO training fleet" 
+                class="about-img-overlap"
+                loading="lazy"
+              />
+            </div>
+            <!-- Floating Value Badge -->
+            <div class="experience-badge">
+              <div class="badge-icon-box">
+                <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+              </div>
+              <div class="badge-text-box">
+                <span class="exp-number">No Hidden</span>
+                <span class="exp-text">Surcharges or Booking Fees</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Value Breakdown Content -->
+          <div class="about-content-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag">WHAT YOUR TUITION COVERS</span>
+            </div>
+            <h2 class="section-title">
+              True Value Behind Every <span class="text-highlight">Driving Lesson</span> &amp; License Plan.
+            </h2>
+            <p class="section-paragraph">
+              Many budget driving schools advertise low hourly rates only to add extra charges for fuel, evening scheduling, insurance waivers, or road test vehicle usage. At <strong>DRIVEPRO Driving Academy</strong>, every package price is 100% transparent and all-inclusive from day one.
+            </p>
+            <p class="section-paragraph">
+              Because our structured curriculum helps 98% of students pass their official DMV road test on the very first attempt, our learners spend significantly less overall than students who have to pay for repeated test retakes and extra remedial hours.
+            </p>
+
+            <!-- 4 Core Tuition Inclusion Pillars -->
+            <div class="about-features-grid">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Full Learner Insurance</h4>
+                  <p>Zero-deductible commercial learner liability &amp; collision coverage on every drive.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Free Doorstep Pickup</h4>
+                  <p>Complimentary pickup and drop-off from your home, college campus, or office.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-gas-pump" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Dual-Control Car &amp; Fuel</h4>
+                  <p>Train in late-model 5-star safety vehicles with all fuel and maintenance included.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>2- or 3-Part Installments</h4>
+                  <p>Split any complete license package into interest-free payments as you learn.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta-wrapper">
+              <a href="#package-comparison" class="btn btn-primary">
+                <span>Compare Package Details</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <button class="btn btn-secondary" id="about-custom-quote-btn">
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                <span>Get Custom Package Quote</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 04 – PACKAGE COMPARISON & INDIVIDUAL ADD-ON RATES    -->
+    <!-- ============================================================ -->
+    <section class="section comparison-section" id="package-comparison">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">SIDE-BY-SIDE BREAKDOWN</span>
+          </div>
+          <h2 class="section-title">Compare License Plans &amp; Individual Add-Ons</h2>
+          <p class="section-subtitle">
+            See exactly how our packages stack up or book individual pay-as-you-go lessons and road test car rentals.
+          </p>
+        </div>
+
+        <!-- Comparison Table Wrapper -->
+        <div class="comparison-table-card">
+          <div class="comparison-table-scroll">
+            <table class="comparison-table" aria-label="Driving License Package Feature Comparison">
+              <thead>
+                <tr>
+                  <th scope="col" class="feature-col-header">Training Feature &amp; Benefit</th>
+                  <th scope="col">
+                    <span class="th-tier">Starter Plan</span>
+                    <strong class="th-price" data-auto-text="$299" data-manual-text="$329">$299</strong>
+                  </th>
+                  <th scope="col" class="highlight-col-header">
+                    <span class="th-tier popular-th">Complete License</span>
+                    <strong class="th-price" data-auto-text="$549" data-manual-text="$599">$549</strong>
+                  </th>
+                  <th scope="col">
+                    <span class="th-tier">VIP Fast-Track</span>
+                    <strong class="th-price" data-auto-text="$849" data-manual-text="$899">$849</strong>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                      <span>1-on-1 Behind-the-Wheel Hours</span>
+                    </div>
+                  </th>
+                  <td><strong>6 Hours</strong> (3 Sessions)</td>
+                  <td class="highlight-col-cell"><strong>12 Hours</strong> (6 Sessions)</td>
+                  <td><strong>20 Hours</strong> (10 Sessions)</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+                      <span>Dual-Control Car, Fuel &amp; Insurance</span>
+                    </div>
+                  </th>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                  <td class="highlight-col-cell"><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-house-chimney-user" aria-hidden="true"></i>
+                      <span>Free Home / Work / Campus Pickup</span>
+                    </div>
+                  </th>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                  <td class="highlight-col-cell"><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+                      <span>Simulated DMV Mock Road Exams</span>
+                    </div>
+                  </th>
+                  <td>1 Assessment</td>
+                  <td class="highlight-col-cell"><strong>2 Full Mock Exams</strong></td>
+                  <td><strong>Unlimited Mock Exams</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+                      <span>Official DMV Road Test Car Rental + Warmup</span>
+                    </div>
+                  </th>
+                  <td><span class="table-addon">$145 Add-On</span></td>
+                  <td class="highlight-col-cell"><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> <strong>Included Free</strong></td>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> <strong>Included Free</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-road" aria-hidden="true"></i>
+                      <span>Expressway &amp; Night Driving Module</span>
+                    </div>
+                  </th>
+                  <td><span class="table-addon">Optional</span></td>
+                  <td class="highlight-col-cell">2-Hour Intro</td>
+                  <td><strong>Full 4-Hour Mastery</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-award" aria-hidden="true"></i>
+                      <span>Insurance Discount Graduation Certificate</span>
+                    </div>
+                  </th>
+                  <td><i class="fa-solid fa-minus table-dash" aria-label="Not included"></i></td>
+                  <td class="highlight-col-cell"><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> Included</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="row-title">
+                      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                      <span>First-Attempt Pass Guarantee (Free Remedial Hrs)</span>
+                    </div>
+                  </th>
+                  <td><i class="fa-solid fa-minus table-dash" aria-label="Not included"></i></td>
+                  <td class="highlight-col-cell"><i class="fa-solid fa-minus table-dash" aria-label="Not included"></i></td>
+                  <td><i class="fa-solid fa-circle-check table-check" aria-label="Included"></i> <strong>Included (2 Hrs)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Individual Add-On Rates Grid -->
+        <div class="addons-header text-center">
+          <h3 class="addons-title">Pay-As-You-Go &amp; Road Test Add-On Services</h3>
+          <p class="addons-subtitle">Need just a single refresher session or a certified vehicle for your DMV road test appointment?</p>
+        </div>
+
+        <div class="addons-grid">
+          <!-- Add-On 01 -->
+          <div class="addon-card">
+            <div class="addon-top">
+              <div class="addon-icon">
+                <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+              </div>
+              <div class="addon-price-tag">
+                <span class="addon-amount">$55</span>
+                <span class="addon-unit">/ hour</span>
+              </div>
+            </div>
+            <h4 class="addon-name">Single Pay-As-You-Go Lesson</h4>
+            <p class="addon-desc">
+              Book a standalone 2-hour practical driving session ($110 total) in an automatic or manual dual-control car with doorstep pickup.
+            </p>
+            <button class="btn btn-secondary btn-block addon-book-btn" data-addon="Single Pay-As-You-Go Lesson ($55/hr)">
+              <span>Book Single Session</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Add-On 02 -->
+          <div class="addon-card">
+            <div class="addon-top">
+              <div class="addon-icon">
+                <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+              </div>
+              <div class="addon-price-tag">
+                <span class="addon-amount">$145</span>
+                <span class="addon-unit">/ test day</span>
+              </div>
+            </div>
+            <h4 class="addon-name">DMV Road Test Car + Warmup</h4>
+            <p class="addon-desc">
+              Includes doorstep pickup, a 45-minute pre-test maneuver warmup, official DMV-compliant dual-control vehicle for the exam, and return drop-off.
+            </p>
+            <button class="btn btn-secondary btn-block addon-book-btn" data-addon="DMV Road Test Car Rental + Warmup ($145)">
+              <span>Reserve Test Vehicle</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Add-On 03 -->
+          <div class="addon-card">
+            <div class="addon-top">
+              <div class="addon-icon">
+                <i class="fa-solid fa-road" aria-hidden="true"></i>
+              </div>
+              <div class="addon-price-tag">
+                <span class="addon-amount">$115</span>
+                <span class="addon-unit">/ 2 hours</span>
+              </div>
+            </div>
+            <h4 class="addon-name">Highway &amp; Parking Clinic</h4>
+            <p class="addon-desc">
+              Focused 2-hour specialist session dedicated to high-speed expressway merging, blind-spot lane changes, and tight parallel parking.
+            </p>
+            <button class="btn btn-secondary btn-block addon-book-btn" data-addon="Highway & Parking 2-Hr Clinic ($115)">
+              <span>Book Specialist Clinic</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Add-On 04 -->
+          <div class="addon-card">
+            <div class="addon-top">
+              <div class="addon-icon">
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+              </div>
+              <div class="addon-price-tag">
+                <span class="addon-amount">$65</span>
+                <span class="addon-unit">/ 90 mins</span>
+              </div>
+            </div>
+            <h4 class="addon-name">Mock DMV Road Evaluation</h4>
+            <p class="addon-desc">
+              Full simulated road test along official local DMV examination routes with a former examiner scoring sheet and readiness debrief.
+            </p>
+            <button class="btn btn-secondary btn-block addon-book-btn" data-addon="Mock DMV Road Evaluation ($65)">
+              <span>Book Mock Road Test</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 05 – PRICING & PAYMENT FAQS                          -->
+    <!-- ============================================================ -->
+    <section class="section faq-section" id="pricing-faq">
+      <div class="container">
+        <div class="faq-layout-grid">
+          <!-- Left Column: Section Header & Tuition Support Card -->
+          <div class="faq-info-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag">BILLING &amp; TUITION FAQ</span>
+            </div>
+            <h2 class="section-title">
+              Questions About <span class="text-highlight">Pricing</span> &amp; Installments?
+            </h2>
+            <p class="section-subtitle">
+              Everything you need to know about our 0% split payment plans, DMV fee policies, unused lesson refunds, and student discounts.
+            </p>
+
+            <!-- Tuition Support Card -->
+            <div class="faq-support-card">
+              <div class="support-card-header">
+                <div class="support-icon">
+                  <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4>Speak with a Tuition Advisor</h4>
+                  <p>Not sure how many hours you need to pass? Get a personalized assessment.</p>
+                </div>
+              </div>
+              <div class="support-card-actions">
+                <a href="tel:+18005553748" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                  <span>Call +1 (800) 555-DRIV</span>
+                </a>
+                <button class="btn btn-secondary btn-block" id="faq-ask-btn">
+                  <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                  <span>Request Custom Package Quote</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Accordion -->
+          <div class="faq-accordion-col" id="faq-accordion">
+
+            <!-- FAQ Item 01 (Open by Default) -->
+            <div class="faq-item active">
+              <button class="faq-question" aria-expanded="true">
+                <span class="faq-q-num">01</span>
+                <span class="faq-q-text">How does the 0% interest installment payment plan work?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer" style="max-height: 280px;">
+                <div class="faq-answer-inner">
+                  <p>
+                    For both our <strong>Complete Car License ($549)</strong> and <strong>VIP Fast-Track ($849)</strong> packages, you can split your tuition into <strong>3 equal monthly installments with 0% interest</strong> and no credit check. You pay the first 1/3 upon enrollment to book your initial lessons, and the remaining installments are billed automatically as you progress through your training hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 02 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">02</span>
+                <span class="faq-q-text">Are fuel, learner insurance, and pickup included in the listed prices?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Yes, 100%. Every package and single lesson rate at DRIVEPRO includes use of our dual-control training vehicle, all fuel costs, zero-deductible commercial learner insurance, and complimentary doorstep pickup and drop-off within our metropolitan service zones.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 03 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">03</span>
+                <span class="faq-q-text">What if I pass my road test early and have unused package hours left?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    We stand behind our <strong>100% Unused Hours Refund Guarantee</strong>. If you feel ready earlier than expected or need to relocate, any unscheduled lesson hours remaining in your account are refunded pro-rata with zero cancellation penalties, or can be converted into advanced highway driving sessions after you pass.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 04 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">04</span>
+                <span class="faq-q-text">Does the package price include state DMV government application fees?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Our packages cover all driving school tuition, mock exams, priority test scheduling assistance, and the certified test car rental for your exam day. State-mandated DMV permit issuance or government license card fees are paid directly to the state DMV, though our team handles all the appointment paperwork for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 05 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">05</span>
+                <span class="faq-q-text">Can I upgrade from the Starter Plan to the Complete License Package later?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Absolutely! You can start with the <strong>Starter Plan ($299)</strong> and upgrade to the <strong>Complete Car License Package ($549)</strong> at any point during your first 6 hours by simply paying the price difference. All your completed hours carry over seamlessly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 06 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-q-num">06</span>
+                <span class="faq-q-text">Do you offer university student or family multi-learner discounts?</span>
+                <span class="faq-icon-box">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Yes! High school and university students with a valid `.edu` ID or student card receive an instant <strong>$30 tuition credit</strong> on Complete and VIP packages. Families enrolling two or more siblings simultaneously receive an additional <strong>10% multi-learner discount</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 06 – HIGH-IMPACT CTA CARD (Consistent with Home 1)   -->
+    <!-- ============================================================ -->
+    <section class="section cta-banner-section" id="cta-banner">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <!-- Subtle Decorative Automotive Accent -->
+          <div class="cta-decorative-svg" aria-hidden="true">
+            <svg viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-50 250 C 150 250, 200 50, 450 80 C 550 95, 620 180, 700 200" stroke="#F47732" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="6 6" />
+              <path d="M-20 280 C 180 280, 240 80, 490 110 C 590 125, 650 210, 720 230" stroke="#F47732" stroke-width="1.5" stroke-opacity="0.15" />
+              <circle cx="450" cy="80" r="4" fill="#F47732" fill-opacity="0.6" />
+            </svg>
+          </div>
+
+          <div class="cta-content-side">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag light-badge">LOCK IN YOUR RATE</span>
+            </div>
+            <h2 class="cta-heading">Ready to Start Your Car License Package?</h2>
+            <p class="cta-description">
+              Enroll online in under 2 minutes with 0% interest installment options and schedule your first doorstep pickup lesson this week.
+            </p>
+            <div class="cta-buttons-group">
+              <button class="btn btn-primary cta-primary-btn" id="cta-book-btn">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Enroll &amp; Book First Lesson</span>
+              </button>
+              <a href="services.html" class="btn btn-secondary cta-secondary-btn">
+                <span>Explore Course Curriculums</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-image-side">
+            <div class="cta-image-frame">
+              <img 
+                src="https://images.pexels.com/photos/226457/pexels-photo-226457.jpeg?auto=compress&cs=tinysrgb&w=900" 
+                alt="Modern digital cockpit gauge display inside DRIVEPRO training fleet" 
+                class="cta-img"
+                loading="lazy"
+              />
+              <div class="cta-image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER DESIGN (Consistent with Home 1)                       -->
+  <!-- ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-main">
+      <div class="footer-columns-grid">
+        <!-- COLUMN 01 – BRAND -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo" aria-label="DRIVEPRO Home">
+            <div class="logo-icon-wrapper">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="20" cy="20" r="6" fill="#F47732" />
+                <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </a>
+          <p class="footer-about-text">
+            Setting the benchmark in professional driver training, safety education, and road test certification for over 12 years.
+          </p>
+          <div class="footer-social-links" aria-label="Social media channels">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 02 – QUICK LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="index.html" class="footer-link">Home 1</a>
+            </li>
+            <li>
+              <a href="home2.html" class="footer-link">Home 2</a>
+            </li>
+            <li>
+              <a href="about.html" class="footer-link">About Us</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Services</a>
+            </li>
+            <li>
+              <a href="pricing.html" class="footer-link active-footer-link">Pricing</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Journal</a>
+            </li>
+            <li>
+              <a href="contact.html" class="footer-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 03 – SERVICES -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="service details.html?course=beginner-driving" class="footer-link">Beginner Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=car-license" class="footer-link">Car License Training</a>
+            </li>
+            <li>
+              <a href="service details.html?course=advanced-driving" class="footer-link">Advanced Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=mock-test-refresher" class="footer-link">Test Preparation</a>
+            </li>
+            <li>
+              <a href="service details.html?course=intensive-fast-track" class="footer-link">Highway Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=automatic-license" class="footer-link">Refresher Lessons</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 04 – ADDITIONAL LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Additional Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="contact.html" class="footer-link">Driving Test Booking</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Theory Test Prep</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Dual-Control Fleet</a>
+            </li>
+            <li>
+              <a href="pricing.html#pricing-faq" class="footer-link">Student FAQ Guide</a>
+            </li>
+            <li>
+              <a href="404.html" class="footer-link">404 Page</a>
+            </li>
+            <li>
+              <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 05 – CONTACT & SUPPORT -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">Contact &amp; Support</h4>
+          <ul class="contact-info-list">
+            <li class="contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+18005553748" class="contact-link">+1 (800) 555-3748</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:admissions@drivepro-academy.com" class="contact-link">admissions@drivepro-academy.com</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>742 Automotive Blvd, Metro City, ST 90210</span>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon – Sat: 7:00 AM – 8:00 PM</span>
+            </li>
+          </ul>
+          <div class="support-action">
+            <a href="contact.html" class="footer-support-btn" id="contact-support-btn">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <span>Contact Support Team</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 DRIVEPRO Academy. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#" class="legal-link placeholder-link" data-page-name="Privacy Policy">Privacy Policy</a>
+          <span class="legal-separator">•</span>
+          <a href="#" class="legal-link placeholder-link" data-page-name="Terms &amp; Conditions">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL 1: LOGIN PORTAL                            -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-login-modal" aria-label="Close login modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-icon-badge">
+          <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+        </div>
+        <h3 id="login-modal-title" class="modal-title">Student &amp; Instructor Portal</h3>
+        <p class="modal-subtitle">Access your lesson schedule, road test checklist, and billing installments.</p>
+      </div>
+      <form id="login-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email or Student ID</label>
+          <div class="input-wrapper">
+            <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+            <input type="email" id="login-email" placeholder="student@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+            <input type="password" id="login-password" placeholder="••••••••" required />
+          </div>
+        </div>
+        <div class="form-row-between">
+          <label class="checkbox-label">
+            <input type="checkbox" checked />
+            <span>Keep me signed in</span>
+          </label>
+          <a href="#" class="forgot-link" id="forgot-pass-link">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>Sign In to Portal</span>
+          <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL 2: PACKAGE ENROLLMENT & BREAKDOWN MODAL    -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="pricing-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pricing-modal-title">
+    <div class="modal-card course-modal-card">
+      <button class="modal-close-btn" id="close-pricing-modal" aria-label="Close package modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div id="pricing-modal-body">
+        <!-- Dynamically populated by pricing.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Page Interactive Script -->
+  <script src="pricing.js"></script>
+</body>
+</html>

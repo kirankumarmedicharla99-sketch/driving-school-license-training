@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DRIVEPRO Driving School & Car License Training Academy — Student Portal Login. Access your behind-the-wheel lesson bookings, DMV road test dates, and hours tracker." />
+  <title>Student Login | DRIVEPRO Driving School &amp; Car License Portal</title>
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- TOP UTILITY FLOATING CONTROLS (RTL, THEME)                   -->
+  <!-- ============================================================ -->
+  <div class="auth-utility-bar">
+    <div class="utility-controls">
+      <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction" aria-label="Toggle text direction between LTR and RTL">
+        <span class="control-label" id="rtl-label">RTL</span>
+      </button>
+
+      <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle visual theme between light and dark">
+        <i class="fa-solid fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+        <span class="sr-only">Toggle theme</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MAIN SPLIT AUTH SHELL: LEFT IMAGE + RIGHT FORM CARD          -->
+  <!-- ============================================================ -->
+  <main class="auth-page-wrapper" id="main-content">
+    <div class="auth-split-container">
+
+      <!-- ======================================================== -->
+      <!-- LEFT PANEL: PREMIUM DRIVING SCHOOL VISUAL SHOWCASE       -->
+      <!-- ======================================================== -->
+      <section class="auth-visual-panel" aria-label="Driving School Highlights">
+        <img
+          src="https://images.pexels.com/photos/19316774/pexels-photo-19316774/free-photo-of-close-up-of-honda-accord-speedometer.jpeg?auto=compress&cs=tinysrgb&w=1400"
+          alt="Modern training vehicle speedometer and automatic transmission cockpit display"
+          class="auth-bg-image"
+        />
+        <div class="auth-visual-overlay"></div>
+        <div class="auth-grid-overlay"></div>
+
+        <div class="auth-visual-content">
+          <div class="visual-top-badge">
+            <span class="pulse-dot"></span>
+            <span>DMV Certified Licensing Academy</span>
+          </div>
+
+          <div class="visual-main-copy">
+            <h1 class="visual-headline">
+              Master the Road With <span class="text-gradient">98.4% First-Attempt</span> License Success.
+            </h1>
+            <p class="visual-subtext">
+              Log in to your student portal to book dual-control vehicle slots, track your mandatory behind-the-wheel hours, and review examiner road-test readiness.
+            </p>
+
+            <!-- Feature Pill Highlights -->
+            <div class="visual-badges-row">
+              <div class="visual-mini-card">
+                <div class="mini-card-icon">
+                  <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>2025 Dual-Control Fleet</strong>
+                  <span>ABS &amp; 360° Telemetry Equipped</span>
+                </div>
+              </div>
+
+              <div class="visual-mini-card">
+                <div class="mini-card-icon">
+                  <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>Fast-Track DMV Road Test</strong>
+                  <span>Priority Examiner Slot Booking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Social Proof Strip -->
+          <div class="visual-footer-proof">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="Licensed graduate" />
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=120&auto=format&fit=crop" alt="Licensed graduate" />
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=120&auto=format&fit=crop" alt="Licensed graduate" />
+              <span class="avatar-more">+15k</span>
+            </div>
+            <div class="proof-meta">
+              <div class="stars-row" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.9/5 Rating</span>
+              </div>
+              <p>Trusted by 15,400+ licensed drivers nationwide</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- RIGHT PANEL: FORM CARD                                   -->
+      <!-- ======================================================== -->
+      <section class="auth-form-panel" aria-label="Student Portal Login Form">
+        <div class="auth-form-card">
+
+          <!-- Center-Aligned Brand Name & Logo (Clicks redirect to Home 1) -->
+          <div class="auth-brand-header">
+            <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving School Home">
+              <div class="brand-icon">
+                <i class="fa-solid fa-steering-wheel" aria-hidden="true"></i>
+                <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                  <line x1="12" y1="3" x2="12" y2="9.5"></line>
+                  <line x1="4.2" y1="16.5" x2="9.8" y2="13.2"></line>
+                  <line x1="19.8" y1="16.5" x2="14.2" y2="13.2"></line>
+                </svg>
+              </div>
+              <div class="brand-text">
+                <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+                <span class="brand-tag">LICENSE ACADEMY</span>
+              </div>
+            </a>
+
+            <span class="auth-card-eyebrow">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Student Portal Access
+            </span>
+            <h2 class="auth-card-title">Welcome Back, Driver</h2>
+            <p class="auth-card-subtitle">
+              Sign in with your student email or permit ID to manage your lessons.
+            </p>
+          </div>
+
+          <!-- Login Form with 2 Placeholders -->
+          <form id="login-form" class="auth-form" novalidate>
+            <!-- Placeholder 1: Email / Student ID -->
+            <div class="form-group">
+              <label for="login-email">Student Email or Permit ID <span class="required">*</span></label>
+              <div class="input-with-icon">
+                <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                <input
+                  type="email"
+                  id="login-email"
+                  name="email"
+                  placeholder="Enter your email or student ID (e.g., alex@drivepro.edu)"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+              <span class="error-msg" id="login-email-error" role="alert"></span>
+            </div>
+
+            <!-- Placeholder 2: Password -->
+            <div class="form-group">
+              <label for="login-password">Password <span class="required">*</span></label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  placeholder="Enter your account password"
+                  required
+                  autocomplete="current-password"
+                />
+                <button type="button" class="password-toggle-btn" id="toggle-password-btn" aria-label="Show or hide password">
+                  <i class="fa-regular fa-eye" id="password-eye-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <span class="error-msg" id="login-password-error" role="alert"></span>
+            </div>
+
+            <!-- Remember Me & Forgot Password Row -->
+            <div class="form-options-row">
+              <label class="checkbox-label" for="remember-me">
+                <input type="checkbox" id="remember-me" name="remember" checked />
+                <span class="custom-checkbox"></span>
+                <span class="checkbox-text">Remember me</span>
+              </label>
+
+              <a href="#forgot-password" class="forgot-password-link" id="forgot-password-link">
+                Forgot Password?
+              </a>
+            </div>
+
+            <!-- Primary Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block auth-submit-btn">
+              <span>Login to Student Portal</span>
+              <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+            </button>
+          </form>
+
+          <!-- Divider -->
+          <div class="auth-divider">
+            <span>Or continue with</span>
+          </div>
+
+          <!-- Social Auth Buttons: Google and Apple Icons -->
+          <div class="social-auth-grid">
+            <button type="button" class="social-auth-btn" id="google-auth-btn" data-provider="Google">
+              <i class="fa-brands fa-google social-icon google-icon" aria-hidden="true"></i>
+              <span>Google</span>
+            </button>
+
+            <button type="button" class="social-auth-btn" id="apple-auth-btn" data-provider="Apple">
+              <i class="fa-brands fa-apple social-icon apple-icon" aria-hidden="true"></i>
+              <span>Apple</span>
+            </button>
+          </div>
+
+          <!-- Bottom Switch Prompt: New to this? Create Account (Signup) -->
+          <div class="auth-switch-footer">
+            <p>
+              New to this?
+              <a href="signup.html" class="auth-switch-link">
+                Create Account (Sign Up) <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FORGOT PASSWORD MODAL                                        -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="forgot-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="forgot-modal-title">
+    <div class="modal-card">
+      <button class="modal-close" id="close-forgot-modal" aria-label="Close password reset modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-badge">
+          <i class="fa-solid fa-key" aria-hidden="true"></i>
+          <span>Password Recovery</span>
+        </div>
+        <h3 id="forgot-modal-title">Reset Your Portal Password</h3>
+        <p>Enter your registered student email address and we will send you a secure password reset link immediately.</p>
+      </div>
+
+      <form id="forgot-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="reset-email">Registered Student Email <span class="required">*</span></label>
+          <div class="input-with-icon">
+            <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+            <input
+              type="email"
+              id="reset-email"
+              placeholder="alex.morgan@drivepro.edu"
+              required
+            />
+          </div>
+          <span class="error-msg" id="reset-email-error" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block auth-submit-btn">
+          <span>Send Reset Link</span>
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- NOTIFICATION TOAST                                           -->
+  <!-- ============================================================ -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Custom Script -->
+  <script src="login.js"></script>
+</body>
+</html>
+

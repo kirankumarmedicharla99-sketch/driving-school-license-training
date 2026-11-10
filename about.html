@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – DRIVEPRO Premium Driving School &amp; License Training Academy</title>
+  <meta name="description"
+    content="Learn about DRIVEPRO Driving Academy, our certified license training programs, our mission and vision, our 12+ year journey, and our expert instructor team." />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- About Page Stylesheet -->
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============================================================ -->
+  <!-- HEADER & NAVIGATION (Consistent with Home 1)                 -->
+  <!-- ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-container container">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving Academy Home">
+        <div class="logo-icon-wrapper">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" class="logo-rim" />
+            <circle cx="20" cy="20" r="6" fill="#F47732" />
+            <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" />
+            <circle cx="20" cy="20" r="14" stroke="#F47732" stroke-width="1.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+        <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+      </a>
+
+      <!-- Middle: Desktop Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <!-- Home Dropdown -->
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" id="home-dropdown-menu" aria-label="Home Pages Submenu">
+              <li>
+                <a href="index.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 1</strong>
+                    <small>Default Driving Academy</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+              <li>
+                <a href="home2.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 2</strong>
+                    <small>Cinematic International Style</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- About Us Page Link (Active) -->
+          <li class="nav-item">
+            <a href="about.html" class="nav-link active-nav" aria-current="page">About Us</a>
+          </li>
+
+          <!-- Services Page Link -->
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+          <!-- Pricing Page Link -->
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link">Pricing</a>
+          </li>
+          <!-- Journal Page Link -->
+          <li class="nav-item">
+            <a href="journal.html" class="nav-link">Journal</a>
+          </li>
+          <!-- Contact Us Page Link -->
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right: Controls & Login -->
+      <div class="header-actions">
+        <!-- RTL/LTR Toggle -->
+        <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction"
+          aria-label="Toggle text direction between LTR and RTL">
+          <span class="control-label" id="rtl-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme"
+          aria-label="Toggle visual theme between light and dark">
+          <i class="fa-solid fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <!-- Login Primary Button -->
+        <a href="login.html" class="btn btn-primary header-login-btn" id="header-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+        </div>
+        <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="mobile-nav-list">
+        <!-- Mobile Home Dropdown -->
+        <li class="mobile-nav-item mobile-dropdown-container">
+          <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-btn" aria-expanded="false">
+            <span>Home Options</span>
+            <i class="fa-solid fa-chevron-down mobile-arrow" aria-hidden="true"></i>
+          </button>
+          <div class="mobile-sub-menu" id="mobile-home-submenu">
+            <a href="index.html" class="mobile-sub-link">Home 1 (Default)</a>
+            <a href="home2.html" class="mobile-sub-link">Home 2 (Cinematic)</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="about.html" class="mobile-nav-link active-link" aria-current="page">About Us (Current)</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="services.html" class="mobile-nav-link">Services</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="journal.html" class="mobile-nav-link">Journal</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+        </li>
+      </ul>
+
+      <div class="mobile-drawer-footer">
+        <a href="login.html" class="btn btn-primary btn-block mobile-login-btn" id="mobile-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Student Portal Login</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 01 – PREMIUM HERO BANNER                              -->
+    <!-- ============================================================ -->
+    <section class="hero-section" id="about-hero">
+      <div class="hero-bg-media" aria-hidden="true">
+        <img src="about-hero-bg.jpg"
+          alt="Open sunset highway with DRIVEPRO training vehicle and driving school highlights" class="hero-bg-img" />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-container">
+        <!-- Main 2-Column Split Row -->
+        <div class="about-hero-split">
+          <!-- Left Column: Hero Content -->
+          <div class="hero-content">
+            <!-- Eyebrow Pill Badge -->
+
+            <!-- Main Heading -->
+            <h1 class="hero-title animate-fade-in">
+              Driven by Safety.<br />
+              <span class="text-gradient">Defined by Excellence.</span>
+            </h1>
+
+            <!-- Orange Accent Underline -->
+            <div class="hero-title-bar animate-fade-in" aria-hidden="true"></div>
+
+            <!-- Supporting Description -->
+            <p class="hero-description animate-fade-in">
+              Welcome to DRIVEPRO Academy &ndash; your trusted partner in learning to drive with confidence. We are
+              committed to providing high-quality driving training, modern vehicles, and expert instructors to help you
+              become a skilled and responsible driver for life.
+            </p>
+
+            <!-- 4 Glassmorphic Pillar Mini-Cards -->
+            <div class="hero-pillars-grid animate-fade-in">
+              <div class="hero-pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                </div>
+                <strong class="pillar-title">Safety First</strong>
+                <span class="pillar-desc">Your safety is our priority</span>
+              </div>
+
+              <div class="hero-pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-users" aria-hidden="true"></i>
+                </div>
+                <strong class="pillar-title">Expert Trainers</strong>
+                <span class="pillar-desc">Learn from certified professionals</span>
+              </div>
+
+              <div class="hero-pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-car" aria-hidden="true"></i>
+                </div>
+                <strong class="pillar-title">Modern Fleet</strong>
+                <span class="pillar-desc">Well-maintained vehicles</span>
+              </div>
+
+              <div class="hero-pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                </div>
+                <strong class="pillar-title">Proven Success</strong>
+                <span class="pillar-desc">Thousands of happy learners</span>
+              </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="hero-actions animate-fade-in">
+              <a href="services.html" class="btn btn-primary hero-btn hero-pill-btn">
+                <span>Explore Our Services</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="#about-school" class="btn btn-secondary hero-btn hero-story-btn">
+                <span class="story-play-icon" aria-hidden="true">
+                  <i class="fa-solid fa-play"></i>
+                </span>
+                <span>Watch Our Story</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Circular Arch Collage & DRIVEPRO Training Car -->
+          <div class="about-hero-visual animate-fade-in">
+            <div class="hero-circle-showcase">
+              <img src="about-hero-showcase.jpg"
+                alt="DRIVEPRO training sedan with steering wheel, road safety cone, and official driving license showcase"
+                class="about-hero-showcase-img" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Full-Width 4-Column Statistics Strip -->
+        <div class="hero-stats-wrapper about-hero-stats-bar animate-fade-in">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fa-solid fa-car" aria-hidden="true"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value">10K+</span>
+              <span class="stat-label">Happy Students</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value">4.9/5</span>
+              <span class="stat-label">Customer Rating</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value">12+ Years</span>
+              <span class="stat-label">Training Excellence</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value">50+</span>
+              <span class="stat-label">Training Centers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 02 – ABOUT DRIVING SCHOOL & LICENSE TRAINING         -->
+    <!-- ============================================================ -->
+    <section class="section about-section" id="about-school">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left: Unique Arrangement Images & Badge -->
+          <div class="about-media-col">
+            <div class="about-image-composition">
+              <div class="image-wrapper main-img-wrapper">
+                <img src="https://images.pexels.com/photos/19754775/pexels-photo-19754775/free-photo-of-close-up-of-a-tachometer-in-a-car.jpeg?auto=compress&cs=tinysrgb&w=900"
+                  alt="Modern training vehicle instrument gauge during road license session" class="about-img-main"
+                  loading="lazy" />
+              </div>
+              <div class="image-wrapper overlap-img-wrapper">
+                <img src="https://images.pexels.com/photos/227730/pexels-photo-227730.jpeg?auto=compress&cs=tinysrgb&w=700"
+                  alt="Modern dual-control driving school training vehicle" class="about-img-overlap"
+                  loading="lazy" />
+              </div>
+              <!-- Experience Floating Badge -->
+              <div class="experience-badge">
+                <div class="badge-icon-box">
+                  <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                </div>
+                <div class="badge-text-box">
+                  <span class="exp-number">100%</span>
+                  <span class="exp-text">Dual-Control 5★ Euro NCAP Fleet</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Narrative & Key Features -->
+          <div class="about-content-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag">DRIVING SCHOOL &amp; LICENSE TRAINING</span>
+            </div>
+            <h2 class="section-title">
+              Setting the Gold Standard in <br>
+              <span class="text-highlight">Modern Driver Education.</span>
+            </h2>
+            <p class="section-paragraph">
+              Founded in 2014, DRIVEPRO Driving School &amp; License Training Academy was built on a simple conviction:
+              passing your driving test should be the natural byproduct of becoming a genuinely safe, self-assured
+              motorist.
+            </p>
+            <p class="section-paragraph">
+              Our structured license training curriculum pairs nervous first-time learners and experienced drivers alike
+              with state-certified instructors. From mastering smooth clutch control and mirror discipline to navigating
+              complex multi-lane roundabouts and official test routes, every hour behind the wheel is engineered for
+              real-world mastery.
+            </p>
+
+            <!-- 4 Key Points with Icons -->
+            <div class="about-features-grid">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Official License Syllabus</h4>
+                  <p>Step-by-step road training aligned with national theory and practical examiner marking sheets.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-car-on" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Dual-Control Safety Fleet</h4>
+                  <p>Modern automatic and manual training vehicles equipped with instructor pedals and 360° cameras.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Mock Test Simulations</h4>
+                  <p>Full-length practice driving exams on local test center routes to eliminate test-day nerves.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Patient 1-on-1 Coaching</h4>
+                  <p>Calm, encouraging instruction paced to your individual comfort level and learning speed.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="about-cta-wrapper">
+              <button class="btn btn-primary" id="about-accreditation-btn">
+                <i class="fa-solid fa-shield-check" aria-hidden="true"></i>
+                <span>View Academy Accreditation</span>
+              </button>
+              <a href="#academy-timeline" class="btn btn-secondary">
+                <span>Our 12-Year Timeline</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 03 – OUR MISSION & OUR VISION                        -->
+    <!-- ============================================================ -->
+    <section class="section mission-vision-section" id="mission-vision">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">PURPOSE &amp; DIRECTION</span>
+          </div>
+          <h2 class="section-title">Guided by Purpose. Focused on Safer Roads.</h2>
+          <p class="section-subtitle">
+            Our mission and vision drive every lesson plan, vehicle safety check, and student milestone across our
+            training centers.
+          </p>
+        </div>
+
+        <!-- Mission & Vision Dual Cards -->
+        <div class="mission-vision-grid">
+          <!-- OUR MISSION CARD -->
+          <article class="mv-card mission-card">
+            <div class="mv-card-top">
+              <div class="mv-icon-badge">
+                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              </div>
+              <span class="mv-pill">OUR CORE MISSION</span>
+            </div>
+            <h3 class="mv-title">Empowering Every Learner with Lifelong Driving Confidence</h3>
+            <p class="mv-description">
+              Our mission is to transform driver education from stressful test memorization into an empowering,
+              anxiety-free learning experience. We equip every student with defensive road perception, vehicle
+              control, and safety habits that protect lives.
+            </p>
+            <ul class="mv-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Deliver calm, personalized 1-on-1 practical license training</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Eliminate beginner anxiety through structured skill milestones</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Uphold 100% transparent pricing and safety-first instruction</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- OUR VISION CARD -->
+          <article class="mv-card vision-card">
+            <div class="mv-card-top">
+              <div class="mv-icon-badge">
+                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+              </div>
+              <span class="mv-pill">OUR FUTURE VISION</span>
+            </div>
+            <h3 class="mv-title">Building a Generation of Zero-Accident, Mindful Motorists</h3>
+            <p class="mv-description">
+              Our vision is to be the most trusted driving academy in the nation—recognized not only for
+              industry-leading first-time pass rates, but for shaping a culture of courteous, defensive, and
+              environmentally conscious drivers ready for modern highways and smart mobility.
+            </p>
+            <ul class="mv-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Lead the region in verified first-time practical test success</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Pioneer eco-driving, EV readiness, and smart road safety</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Foster safer communities through proactive road defense</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Core Values Strip -->
+        <div class="core-values-strip">
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
+            <div class="value-info">
+              <h4>Safety First</h4>
+              <p>Zero compromise on dual-control vehicle maintenance and road safety protocols.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></div>
+            <div class="value-info">
+              <h4>Patient Mentorship</h4>
+              <p>Supportive coaching tailored to nervous beginners and returning motorists.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></div>
+            <div class="value-info">
+              <h4>Test Precision</h4>
+              <p>Real exam route familiarity and structured progress scoring every session.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+            <div class="value-info">
+              <h4>Total Integrity</h4>
+              <p>Honest readiness assessments and clear tuition packages with zero hidden fees.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 04 – TIMELINE SECTION (OUR ACADEMY MILESTONES)       -->
+    <!-- ============================================================ -->
+    <section class="section journey-section" id="academy-timeline">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">OUR MILESTONE TIMELINE</span>
+          </div>
+          <h2 class="section-title">12+ Years of Shaping Safer Roads.</h2>
+          <p class="section-subtitle">
+            Trace our growth from a single dual-control training car in 2014 to an award-winning license training
+            academy with over 10,000 graduates.
+          </p>
+        </div>
+
+        <!-- 4-Step Milestone Timeline Component -->
+        <div class="timeline-container">
+          <div class="timeline-track" aria-hidden="true">
+            <div class="timeline-progress-bar"></div>
+          </div>
+
+          <div class="timeline-steps-grid">
+            <!-- MILESTONE 01: 2014 -->
+            <div class="timeline-step" data-step="1">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">2014</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-flag" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content timeline-card">
+                <span class="timeline-tag">Foundation</span>
+                <h3 class="step-title">Academy Launch</h3>
+                <p class="step-desc">
+                  DRIVEPRO opened its doors in Metro City with 3 certified instructors and a mission to replace rushed
+                  driving lessons with patient, structured coaching.
+                </p>
+              </div>
+            </div>
+
+            <!-- MILESTONE 02: 2017 -->
+            <div class="timeline-step" data-step="2">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">2017</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content timeline-card">
+                <span class="timeline-tag">Fleet Upgrade</span>
+                <h3 class="step-title">5-Star Dual-Control Fleet</h3>
+                <p class="step-desc">
+                  Expanded to 25 modern manual and automatic training vehicles, all rated 5-Star Euro NCAP with dual
+                  braking systems and blind-spot assist.
+                </p>
+              </div>
+            </div>
+
+            <!-- MILESTONE 03: 2021 -->
+            <div class="timeline-step" data-step="3">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">2021</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-laptop-medical" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content timeline-card">
+                <span class="timeline-tag">Innovation</span>
+                <h3 class="step-title">Digital Theory &amp; Route Labs</h3>
+                <p class="step-desc">
+                  Launched our interactive Student Portal, 3D junction hazard perception labs, and GPS-mapped mock test
+                  routes covering all regional test centers.
+                </p>
+              </div>
+            </div>
+
+            <!-- MILESTONE 04: 2026 -->
+            <div class="timeline-step" data-step="4">
+              <div class="step-marker-wrapper">
+                <div class="step-number-circle">2026</div>
+                <div class="step-icon-bubble">
+                  <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-content timeline-card">
+                <span class="timeline-tag">Milestone</span>
+                <h3 class="step-title">10,000+ Licensed Drivers</h3>
+                <p class="step-desc">
+                  Celebrated over 10,000 certified license graduates while maintaining a verified 95% first-time
+                  practical driving test pass rate.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 05 – TEAM CARDS (MEET OUR LEADERSHIP & INSTRUCTORS)  -->
+    <!-- ============================================================ -->
+    <section class="section team-section" id="team-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-eyebrow">
+            <span class="eyebrow-tag">CERTIFIED LEADERSHIP &amp; MENTORS</span>
+          </div>
+          <h2 class="section-title">Meet the Experts Behind the Wheel.</h2>
+          <p class="section-subtitle">
+            Our leadership team and master driving instructors combine official examiner insight with calm, personalized
+            road mentorship.
+          </p>
+        </div>
+
+        <!-- 3 Team Member Cards Grid -->
+        <div class="team-grid">
+          <!-- TEAM CARD 01 -->
+          <article class="team-card">
+            <div class="team-card-image">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=700&auto=format&fit=crop"
+                alt="David Sterling – Founder & Chief Driving Examiner" loading="lazy" />
+              <span class="team-exp-badge">14+ Yrs Exp</span>
+            </div>
+            <div class="team-card-body">
+              <div class="team-role-tag">
+                <i class="fa-solid fa-id-badge" aria-hidden="true"></i>
+                <span>Founder &amp; Chief Instructor</span>
+              </div>
+              <h3 class="team-name">David Sterling</h3>
+              <p class="team-bio">
+                Former national driving test examiner who founded DRIVEPRO to help learners master official test routes
+                with calm, methodical precision.
+              </p>
+              <div class="team-metrics">
+                <span><i class="fa-solid fa-user-check" aria-hidden="true"></i> 3,200+ Passed</span>
+                <span><i class="fa-solid fa-star" aria-hidden="true"></i> 98% Pass Rate</span>
+              </div>
+              <div class="team-card-footer">
+                <button class="btn btn-primary btn-block team-profile-btn" data-member="David Sterling">
+                  <span>View Instructor Bio</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- TEAM CARD 02 -->
+          <article class="team-card team-featured">
+            <div class="team-card-image">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=700&auto=format&fit=crop"
+                alt="Sarah Jenkins – Director of License Curriculum & Defensive Driving" loading="lazy" />
+              <span class="team-exp-badge featured-badge">11+ Yrs Exp</span>
+            </div>
+            <div class="team-card-body">
+              <div class="team-role-tag">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Head of Defensive Training</span>
+              </div>
+              <h3 class="team-name">Sarah Jenkins</h3>
+              <p class="team-bio">
+                Specializes in motorway confidence, spatial parking mastery, and defensive hazard anticipation for both
+                manual and automatic license candidates.
+              </p>
+              <div class="team-metrics">
+                <span><i class="fa-solid fa-user-check" aria-hidden="true"></i> 2,600+ Passed</span>
+                <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9/5 Rating</span>
+              </div>
+              <div class="team-card-footer">
+                <button class="btn btn-primary btn-block team-profile-btn" data-member="Sarah Jenkins">
+                  <span>View Instructor Bio</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- TEAM CARD 03 -->
+          <article class="team-card">
+            <div class="team-card-image">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop"
+                alt="Marcus Bennett – Lead Novice & Test Anxiety Specialist" loading="lazy" />
+              <span class="team-exp-badge">9+ Yrs Exp</span>
+            </div>
+            <div class="team-card-body">
+              <div class="team-role-tag">
+                <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                <span>Novice Confidence Lead</span>
+              </div>
+              <h3 class="team-name">Marcus Bennett</h3>
+              <p class="team-bio">
+                Dedicated to helping nervous first-time drivers overcome behind-the-wheel anxiety through step-by-step
+                cockpit drills and positive reinforcement.
+              </p>
+              <div class="team-metrics">
+                <span><i class="fa-solid fa-user-check" aria-hidden="true"></i> 1,950+ Passed</span>
+                <span><i class="fa-solid fa-star" aria-hidden="true"></i> 5.0/5 Rating</span>
+              </div>
+              <div class="team-card-footer">
+                <button class="btn btn-primary btn-block team-profile-btn" data-member="Marcus Bennett">
+                  <span>View Instructor Bio</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 06 – PREMIUM CTA CARD                                -->
+    <!-- ============================================================ -->
+    <section class="section cta-banner-section" id="cta-banner">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <!-- Subtle Decorative Automotive Accent -->
+          <div class="cta-decorative-svg" aria-hidden="true">
+            <svg viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-50 250 C 150 250, 200 50, 450 80 C 550 95, 620 180, 700 200" stroke="#F47732" stroke-width="2"
+                stroke-opacity="0.3" stroke-dasharray="6 6" />
+              <path d="M-20 280 C 180 280, 240 80, 490 110 C 590 125, 650 210, 720 230" stroke="#F47732"
+                stroke-width="1.5" stroke-opacity="0.15" />
+              <circle cx="450" cy="80" r="4" fill="#F47732" fill-opacity="0.6" />
+            </svg>
+          </div>
+
+          <div class="cta-content-side">
+            <div class="section-eyebrow">
+              <span class="eyebrow-tag light-badge">START TODAY</span>
+            </div>
+            <h2 class="cta-heading">Ready to Take the Driver's Seat?</h2>
+            <p class="cta-description">
+              Join over 10,000 licensed graduates who started their journey with DRIVEPRO's certified instructors and
+              dual-control training fleet.
+            </p>
+            <div class="cta-buttons-group">
+              <button class="btn btn-primary cta-primary-btn" id="cta-book-btn">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                <span>Book Your First Lesson</span>
+              </button>
+              <a href="services.html" class="btn btn-secondary cta-secondary-btn">
+                <span>Explore Driving Courses</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-image-side">
+            <div class="cta-image-frame">
+              <img src="https://images.pexels.com/photos/14764071/pexels-photo-14764071.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="DRIVEPRO modern sedan training fleet parked and ready for road lessons" class="cta-img"
+                loading="lazy" />
+              <div class="cta-image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER DESIGN (Consistent with Home 1)                       -->
+  <!-- ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-main">
+      <div class="footer-columns-grid">
+        <!-- COLUMN 01 – BRAND -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo" aria-label="DRIVEPRO Home">
+            <div class="logo-icon-wrapper">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="20" cy="20" r="6" fill="#F47732" />
+                <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </a>
+          <p class="footer-about-text">
+            Setting the benchmark in professional driver training, safety education, and road test certification for
+            over 12 years.
+          </p>
+          <div class="footer-social-links" aria-label="Social media channels">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="YouTube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 02 – QUICK LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="index.html" class="footer-link">Home 1</a>
+            </li>
+            <li>
+              <a href="home2.html" class="footer-link">Home 2</a>
+            </li>
+            <li>
+              <a href="about.html" class="footer-link active-footer-link">About Us</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Services</a>
+            </li>
+            <li>
+              <a href="pricing.html" class="footer-link">Pricing</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Journal</a>
+            </li>
+            <li>
+              <a href="contact.html" class="footer-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 03 – SERVICES -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="service details.html?course=beginner-driving" class="footer-link">Beginner Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=car-license" class="footer-link">Car License Training</a>
+            </li>
+            <li>
+              <a href="service details.html?course=advanced-driving" class="footer-link">Advanced Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=mock-test-refresher" class="footer-link">Test Preparation</a>
+            </li>
+            <li>
+              <a href="service details.html?course=intensive-fast-track" class="footer-link">Highway Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=automatic-license" class="footer-link">Refresher Lessons</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 04 – ADDITIONAL LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Additional Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="contact.html" class="footer-link">Driving Test Booking</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Theory Test Prep</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Dual-Control Fleet</a>
+            </li>
+            <li>
+              <a href="pricing.html#pricing-faq" class="footer-link">Student FAQ Guide</a>
+            </li>
+            <li>
+              <a href="404.html" class="footer-link">404 Page</a>
+            </li>
+            <li>
+              <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 05 – CONTACT & SUPPORT -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">Contact &amp; Support</h4>
+          <ul class="contact-info-list">
+            <li class="contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+18005553748" class="contact-link">+1 (800) 555-3748</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:admissions@drivepro-academy.com" class="contact-link">admissions@drivepro-academy.com</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>742 Automotive Blvd, Metro City, ST 90210</span>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon – Sat: 7:00 AM – 8:00 PM</span>
+            </li>
+          </ul>
+          <div class="support-action">
+            <a href="contact.html" class="footer-support-btn" id="contact-support-btn">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <span>Contact Support Team</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 DRIVEPRO Academy. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#" class="legal-link placeholder-link" data-page-name="Privacy Policy">Privacy Policy</a>
+          <span class="legal-separator">•</span>
+          <a href="#" class="legal-link placeholder-link" data-page-name="Terms &amp; Conditions">Terms &amp;
+            Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODALS                                           -->
+  <!-- ============================================================ -->
+  <!-- 1. Student Login Modal -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="login-modal-title">
+            <i class="fa-solid fa-user-shield text-primary" aria-hidden="true"></i>
+            <span>Student Portal Login</span>
+          </h3>
+          <button class="modal-close-btn" id="close-login-modal" aria-label="Close login dialog">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-description">
+            Access your lesson schedule, practice theory modules, and track certified road training hours.
+          </p>
+          <form id="student-login-form" class="modal-form">
+            <div class="form-group">
+              <label for="student-email" class="form-label">Learner Email or License ID</label>
+              <div class="input-with-icon">
+                <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                <input type="text" id="student-email" class="form-input" placeholder="e.g. learner@drivepro.com"
+                  required value="alex.learner@drivepro.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="student-password" class="form-label">Password</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+                <input type="password" id="student-password" class="form-input" placeholder="••••••••" required
+                  value="student123" />
+              </div>
+            </div>
+            <div class="form-meta-row">
+              <label class="remember-label">
+                <input type="checkbox" checked />
+                <span>Remember this device</span>
+              </label>
+              <a href="#" class="forgot-link placeholder-link" data-page-name="Password Recovery">Forgot code?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+              <span>Enter Portal</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Team / Accreditation / Booking Details Modal -->
+  <div class="modal-overlay" id="about-modal" aria-hidden="true" role="dialog" aria-labelledby="about-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="about-modal-title">Details</h3>
+          <button class="modal-close-btn" id="close-about-modal" aria-label="Close dialog">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="about-modal-body">
+          <!-- Dynamically populated via about.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File for About Page -->
+  <script src="about.js"></script>
+</body>
+
+</html>

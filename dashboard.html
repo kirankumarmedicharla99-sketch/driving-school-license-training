@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard – DRIVEPRO Driving School &amp; License Portal</title>
+  <meta name="description" content="DRIVEPRO Student Portal Dashboard for booking driving lesson slots, tracking behind-the-wheel hours completed, viewing DMV road test dates, and managing tuition fee payments." />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Dashboard Stylesheet -->
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Mobile Sidebar Backdrop (for <= 1024px) -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <!-- ============================================================ -->
+  <!-- DASHBOARD APP SHELL (Sticky Sidebar + Sticky Topbar + Scroll) -->
+  <!-- ============================================================ -->
+  <div class="dashboard-shell" id="dashboard-shell">
+
+    <!-- ========================================================== -->
+    <!-- LEFT SIDE PANEL (STICKY SIDEBAR WITH BRAND + 5 NAV LINKS)  -->
+    <!-- ========================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Student Dashboard Navigation">
+      <!-- Top: Brand Name (Redirects to Home index.html) -->
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo" title="Return to DRIVEPRO Home Page" aria-label="DRIVEPRO Driving Academy Home">
+          <div class="logo-icon-wrapper">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" class="logo-rim" />
+              <circle cx="20" cy="20" r="6" fill="#F47732" />
+              <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              <circle cx="20" cy="20" r="14" stroke="#F47732" stroke-width="1.5" stroke-dasharray="4 4" />
+            </svg>
+          </div>
+          <div class="brand-text-group">
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+            <span class="portal-sub-tag">Student License Portal</span>
+          </div>
+        </a>
+
+        <!-- Close Button for Mobile/Tablet Drawer -->
+        <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close navigation panel">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- Learner Permit Status Mini Card -->
+      <div class="sidebar-learner-card">
+        <div class="learner-card-top">
+          <span class="permit-pill"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Permit #TX-90482</span>
+          <span class="status-dot-live">Active</span>
+        </div>
+        <p class="learner-plan-name">Full Car License Package</p>
+        <div class="mini-progress-track" aria-label="83% of driving hours completed">
+          <div class="mini-progress-fill" style="width: 83%;"></div>
+        </div>
+        <div class="learner-card-foot">
+          <span>10 / 12 Hrs Driven</span>
+          <strong>83% Ready</strong>
+        </div>
+      </div>
+
+      <!-- 5 Primary Sidebar Navigation Links -->
+      <nav class="sidebar-nav" aria-label="Dashboard Sections">
+        <span class="sidebar-nav-label">MAIN MENU (5 VIEWS)</span>
+        <ul class="sidebar-nav-list" role="tablist">
+          <!-- 1. Overview -->
+          <li role="presentation">
+            <button 
+              type="button" 
+              class="sidebar-nav-link active" 
+              role="tab" 
+              aria-selected="true" 
+              aria-controls="panel-overview" 
+              id="tab-overview" 
+              data-tab="overview"
+            >
+              <span class="nav-icon"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></span>
+              <span class="nav-text">Overview &amp; Analytics</span>
+              <span class="nav-badge">Live</span>
+            </button>
+          </li>
+
+          <!-- 2. Book Lesson Slots -->
+          <li role="presentation">
+            <button 
+              type="button" 
+              class="sidebar-nav-link" 
+              role="tab" 
+              aria-selected="false" 
+              aria-controls="panel-lessons" 
+              id="tab-lessons" 
+              data-tab="lessons"
+            >
+              <span class="nav-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+              <span class="nav-text">Book Lesson Slots</span>
+              <span class="nav-badge accent">2 Hrs Left</span>
+            </button>
+          </li>
+
+          <!-- 3. Hours & Skill Progress -->
+          <li role="presentation">
+            <button 
+              type="button" 
+              class="sidebar-nav-link" 
+              role="tab" 
+              aria-selected="false" 
+              aria-controls="panel-hours" 
+              id="tab-hours" 
+              data-tab="hours"
+            >
+              <span class="nav-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span>
+              <span class="nav-text">Hours &amp; Skill Tracker</span>
+            </button>
+          </li>
+
+          <!-- 4. DMV Road Test Dates -->
+          <li role="presentation">
+            <button 
+              type="button" 
+              class="sidebar-nav-link" 
+              role="tab" 
+              aria-selected="false" 
+              aria-controls="panel-tests" 
+              id="tab-tests" 
+              data-tab="tests"
+            >
+              <span class="nav-icon"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i></span>
+              <span class="nav-text">DMV Test &amp; Dates</span>
+              <span class="nav-badge">Nov 24</span>
+            </button>
+          </li>
+
+          <!-- 5. Fee Payments & Tuition -->
+          <li role="presentation">
+            <button 
+              type="button" 
+              class="sidebar-nav-link" 
+              role="tab" 
+              aria-selected="false" 
+              aria-controls="panel-payments" 
+              id="tab-payments" 
+              data-tab="payments"
+            >
+              <span class="nav-icon"><i class="fa-solid fa-credit-card" aria-hidden="true"></i></span>
+              <span class="nav-text">Fee Payments &amp; Billing</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer: Logout -->
+      <div class="sidebar-footer">
+        <button type="button" class="sidebar-logout-btn" id="sidebar-logout-btn">
+          <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+          <span>Logout of Portal</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ========================================================== -->
+    <!-- RIGHT MAIN WORKSPACE (STICKY HEADER + SCROLLABLE CONTENT)  -->
+    <!-- ========================================================== -->
+    <div class="dashboard-workspace">
+
+      <!-- STICKY TOP HEADER -->
+      <header class="dashboard-topbar" id="dashboard-topbar">
+        <!-- Left: Hamburger Toggle + Welcome Note -->
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Open dashboard menu" aria-expanded="false">
+            <i class="fa-solid fa-bars-staggered" aria-hidden="true"></i>
+          </button>
+
+          <div class="welcome-note-block">
+            <h1 class="welcome-title">
+              Welcome back, <span class="text-primary">Alex Morgan</span> 👋
+            </h1>
+            <p class="welcome-subtitle">
+              Student ID: <strong>#DP-2026-849</strong> &bull; Class C Automatic License Track &bull; Instructor: <strong>Marcus Vance</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: RTL Button, Theme Toggle, Notification Icon & Profile Icon -->
+        <div class="topbar-right">
+          <!-- RTL / LTR Toggle -->
+          <button type="button" class="topbar-control-btn" id="rtl-toggle-btn" title="Toggle RTL / LTR Layout Direction" aria-label="Toggle text direction">
+            <span class="control-text" id="rtl-label">RTL</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="topbar-control-btn" id="theme-toggle-btn" title="Toggle Light / Dark Theme" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+          </button>
+
+          <!-- Notifications Dropdown Wrapper -->
+          <div class="topbar-dropdown-wrapper" id="notification-dropdown-wrapper">
+            <button 
+              type="button" 
+              class="topbar-control-btn notification-btn" 
+              id="notification-btn" 
+              aria-expanded="false" 
+              aria-haspopup="true" 
+              aria-label="View notifications (3 unread)"
+            >
+              <i class="fa-regular fa-bell" aria-hidden="true"></i>
+              <span class="notif-badge" id="notif-badge">3</span>
+            </button>
+
+            <!-- Notifications Dropdown Menu -->
+            <div class="topbar-dropdown notif-dropdown" id="notif-dropdown" aria-label="Notifications List">
+              <div class="dropdown-header-row">
+                <h4>Portal Notifications</h4>
+                <button type="button" class="text-action-btn" id="mark-all-read-btn">Mark all read</button>
+              </div>
+              <ul class="notif-list" id="notif-list">
+                <li class="notif-item unread">
+                  <div class="notif-icon accent"><i class="fa-solid fa-car-side" aria-hidden="true"></i></div>
+                  <div class="notif-body">
+                    <strong>Upcoming Lesson Tomorrow at 9:00 AM</strong>
+                    <p>Instructor Marcus Vance will pick you up at 740 Congress Ave in Vehicle #14.</p>
+                    <span class="notif-time">18 mins ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon success"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></div>
+                  <div class="notif-body">
+                    <strong>Mock DMV Exam #2 Graded: 94/100 (Pass)</strong>
+                    <p>Zero critical errors! Parallel parking &amp; highway merge marked Test-Ready.</p>
+                    <span class="notif-time">3 hours ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon info"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i></div>
+                  <div class="notif-body">
+                    <strong>Installment #2 Receipt Available ($183.00)</strong>
+                    <p>Your 0% APR monthly tuition installment was processed successfully.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="dropdown-footer-row">
+                <button type="button" class="dropdown-footer-link" data-switch-tab="tests">
+                  <span>View DMV Road Test Checklist</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Dropdown Wrapper -->
+          <div class="topbar-dropdown-wrapper" id="profile-dropdown-wrapper">
+            <button 
+              type="button" 
+              class="profile-trigger-btn" 
+              id="profile-trigger-btn" 
+              aria-expanded="false" 
+              aria-haspopup="true" 
+              aria-label="Open student profile menu"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" 
+                alt="Alex Morgan avatar" 
+                class="profile-avatar"
+              />
+              <div class="profile-meta">
+                <span class="profile-name">Alex Morgan</span>
+                <span class="profile-role">Class C Learner</span>
+              </div>
+              <i class="fa-solid fa-chevron-down profile-chevron" aria-hidden="true"></i>
+            </button>
+
+            <!-- Profile More Options Dropdown Menu -->
+            <div class="topbar-dropdown profile-dropdown" id="profile-dropdown" aria-label="Student Profile Options">
+              <div class="profile-dropdown-user">
+                <img 
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" 
+                  alt="Alex Morgan" 
+                  class="profile-avatar-lg"
+                />
+                <div>
+                  <strong>Alex Morgan</strong>
+                  <span>alex.morgan@example.com</span>
+                  <span class="badge-mini">Permit #TX-90482</span>
+                </div>
+              </div>
+
+              <ul class="profile-menu-list">
+                <li>
+                  <button type="button" class="profile-menu-item" id="open-profile-modal-btn">
+                    <i class="fa-regular fa-id-badge" aria-hidden="true"></i>
+                    <span>My Learner Profile &amp; Permit</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="profile-menu-item" data-switch-tab="lessons">
+                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                    <span>Book New Driving Slot</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="profile-menu-item" data-switch-tab="hours">
+                    <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    <span>Download Hours Certificate</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="profile-menu-item" data-switch-tab="payments">
+                    <i class="fa-regular fa-credit-card" aria-hidden="true"></i>
+                    <span>Tuition &amp; Billing Settings</span>
+                  </button>
+                </li>
+                <li>
+                  <a href="pricing.html" class="profile-menu-item">
+                    <i class="fa-solid fa-arrow-up-right-dots" aria-hidden="true"></i>
+                    <span>Upgrade License Package</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="profile-dropdown-footer">
+                <button type="button" class="profile-logout-item" id="profile-logout-btn">
+                  <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+                  <span>Sign Out / Logout</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ======================================================== -->
+      <!-- SCROLLABLE MAIN CONTENT AREA (5 TAB PANELS)              -->
+      <!-- ======================================================== -->
+      <main class="dashboard-content" id="dashboard-content">
+
+        <!-- ====================================================== -->
+        <!-- TAB PANEL 1: OVERVIEW & ANALYTICS (ACTIVE BY DEFAULT)  -->
+        <!-- ====================================================== -->
+        <section 
+          class="dashboard-panel active" 
+          id="panel-overview" 
+          role="tabpanel" 
+          aria-labelledby="tab-overview"
+        >
+          <!-- Top Banner: Quick Action Strip -->
+          <div class="panel-welcome-banner">
+            <div class="banner-info">
+              <span class="banner-eyebrow"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ROAD TEST READINESS: 94%</span>
+              <h2>Your Official DMV Road Test Is in 16 Days!</h2>
+              <p>
+                You have completed <strong>10 of 12 practical hours</strong> and passed 2 simulated road evaluations. Book your final 2-hour highway &amp; parallel parking session before Nov 24.
+              </p>
+            </div>
+            <div class="banner-actions">
+              <button type="button" class="btn btn-primary" data-switch-tab="lessons">
+                <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
+                <span>Book Final 2-Hr Slot</span>
+              </button>
+              <button type="button" class="btn btn-secondary light-outline" data-switch-tab="tests">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                <span>View Test Route</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 KPI Metric Cards (Hours, Mock Score, Test Date, Tuition/Revenue) -->
+          <div class="kpi-cards-grid">
+            <!-- KPI 1 -->
+            <article class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Practical Hours Completed</span>
+                <div class="kpi-icon-box"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">10.0 <small>/ 12 Hrs</small></strong>
+                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 83.3%</span>
+              </div>
+              <p class="kpi-foot">5 sessions completed &bull; 1 session remaining</p>
+            </article>
+
+            <!-- KPI 2 -->
+            <article class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Latest Mock DMV Score</span>
+                <div class="kpi-icon-box"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">94 <small>/ 100 Pts</small></strong>
+                <span class="kpi-trend positive"><i class="fa-solid fa-check" aria-hidden="true"></i> Pass Grade</span>
+              </div>
+              <p class="kpi-foot">+16 pts improvement since Mock Exam #1</p>
+            </article>
+
+            <!-- KPI 3 -->
+            <article class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Official DMV Test Date</span>
+                <div class="kpi-icon-box"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">Nov 24</strong>
+                <span class="kpi-trend badge-amber">10:30 AM</span>
+              </div>
+              <p class="kpi-foot">Central Austin DPS &bull; Car #14 Reserved</p>
+            </article>
+
+            <!-- KPI 4 -->
+            <article class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Tuition Paid &amp; Package Value</span>
+                <div class="kpi-icon-box"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">$366 <small>/ $549</small></strong>
+                <span class="kpi-trend positive">0% APR</span>
+              </div>
+              <p class="kpi-foot">$183 final installment due Nov 20, 2026</p>
+            </article>
+          </div>
+
+          <!-- CHARTS ROW 1: Bar Chart (Weekly Driving Hours & Tuition Value) + Circle / Donut Chart (Skill Breakdown) -->
+          <div class="charts-grid-2">
+
+            <!-- BAR CHART CARD: Weekly Driving Hours & Training Output -->
+            <article class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <span class="chart-eyebrow">TRAINING ANALYTICS &amp; TUITION UTILIZATION</span>
+                  <h3 class="chart-title">Weekly Behind-the-Wheel Hours &amp; Lesson Value</h3>
+                </div>
+                <div class="chart-legend-inline">
+                  <span class="legend-item"><i class="legend-dot primary-dot"></i> City &amp; Parking</span>
+                  <span class="legend-item"><i class="legend-dot dark-dot"></i> Highway &amp; Night</span>
+                </div>
+              </div>
+
+              <!-- Interactive CSS/SVG Bar Chart -->
+              <div class="bar-chart-wrapper" aria-label="Weekly driving hours bar chart across 6 weeks">
+                <div class="bar-y-axis">
+                  <span>4.0 hr</span>
+                  <span>3.0 hr</span>
+                  <span>2.0 hr</span>
+                  <span>1.0 hr</span>
+                  <span>0 hr</span>
+                </div>
+
+                <div class="bar-columns-grid">
+                  <!-- Week 1 -->
+                  <div class="bar-col-group" tabindex="0">
+                    <div class="bar-tooltip">Week 1: 2.0 Hrs ($92 Value) • Cockpit &amp; Steering</div>
+                    <div class="bar-stack" style="height: 50%;">
+                      <div class="bar-segment primary-seg" style="height: 100%;"></div>
+                    </div>
+                    <span class="bar-x-label">Wk 1</span>
+                  </div>
+
+                  <!-- Week 2 -->
+                  <div class="bar-col-group" tabindex="0">
+                    <div class="bar-tooltip">Week 2: 2.5 Hrs ($115 Value) • Urban Intersections</div>
+                    <div class="bar-stack" style="height: 62.5%;">
+                      <div class="bar-segment dark-seg" style="height: 25%;"></div>
+                      <div class="bar-segment primary-seg" style="height: 75%;"></div>
+                    </div>
+                    <span class="bar-x-label">Wk 2</span>
+                  </div>
+
+                  <!-- Week 3 -->
+                  <div class="bar-col-group" tabindex="0">
+                    <div class="bar-tooltip">Week 3: 3.0 Hrs ($138 Value) • Parallel Parking &amp; Merge</div>
+                    <div class="bar-stack" style="height: 75%;">
+                      <div class="bar-segment dark-seg" style="height: 35%;"></div>
+                      <div class="bar-segment primary-seg" style="height: 65%;"></div>
+                    </div>
+                    <span class="bar-x-label">Wk 3</span>
+                  </div>
+
+                  <!-- Week 4 -->
+                  <div class="bar-col-group" tabindex="0">
+                    <div class="bar-tooltip">Week 4: 2.0 Hrs ($92 Value) • Mock DMV Exam #1</div>
+                    <div class="bar-stack" style="height: 50%;">
+                      <div class="bar-segment dark-seg" style="height: 40%;"></div>
+                      <div class="bar-segment primary-seg" style="height: 60%;"></div>
+                    </div>
+                    <span class="bar-x-label">Wk 4</span>
+                  </div>
+
+                  <!-- Week 5 -->
+                  <div class="bar-col-group" tabindex="0">
+                    <div class="bar-tooltip">Week 5: 3.5 Hrs ($160 Value) • Highway &amp; Night Glare</div>
+                    <div class="bar-stack" style="height: 88%;">
+                      <div class="bar-segment dark-seg" style="height: 55%;"></div>
+                      <div class="bar-segment primary-seg" style="height: 45%;"></div>
+                    </div>
+                    <span class="bar-x-label">Wk 5</span>
+                  </div>
+
+                  <!-- Week 6 (Current) -->
+                  <div class="bar-col-group active-bar" tabindex="0">
+                    <div class="bar-tooltip">Week 6: 3.0 Hrs ($138 Value) • Mock Exam #2 (94%)</div>
+                    <div class="bar-stack" style="height: 76%;">
+                      <div class="bar-segment dark-seg" style="height: 45%;"></div>
+                      <div class="bar-segment primary-seg" style="height: 55%;"></div>
+                    </div>
+                    <span class="bar-x-label">Wk 6</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-summary-strip">
+                <div>
+                  <span>Total Tuition Value Delivered</span>
+                  <strong>$458.00 of $549.00</strong>
+                </div>
+                <div>
+                  <span>Avg. Session Duration</span>
+                  <strong>2.0 Hours / Drive</strong>
+                </div>
+                <div>
+                  <span>On-Time Doorstep Pickups</span>
+                  <strong class="text-primary">100% (5/5)</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- CIRCLE / DONUT CHART CARD: Car License Competency Breakdown -->
+            <article class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <span class="chart-eyebrow">CIRCLE COMPETENCY CHART</span>
+                  <h3 class="chart-title">License Curriculum Mastery</h3>
+                </div>
+                <span class="badge-pill-accent">4 Core Modules</span>
+              </div>
+
+              <div class="donut-chart-layout">
+                <!-- SVG Circle / Donut Chart -->
+                <div class="donut-svg-container">
+                  <svg viewBox="0 0 180 180" class="donut-svg" role="img" aria-label="Donut chart showing 91% overall driving skill mastery">
+                    <!-- Background Ring -->
+                    <circle cx="90" cy="90" r="68" fill="none" stroke="var(--border)" stroke-width="18" />
+                    <!-- Segment 1: City & Intersections (35% -> 149.5 of 427) -->
+                    <circle cx="90" cy="90" r="68" fill="none" stroke="#F47732" stroke-width="18" stroke-dasharray="149 427" stroke-dashoffset="0" transform="rotate(-90 90 90)" />
+                    <!-- Segment 2: Parking Maneuvers (25% -> 107 of 427) -->
+                    <circle cx="90" cy="90" r="68" fill="none" stroke="#10B981" stroke-width="18" stroke-dasharray="107 427" stroke-dashoffset="-149" transform="rotate(-90 90 90)" />
+                    <!-- Segment 3: Highway Merging (22% -> 94 of 427) -->
+                    <circle cx="90" cy="90" r="68" fill="none" stroke="#3B82F6" stroke-width="18" stroke-dasharray="94 427" stroke-dashoffset="-256" transform="rotate(-90 90 90)" />
+                    <!-- Segment 4: Night & Hazard (18% -> 77 of 427) -->
+                    <circle cx="90" cy="90" r="68" fill="none" stroke="#F59E0B" stroke-width="18" stroke-dasharray="77 427" stroke-dashoffset="-350" transform="rotate(-90 90 90)" />
+                  </svg>
+                  <div class="donut-center-label">
+                    <strong>91%</strong>
+                    <span>Overall Mastery</span>
+                  </div>
+                </div>
+
+                <!-- Circle Chart Legend & Breakdown -->
+                <ul class="donut-legend-list">
+                  <li>
+                    <span class="donut-swatch" style="background-color: #F47732;"></span>
+                    <div class="donut-legend-info">
+                      <strong>Urban Traffic &amp; Right-of-Way</strong>
+                      <span>3.5 Hours &bull; 96% Examiner Score</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="donut-swatch" style="background-color: #10B981;"></span>
+                    <div class="donut-legend-info">
+                      <strong>Parallel &amp; Reverse Bay Parking</strong>
+                      <span>2.5 Hours &bull; 92% Examiner Score</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="donut-swatch" style="background-color: #3B82F6;"></span>
+                    <div class="donut-legend-info">
+                      <strong>Expressway Merging &amp; Lane Change</strong>
+                      <span>2.5 Hours &bull; 89% Examiner Score</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="donut-swatch" style="background-color: #F59E0B;"></span>
+                    <div class="donut-legend-info">
+                      <strong>Defensive Hazard &amp; Night Glare</strong>
+                      <span>1.5 Hours &bull; 88% Examiner Score</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- CHARTS ROW 2: Line Graph (Road Test & Theory Score Curve) + Next Scheduled Lesson Card -->
+          <div class="charts-grid-2">
+
+            <!-- LINE GRAPH CARD: Mock Road Test & Hazard Score Progression -->
+            <article class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <span class="chart-eyebrow">PERFORMANCE LINE GRAPH</span>
+                  <h3 class="chart-title">Mock DMV Road Test &amp; Hazard Score Trajectory</h3>
+                </div>
+                <span class="pass-threshold-tag"><i class="fa-solid fa-flag" aria-hidden="true"></i> DMV Pass Threshold: 80%</span>
+              </div>
+
+              <div class="line-graph-container">
+                <svg viewBox="0 0 600 220" class="line-graph-svg" role="img" aria-label="Line graph showing driving evaluation scores rising from 64% in Session 1 to 94% in Session 5">
+                  <defs>
+                    <linearGradient id="lineAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#F47732" stop-opacity="0.34" />
+                      <stop offset="100%" stop-color="#F47732" stop-opacity="0.0" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Horizontal Grid Lines -->
+                  <line x1="45" y1="30" x2="575" y2="30" stroke="var(--border)" stroke-dasharray="4 4" />
+                  <line x1="45" y1="75" x2="575" y2="75" stroke="#10B981" stroke-width="1.5" stroke-dasharray="6 4" />
+                  <line x1="45" y1="120" x2="575" y2="120" stroke="var(--border)" stroke-dasharray="4 4" />
+                  <line x1="45" y1="165" x2="575" y2="165" stroke="var(--border)" stroke-dasharray="4 4" />
+
+                  <!-- Y-Axis Labels -->
+                  <text x="10" y="34" class="svg-axis-label">100%</text>
+                  <text x="10" y="79" class="svg-axis-label pass-line-text">80%</text>
+                  <text x="10" y="124" class="svg-axis-label">60%</text>
+                  <text x="10" y="169" class="svg-axis-label">40%</text>
+
+                  <!-- Shaded Area Under Curve -->
+                  <path 
+                    d="M 70 112 L 190 92 L 310 74 L 430 56 L 550 42 L 550 180 L 70 180 Z" 
+                    fill="url(#lineAreaGrad)" 
+                  />
+
+                  <!-- Primary Score Line -->
+                  <polyline 
+                    fill="none" 
+                    stroke="#F47732" 
+                    stroke-width="3.5" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                    points="70,112 190,92 310,74 430,56 550,42" 
+                  />
+
+                  <!-- Data Points & Score Labels -->
+                  <g class="line-nodes">
+                    <circle cx="70" cy="112" r="6" fill="#FFFFFF" stroke="#F47732" stroke-width="3" />
+                    <text x="70" y="98" text-anchor="middle" class="svg-point-val">64%</text>
+
+                    <circle cx="190" cy="92" r="6" fill="#FFFFFF" stroke="#F47732" stroke-width="3" />
+                    <text x="190" y="78" text-anchor="middle" class="svg-point-val">73%</text>
+
+                    <circle cx="310" cy="74" r="6" fill="#FFFFFF" stroke="#F47732" stroke-width="3" />
+                    <text x="310" y="60" text-anchor="middle" class="svg-point-val">81%</text>
+
+                    <circle cx="430" cy="56" r="6" fill="#FFFFFF" stroke="#F47732" stroke-width="3" />
+                    <text x="430" y="42" text-anchor="middle" class="svg-point-val">88%</text>
+
+                    <circle cx="550" cy="42" r="7" fill="#F47732" stroke="#FFFFFF" stroke-width="3" />
+                    <text x="550" y="26" text-anchor="middle" class="svg-point-val highlight">94%</text>
+                  </g>
+
+                  <!-- X-Axis Labels -->
+                  <text x="70" y="204" text-anchor="middle" class="svg-axis-label">Lesson 1</text>
+                  <text x="190" y="204" text-anchor="middle" class="svg-axis-label">Lesson 2</text>
+                  <text x="310" y="204" text-anchor="middle" class="svg-axis-label">Mock #1</text>
+                  <text x="430" y="204" text-anchor="middle" class="svg-axis-label">Lesson 4</text>
+                  <text x="550" y="204" text-anchor="middle" class="svg-axis-label">Mock #2</text>
+                </svg>
+              </div>
+            </article>
+
+            <!-- NEXT SCHEDULED LESSON & INSTRUCTOR CARD -->
+            <article class="chart-card next-lesson-spotlight">
+              <div class="chart-card-header">
+                <div>
+                  <span class="chart-eyebrow">NEXT DOORSTEP PICKUP</span>
+                  <h3 class="chart-title">Upcoming Practical Session #6</h3>
+                </div>
+                <span class="status-confirmed-pill"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Confirmed</span>
+              </div>
+
+              <div class="spotlight-instructor-box">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=180&auto=format&fit=crop" 
+                  alt="Master Instructor Marcus Vance" 
+                  class="spotlight-instructor-img"
+                />
+                <div class="spotlight-instructor-info">
+                  <h4>Marcus Vance</h4>
+                  <p>Senior DMV Examiner Specialist &bull; 4.98 ★</p>
+                  <span class="vehicle-chip"><i class="fa-solid fa-car" aria-hidden="true"></i> 2026 Toyota Corolla Hybrid (Dual-Control #14)</span>
+                </div>
+              </div>
+
+              <div class="spotlight-details-grid">
+                <div class="spotlight-detail-item">
+                  <span class="detail-k">Date &amp; Time</span>
+                  <strong class="detail-v">Thu, Nov 12 &bull; 9:00 AM – 11:00 AM</strong>
+                </div>
+                <div class="spotlight-detail-item">
+                  <span class="detail-k">Doorstep Pickup Address</span>
+                  <strong class="detail-v">740 Congress Ave, Apt 4B, Austin</strong>
+                </div>
+                <div class="spotlight-detail-item">
+                  <span class="detail-k">Session Focus</span>
+                  <strong class="detail-v">Final Mock Test Route &amp; Tight Parallel Parking</strong>
+                </div>
+              </div>
+
+              <div class="spotlight-actions">
+                <button type="button" class="btn btn-primary" data-switch-tab="lessons">
+                  <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>
+                  <span>Manage Lesson Slot</span>
+                </button>
+                <button type="button" class="btn btn-secondary" id="message-instructor-btn">
+                  <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                  <span>Message Instructor</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- TAB PANEL 2: BOOK LESSON SLOTS                         -->
+        <!-- ====================================================== -->
+        <section 
+          class="dashboard-panel" 
+          id="panel-lessons" 
+          role="tabpanel" 
+          aria-labelledby="tab-lessons" 
+          hidden
+        >
+          <div class="panel-header-row">
+            <div>
+              <span class="eyebrow-tag">DOORSTEP DISPATCH SCHEDULER</span>
+              <h2 class="panel-main-title">Book &amp; Manage Driving Lesson Slots</h2>
+              <p class="panel-main-subtitle">
+                You have <strong>2.0 prepaid hours remaining</strong> in your Complete Car License Package. Schedule your slot below with complimentary doorstep pickup.
+              </p>
+            </div>
+          </div>
+
+          <div class="lessons-workspace-grid">
+            <!-- Left: Interactive New Slot Booking Form Card -->
+            <div class="dash-card">
+              <h3 class="dash-card-title">
+                <i class="fa-solid fa-calendar-plus text-primary" aria-hidden="true"></i>
+                <span>Schedule a 2-Hour Practical Driving Slot</span>
+              </h3>
+              <form id="dashboard-slot-form" class="slot-booking-form">
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="slot-date">Preferred Lesson Date</label>
+                    <input type="date" id="slot-date" name="slotDate" value="2026-11-16" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="slot-time">Time Window (2-Hour Block)</label>
+                    <select id="slot-time" name="slotTime" required>
+                      <option value="08:00 AM – 10:00 AM">Morning: 08:00 AM – 10:00 AM</option>
+                      <option value="10:30 AM – 12:30 PM">Midday: 10:30 AM – 12:30 PM</option>
+                      <option value="02:00 PM – 04:00 PM" selected>Afternoon: 02:00 PM – 04:00 PM</option>
+                      <option value="05:30 PM – 07:30 PM">Evening: 05:30 PM – 07:30 PM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="slot-module">Training Module Focus</label>
+                    <select id="slot-module" name="slotModule">
+                      <option value="Official DMV Test Route Simulation">Official DMV Test Route Simulation</option>
+                      <option value="Parallel & Reverse Bay Parking Mastery">Parallel &amp; Reverse Bay Parking Mastery</option>
+                      <option value="Expressway Merging & Blind-Spot Control">Expressway Merging &amp; Blind-Spot Control</option>
+                      <option value="Night-Time & Adverse Weather Driving">Night-Time &amp; Adverse Weather Driving</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="slot-instructor">Assigned Instructor</label>
+                    <select id="slot-instructor" name="slotInstructor">
+                      <option value="Marcus Vance (Automatic #14)">Marcus Vance (Automatic Car #14)</option>
+                      <option value="Elena Rostova (Highway Specialist #08)">Elena Rostova (Automatic Car #08)</option>
+                      <option value="David Thorne (Manual Clutch #21)">David Thorne (Manual Car #21)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="slot-pickup">Doorstep Pickup Address</label>
+                  <input type="text" id="slot-pickup" name="slotPickup" value="740 Congress Ave, Apt 4B, Austin, TX 78701" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-check-double" aria-hidden="true"></i>
+                  <span>Confirm &amp; Add Lesson Slot to Schedule</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Right: Upcoming & Completed Lesson Slots List -->
+            <div class="dash-card">
+              <h3 class="dash-card-title">
+                <i class="fa-solid fa-list-check text-primary" aria-hidden="true"></i>
+                <span>Your Scheduled &amp; Completed Sessions</span>
+              </h3>
+
+              <div class="scheduled-slots-list" id="scheduled-slots-list">
+                <!-- Slot Item 1 (Upcoming) -->
+                <div class="slot-item upcoming-slot">
+                  <div class="slot-date-badge">
+                    <span class="slot-month">NOV</span>
+                    <strong class="slot-day">12</strong>
+                  </div>
+                  <div class="slot-info">
+                    <span class="slot-status-tag upcoming">Upcoming Pickup</span>
+                    <h4>Final Mock Test Route &amp; Parallel Parking</h4>
+                    <p>09:00 AM – 11:00 AM &bull; Instructor: Marcus Vance &bull; Pickup: 740 Congress Ave</p>
+                  </div>
+                  <button type="button" class="btn btn-secondary btn-sm cancel-slot-btn">Reschedule</button>
+                </div>
+
+                <!-- Slot Item 2 (Completed) -->
+                <div class="slot-item">
+                  <div class="slot-date-badge completed">
+                    <span class="slot-month">NOV</span>
+                    <strong class="slot-day">05</strong>
+                  </div>
+                  <div class="slot-info">
+                    <span class="slot-status-tag done"><i class="fa-solid fa-check" aria-hidden="true"></i> Completed (2.0 Hrs)</span>
+                    <h4>Mock DMV Road Exam #2 &amp; Debrief</h4>
+                    <p>Score: 94/100 &bull; Instructor: Marcus Vance &bull; Zero Critical Faults</p>
+                  </div>
+                </div>
+
+                <!-- Slot Item 3 (Completed) -->
+                <div class="slot-item">
+                  <div class="slot-date-badge completed">
+                    <span class="slot-month">OCT</span>
+                    <strong class="slot-day">29</strong>
+                  </div>
+                  <div class="slot-info">
+                    <span class="slot-status-tag done"><i class="fa-solid fa-check" aria-hidden="true"></i> Completed (2.0 Hrs)</span>
+                    <h4>Multi-Lane Highway Merging &amp; Speed Control</h4>
+                    <p>Score: 88/100 &bull; Instructor: Elena Rostova &bull; I-35 &amp; MoPac Loop</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- TAB PANEL 3: HOURS & SKILL TRACKER                     -->
+        <!-- ====================================================== -->
+        <section 
+          class="dashboard-panel" 
+          id="panel-hours" 
+          role="tabpanel" 
+          aria-labelledby="tab-hours" 
+          hidden
+        >
+          <div class="panel-header-row">
+            <div>
+              <span class="eyebrow-tag">DMV CERTIFICATION LOGBOOK</span>
+              <h2 class="panel-main-title">Behind-the-Wheel Hours &amp; Skill Mastery</h2>
+              <p class="panel-main-subtitle">
+                Official state-verified log of your practical driving hours, maneuver grading, and insurance discount certificate status.
+              </p>
+            </div>
+            <button type="button" class="btn btn-primary" id="download-logbook-btn">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              <span>Download Verified Hours PDF</span>
+            </button>
+          </div>
+
+          <div class="hours-grid-layout">
+            <!-- Skill Progress Bars Card -->
+            <div class="dash-card">
+              <h3 class="dash-card-title">
+                <i class="fa-solid fa-sliders text-primary" aria-hidden="true"></i>
+                <span>Examiner Rubric Competency Breakdown</span>
+              </h3>
+
+              <div class="skill-bars-list">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-top">
+                    <strong>Cockpit Drill, Mirrors &amp; Smooth Braking</strong>
+                    <span class="text-primary">100% Mastered</span>
+                  </div>
+                  <div class="skill-track"><div class="skill-fill" style="width: 100%;"></div></div>
+                </div>
+
+                <div class="skill-bar-item">
+                  <div class="skill-bar-top">
+                    <strong>Urban Intersections, Yielding &amp; Lane Discipline</strong>
+                    <span class="text-primary">96% Mastered</span>
+                  </div>
+                  <div class="skill-track"><div class="skill-fill" style="width: 96%;"></div></div>
+                </div>
+
+                <div class="skill-bar-item">
+                  <div class="skill-bar-top">
+                    <strong>Curbside Parallel Parking &amp; 3-Point Turn</strong>
+                    <span class="text-primary">92% Mastered</span>
+                  </div>
+                  <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+                </div>
+
+                <div class="skill-bar-item">
+                  <div class="skill-bar-top">
+                    <strong>High-Speed Highway Merging &amp; Overtaking</strong>
+                    <span class="text-primary">89% Mastered</span>
+                  </div>
+                  <div class="skill-track"><div class="skill-fill" style="width: 89%;"></div></div>
+                </div>
+
+                <div class="skill-bar-item">
+                  <div class="skill-bar-top">
+                    <strong>Night Driving Glare &amp; Wet-Road Braking</strong>
+                    <span class="text-primary">85% Mastered</span>
+                  </div>
+                  <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Completed Hours Table Card -->
+            <div class="dash-card">
+              <h3 class="dash-card-title">
+                <i class="fa-solid fa-clipboard-check text-primary" aria-hidden="true"></i>
+                <span>Completed Behind-the-Wheel Session Log (10.0 Hrs)</span>
+              </h3>
+
+              <div class="table-responsive">
+                <table class="dash-table" aria-label="Completed Driving Hours Log">
+                  <thead>
+                    <tr>
+                      <th>Session</th>
+                      <th>Date</th>
+                      <th>Curriculum Module</th>
+                      <th>Hours</th>
+                      <th>Instructor Sign-Off</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#01</strong></td>
+                      <td>Oct 08, 2026</td>
+                      <td>Cockpit Controls &amp; Residential Turns</td>
+                      <td>2.0 Hrs</td>
+                      <td><span class="table-badge-pass">Verified &bull; M. Vance</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#02</strong></td>
+                      <td>Oct 15, 2026</td>
+                      <td>City Traffic, Traffic Lights &amp; Roundabouts</td>
+                      <td>2.0 Hrs</td>
+                      <td><span class="table-badge-pass">Verified &bull; M. Vance</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#03</strong></td>
+                      <td>Oct 22, 2026</td>
+                      <td>Parallel Parking, Reverse Bay &amp; Mock #1</td>
+                      <td>2.0 Hrs</td>
+                      <td><span class="table-badge-pass">Verified &bull; M. Vance</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#04</strong></td>
+                      <td>Oct 29, 2026</td>
+                      <td>Expressway Merging &amp; Defensive Spacing</td>
+                      <td>2.0 Hrs</td>
+                      <td><span class="table-badge-pass">Verified &bull; E. Rostova</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#05</strong></td>
+                      <td>Nov 05, 2026</td>
+                      <td>Official DMV Route Simulation #2 (94%)</td>
+                      <td>2.0 Hrs</td>
+                      <td><span class="table-badge-pass">Verified &bull; M. Vance</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- TAB PANEL 4: DMV ROAD TEST & DATES                     -->
+        <!-- ====================================================== -->
+        <section 
+          class="dashboard-panel" 
+          id="panel-tests" 
+          role="tabpanel" 
+          aria-labelledby="tab-tests" 
+          hidden
+        >
+          <div class="panel-header-row">
+            <div>
+              <span class="eyebrow-tag">OFFICIAL DMV EXAMINATION CONCIERGE</span>
+              <h2 class="panel-main-title">Your DMV Road Test Schedule &amp; Vehicle Escort</h2>
+              <p class="panel-main-subtitle">
+                Your Complete Car License Package includes our dual-control test vehicle and a 1-hour pre-test warmup right before your exam.
+              </p>
+            </div>
+          </div>
+
+          <div class="tests-grid-layout">
+            <!-- Official Road Test Appointment Card -->
+            <div class="dash-card highlight-border-card">
+              <div class="test-ticket-header">
+                <span class="status-confirmed-pill"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> DMV Appointment Locked</span>
+                <span class="test-booking-ref">Booking Ref: #DMV-TX-44810</span>
+              </div>
+
+              <h3 class="test-main-heading">Class C Practical Driving Examination</h3>
+              <p class="test-sub-location">
+                <i class="fa-solid fa-location-dot text-primary" aria-hidden="true"></i>
+                <span>Central Austin DPS Mega Center — 740 Motorway Blvd, Testing Lane B</span>
+              </p>
+
+              <div class="test-timeline-grid">
+                <div class="test-timeline-step">
+                  <span class="step-time">09:15 AM</span>
+                  <strong>Doorstep Pickup</strong>
+                  <p>Instructor Marcus Vance picks you up at home in Car #14.</p>
+                </div>
+                <div class="test-timeline-step">
+                  <span class="step-time">09:30 AM</span>
+                  <strong>1-Hr Route Warmup</strong>
+                  <p>Practice parallel parking &amp; local examiner intersections.</p>
+                </div>
+                <div class="test-timeline-step active-step">
+                  <span class="step-time">10:30 AM</span>
+                  <strong>Official DMV Road Test</strong>
+                  <p>20-minute practical road test with state examiner.</p>
+                </div>
+              </div>
+
+              <div class="test-card-actions">
+                <button type="button" class="btn btn-primary" id="confirm-test-docs-btn">
+                  <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+                  <span>Verify My Test-Day Documents</span>
+                </button>
+                <button type="button" class="btn btn-secondary" id="reschedule-dmv-btn">
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                  <span>Request Test Date Change</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Test-Day Required Documents Checklist -->
+            <div class="dash-card">
+              <h3 class="dash-card-title">
+                <i class="fa-solid fa-list-check text-primary" aria-hidden="true"></i>
+                <span>Mandatory DMV Test-Day Checklist</span>
+              </h3>
+              <ul class="test-checklist">
+                <li class="checked">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <div>
+                    <strong>Valid Learner Permit Card (#TX-90482)</strong>
+                    <span>Verified &amp; on file in Student Portal</span>
+                  </div>
+                </li>
+                <li class="checked">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <div>
+                    <strong>6-Hour Adult / Teen Driver Ed Certificate</strong>
+                    <span>Completed &amp; digitally signed by DRIVEPRO</span>
+                  </div>
+                </li>
+                <li class="checked">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  <div>
+                    <strong>Commercial Dual-Control Vehicle Insurance</strong>
+                    <span>Provided by DRIVEPRO Instructor on exam morning</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-regular fa-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>Corrective Glasses / Contacts (If Applicable)</strong>
+                    <span>Bring to doorstep pickup on Nov 24 at 9:15 AM</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- TAB PANEL 5: FEE PAYMENTS & BILLING                    -->
+        <!-- ====================================================== -->
+        <section 
+          class="dashboard-panel" 
+          id="panel-payments" 
+          role="tabpanel" 
+          aria-labelledby="tab-payments" 
+          hidden
+        >
+          <div class="panel-header-row">
+            <div>
+              <span class="eyebrow-tag">0% APR TUITION &amp; INVOICES</span>
+              <h2 class="panel-main-title">Fee Payments &amp; Installment Schedule</h2>
+              <p class="panel-main-subtitle">
+                Manage your interest-free split tuition payments, download official tax/insurance receipts, or pay your remaining balance.
+              </p>
+            </div>
+            <button type="button" class="btn btn-primary" id="pay-installment-btn">
+              <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+              <span>Pay Final Installment ($183.00)</span>
+            </button>
+          </div>
+
+          <!-- 3 Billing Summary Cards -->
+          <div class="billing-summary-grid">
+            <div class="dash-card billing-stat-card">
+              <span>Enrolled Package Total</span>
+              <strong>$549.00</strong>
+              <p>Complete Car License Package (Automatic)</p>
+            </div>
+            <div class="dash-card billing-stat-card">
+              <span>Amount Paid to Date</span>
+              <strong class="text-success" id="paid-amount-display">$366.00</strong>
+              <p>2 of 3 installments completed (0% APR)</p>
+            </div>
+            <div class="dash-card billing-stat-card">
+              <span>Remaining Balance</span>
+              <strong class="text-primary" id="remaining-balance-display">$183.00</strong>
+              <p id="balance-due-note">Due before Nov 20, 2026 &bull; Visa •••• 4821</p>
+            </div>
+          </div>
+
+          <!-- Invoices & Payment History Table -->
+          <div class="dash-card">
+            <h3 class="dash-card-title">
+              <i class="fa-solid fa-file-invoice-dollar text-primary" aria-hidden="true"></i>
+              <span>Tuition Payment History &amp; Receipts</span>
+            </h3>
+
+            <div class="table-responsive">
+              <table class="dash-table" aria-label="Tuition Payment History">
+                <thead>
+                  <tr>
+                    <th>Invoice ID</th>
+                    <th>Billing Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody id="payment-history-tbody">
+                  <tr>
+                    <td><strong>#INV-2026-101</strong></td>
+                    <td>Oct 05, 2026</td>
+                    <td>Installment 1 of 3 — Complete License Package</td>
+                    <td><strong>$183.00</strong></td>
+                    <td><span class="table-badge-pass">Paid (Visa •••• 4821)</span></td>
+                    <td><button type="button" class="table-link-btn download-receipt-btn" data-inv="#INV-2026-101"><i class="fa-solid fa-download" aria-hidden="true"></i> PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#INV-2026-148</strong></td>
+                    <td>Nov 05, 2026</td>
+                    <td>Installment 2 of 3 — Complete License Package</td>
+                    <td><strong>$183.00</strong></td>
+                    <td><span class="table-badge-pass">Paid (Visa •••• 4821)</span></td>
+                    <td><button type="button" class="table-link-btn download-receipt-btn" data-inv="#INV-2026-148"><i class="fa-solid fa-download" aria-hidden="true"></i> PDF</button></td>
+                  </tr>
+                  <tr id="pending-installment-row">
+                    <td><strong>#INV-2026-192</strong></td>
+                    <td>Nov 20, 2026</td>
+                    <td>Installment 3 of 3 — Final Road Test Balance</td>
+                    <td><strong>$183.00</strong></td>
+                    <td><span class="table-badge-pending" id="pending-status-badge">Scheduled (0% APR)</span></td>
+                    <td><button type="button" class="table-link-btn pay-now-inline-btn" id="inline-pay-btn">Pay Now</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE MODAL: LEARNER PROFILE / PAYMENT / MESSAGE       -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="dashboard-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dashboard-modal-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="close-dashboard-modal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div id="dashboard-modal-body">
+        <!-- Populated dynamically by dashboard.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Interactive Script -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course &amp; Service Details – DRIVEPRO Driving Academy</title>
+  <meta name="description" content="Explore comprehensive syllabus details, dual-control safety vehicle specifications, certified instructor credentials, and all-inclusive pricing for DRIVEPRO driving courses." />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Service Details Page Stylesheet -->
+  <link rel="stylesheet" href="servicedetails.css" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ============================================================ -->
+  <!-- HEADER & NAVIGATION                                          -->
+  <!-- ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-container container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving Academy Home">
+        <div class="logo-icon-wrapper">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" class="logo-rim" />
+            <circle cx="20" cy="20" r="6" fill="#F47732" />
+            <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="20" cy="20" r="14" stroke="#F47732" stroke-width="1.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+        <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <!-- Home Dropdown -->
+          <li class="nav-item has-dropdown" id="home-dropdown-item">
+            <button class="nav-link dropdown-toggle" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" id="home-dropdown-menu" aria-label="Home Pages Submenu">
+              <li>
+                <a href="index.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 1</strong>
+                    <small>Default Driving Academy</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+              <li>
+                <a href="home2.html" class="dropdown-link">
+                  <span class="dot-indicator inactive"></span>
+                  <div>
+                    <strong>Home 2</strong>
+                    <small>Cinematic International Style</small>
+                  </div>
+                  <span class="badge-upcoming">View</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link active-nav">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="journal.html" class="nav-link">Journal</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Controls & Login -->
+      <div class="header-actions">
+        <!-- RTL Toggle -->
+        <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction" aria-label="Toggle text direction between LTR and RTL">
+          <span class="control-label" id="rtl-label">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle visual theme between light and dark">
+          <i class="fa-solid fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <!-- Login Button -->
+        <a href="login.html" class="btn btn-primary header-login-btn" id="header-login-btn">
+          <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-drawer-header">
+          <div class="brand-logo">
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </div>
+          <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item mobile-dropdown-container">
+            <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-btn" aria-expanded="false">
+              <span>Home Options</span>
+              <i class="fa-solid fa-chevron-down mobile-arrow" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-sub-menu" id="mobile-home-submenu">
+              <a href="index.html" class="mobile-sub-link">Home 1 (Default)</a>
+              <a href="home2.html" class="mobile-sub-link">Home 2 (Cinematic)</a>
+            </div>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="services.html" class="mobile-nav-link active-link">Services</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="journal.html" class="mobile-nav-link">Journal</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="mobile-drawer-footer">
+          <a href="login.html" class="btn btn-primary btn-block mobile-login-btn" id="mobile-login-btn">
+            <i class="fa-solid fa-user-lock" aria-hidden="true"></i>
+            <span>Student Portal Login</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================ -->
+    <!-- SERVICE DETAILS HERO BANNER                                  -->
+    <!-- ============================================================ -->
+    <section class="service-hero-section" id="service-hero">
+      <div class="service-hero-bg" aria-hidden="true">
+        <img src="https://images.pexels.com/photos/9518244/pexels-photo-9518244.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Driving Course Background" class="service-hero-bg-img" id="hero-bg-img" />
+        <div class="service-hero-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="service-hero-content">
+          <div class="service-hero-eyebrow">
+            <span class="badge badge-primary">
+              <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+              <span id="hero-badge-text">Course Details</span>
+            </span>
+          </div>
+
+          <h1 class="service-hero-title" id="hero-course-title">Driving Course Program</h1>
+          <p class="service-hero-desc" id="hero-course-desc">
+            Professional behind-the-wheel instruction engineered for first-time pass success.
+          </p>
+
+          <!-- Quick Meta Info Pills -->
+          <div class="service-quick-pills">
+            <div class="quick-pill">
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              <span id="pill-duration">Practical Hours</span>
+            </div>
+            <div class="quick-pill">
+              <i class="fa-solid fa-car" aria-hidden="true"></i>
+              <span id="pill-transmission">Manual &amp; Automatic Available</span>
+            </div>
+            <div class="quick-pill">
+              <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+              <span id="pill-level">Accredited Program</span>
+            </div>
+            <div class="quick-pill">
+              <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+              <span id="pill-pass-rate">96% First-Attempt Success</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="service-hero-actions">
+            <a href="#booking-card" class="btn btn-primary">
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+              <span>Enroll in This Program</span>
+            </a>
+            <button class="btn btn-secondary" id="download-syllabus-btn" type="button">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              <span>Download Syllabus PDF</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- MAIN 2-COLUMN SERVICE DETAILS SECTION                        -->
+    <!-- ============================================================ -->
+    <section class="service-details-section">
+      <div class="container">
+        <div class="service-details-layout">
+
+          <!-- ======================================================== -->
+          <!-- LEFT / MAIN CONTENT COLUMN                              -->
+          <!-- ======================================================== -->
+          <div class="service-main-content">
+
+            <!-- Card 01: Course Overview -->
+            <article class="details-card">
+              <div class="details-card-header">
+                <h2 class="details-card-title">
+                  <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                  <span id="overview-title">Comprehensive Driver Education Overview</span>
+                </h2>
+                <p class="details-card-subtitle">Comprehensive training methodology designed for complete confidence</p>
+              </div>
+
+              <p id="overview-text" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                Loading course syllabus, module milestones, and instructor curriculum...
+              </p>
+
+              <h3 style="font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px;">What You'll Experience in This Course</h3>
+              <div class="benefits-grid" id="benefits-grid">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </article>
+
+            <!-- Card 02: Curriculum & Road Modules Accordion -->
+            <article class="details-card">
+              <div class="details-card-header">
+                <h2 class="details-card-title">
+                  <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                  <span>Structured Learning Syllabus &amp; Modules</span>
+                </h2>
+                <p class="details-card-subtitle">Progressive lesson roadmap aligned with national driving examiner marking sheets</p>
+              </div>
+
+              <div class="curriculum-accordion" id="curriculum-accordion">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </article>
+
+            <!-- Card 03: Dual-Control Safety Fleet & Equipment Specs -->
+            <article class="details-card">
+              <div class="details-card-header">
+                <h2 class="details-card-title">
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                  <span>Dual-Control Training Vehicle Specifications</span>
+                </h2>
+                <p class="details-card-subtitle">Safety-certified vehicles equipped with certified dual controls and 360-degree telemetry</p>
+              </div>
+
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Assigned Vehicle Model</span>
+                  <span class="spec-value" id="spec-model">Dual-Control Safety Training Fleet</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Safety Rating &amp; Controls</span>
+                  <span class="spec-value" id="spec-safety">5-Star Euro NCAP, Dual Brake &amp; Instructor Pedals</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Cockpit Comfort</span>
+                  <span class="spec-value" id="spec-comfort">Climate Controlled Cockpit, Adjustable Orthopedic Seating</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Driver Aids &amp; Technology</span>
+                  <span class="spec-value" id="spec-tech">360-Degree Parking Sensors, Reversing Camera, Route Telemetry</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 04: Prerequisites & Enrollment Requirements -->
+            <article class="details-card">
+              <div class="details-card-header">
+                <h2 class="details-card-title">
+                  <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
+                  <span>Eligibility &amp; License Requirements</span>
+                </h2>
+                <p class="details-card-subtitle">What you need before attending your first behind-the-wheel session</p>
+              </div>
+
+              <div class="req-list" id="requirements-list">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </article>
+
+            <!-- Card 05: Lead Course Specialist Instructor -->
+            <article class="details-card">
+              <div class="details-card-header">
+                <h2 class="details-card-title">
+                  <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                  <span>Course Lead Instructor Spotlight</span>
+                </h2>
+                <p class="details-card-subtitle">Train with dedicated state-licensed coaches who specialize in this program</p>
+              </div>
+
+              <div class="instructor-spotlight">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" alt="Course Instructor" class="instructor-avatar" id="instructor-img" />
+                <div class="instructor-info">
+                  <h4 id="instructor-name">Lead Instructor</h4>
+                  <div class="instructor-role" id="instructor-role">Certified Senior Coach</div>
+                  <p class="instructor-bio" id="instructor-bio">
+                    Dedicated, certified instructor with comprehensive practical coaching experience.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 06: Frequently Asked Questions -->
+            <article class="details-card">
+              <div class="details-card-header">
+                <h2 class="details-card-title">
+                  <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                  <span>Frequently Asked Questions</span>
+                </h2>
+                <p class="details-card-subtitle">Common queries about lesson scheduling, test vehicles, and payment plans</p>
+              </div>
+
+              <div class="faq-accordion-list" id="course-faq-list">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </article>
+
+          </div>
+
+          <!-- ======================================================== -->
+          <!-- RIGHT / STICKY SIDEBAR                                   -->
+          <!-- ======================================================== -->
+          <aside class="service-sidebar" aria-label="Course Booking & Navigation">
+
+            <!-- Sidebar Card 01: Pricing & Booking Form -->
+            <div class="sidebar-card sidebar-pricing-card" id="booking-card">
+              <span class="spec-label">ALL-INCLUSIVE TUITION</span>
+              <div class="sidebar-price-row">
+                <span class="sidebar-price-amount" id="sidebar-price">$540</span>
+                <span class="sidebar-price-unit">total package</span>
+              </div>
+              <div class="sidebar-installment-note" id="sidebar-installment">
+                0% interest monthly payment installments available
+              </div>
+
+              <!-- Transmission Switcher -->
+              <div class="transmission-selector" role="group" aria-label="Transmission selector">
+                <button type="button" class="trans-option-btn active" data-trans="manual">
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i> Manual
+                </button>
+                <button type="button" class="trans-option-btn" data-trans="auto">
+                  <i class="fa-solid fa-microchip" aria-hidden="true"></i> Automatic
+                </button>
+              </div>
+
+              <!-- Meta List -->
+              <div class="sidebar-meta-list">
+                <div class="sidebar-meta-item">
+                  <span class="sidebar-meta-label"><i class="fa-regular fa-clock"></i> Duration:</span>
+                  <span class="sidebar-meta-val" id="side-meta-duration">Practical Hours</span>
+                </div>
+                <div class="sidebar-meta-item">
+                  <span class="sidebar-meta-label"><i class="fa-solid fa-id-card"></i> License:</span>
+                  <span class="sidebar-meta-val" id="side-meta-license">Full Car License</span>
+                </div>
+                <div class="sidebar-meta-item">
+                  <span class="sidebar-meta-label"><i class="fa-solid fa-award"></i> Pass Rate:</span>
+                  <span class="sidebar-meta-val" id="side-meta-pass">96% First Attempt</span>
+                </div>
+                <div class="sidebar-meta-item">
+                  <span class="sidebar-meta-label"><i class="fa-solid fa-location-dot"></i> Doorstep Pickup:</span>
+                  <span class="sidebar-meta-val" style="color: #10B981;">Free Included</span>
+                </div>
+              </div>
+
+              <!-- Quick Reservation Inquiry Form -->
+              <form class="booking-form" id="sidebar-booking-form">
+                <div class="form-group">
+                  <label for="book-name">Learner Full Name *</label>
+                  <input type="text" id="book-name" class="form-control" placeholder="e.g. Alex Morgan" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="book-email">Email Address *</label>
+                  <input type="email" id="book-email" class="form-control" placeholder="e.g. alex@example.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="book-phone">Phone Number *</label>
+                  <input type="tel" id="book-phone" class="form-control" placeholder="e.g. +1 (555) 019-2834" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="book-date">Preferred Start Date</label>
+                  <input type="date" id="book-date" class="form-control" />
+                </div>
+
+                <input type="hidden" id="book-course-select" value="beginner-driving" />
+
+                <button type="submit" class="btn btn-primary btn-block" style="margin-top: 8px;">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  <span>Reserve Lesson Slot</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Sidebar Card 02: Switch Course Quick-Nav -->
+            <div class="sidebar-card">
+              <h3 style="font-size: 1.15rem; margin-bottom: 4px;">Other Available Programs</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+                Switch between all 6 accredited driver training packages
+              </p>
+              <nav class="courses-quicknav-list" aria-label="Available Programs">
+                <a href="#service-hero" class="quicknav-link active" data-target-course="beginner-driving">
+                  <span>Beginner Driving Course</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#service-hero" class="quicknav-link" data-target-course="car-license">
+                  <span>Car License Training</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#service-hero" class="quicknav-link" data-target-course="advanced-driving">
+                  <span>Advanced Driving Course</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#service-hero" class="quicknav-link" data-target-course="intensive-fast-track">
+                  <span>Intensive Fast-Track</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#service-hero" class="quicknav-link" data-target-course="automatic-license">
+                  <span>Automatic License Training</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#service-hero" class="quicknav-link" data-target-course="mock-test-refresher">
+                  <span>Mock Test &amp; Refresher Pack</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </nav>
+            </div>
+
+            <!-- Sidebar Card 03: Direct Phone Support Help Box -->
+            <div class="help-box">
+              <div class="help-box-icon">
+                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              </div>
+              <h4>Need Advice Choosing?</h4>
+              <p>Our licensed training advisors can assess your current experience and recommend the ideal package.</p>
+              <a href="tel:+18005553748" class="help-phone-link">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i> +1 (800) 555-DRIV
+              </a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- RELATED COURSES SECTION                                      -->
+    <!-- ============================================================ -->
+    <section class="related-courses-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="service-hero-eyebrow">
+            <span class="badge badge-primary">EXPLORE MORE OPTIONS</span>
+          </div>
+          <h2 class="section-title">Explore Other Driving Programs</h2>
+          <p class="section-subtitle">
+            Compare hours, curricula, and certifications to find the exact match for your personal driving goals.
+          </p>
+        </div>
+
+        <div class="related-courses-grid" id="related-courses-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FINAL HIGH-IMPACT CTA BANNER                                 -->
+    <!-- ============================================================ -->
+    <section class="details-cta-section">
+      <div class="container">
+        <div class="details-cta-card">
+          <div class="details-cta-text">
+            <h2>Ready to Get Behind the Wheel?</h2>
+            <p>
+              Lock in your lesson schedule this week with zero hidden fuel fees, complimentary doorstep pickup, and flexible 0% installment options.
+            </p>
+          </div>
+          <div class="details-cta-buttons">
+            <a href="#booking-card" class="btn btn-primary">
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+              <span>Book Your First Lesson</span>
+            </a>
+            <a href="pricing.html" class="btn btn-secondary">
+              <span>View All Pricing Plans</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-main">
+      <div class="footer-columns-grid">
+        <!-- COLUMN 01 – BRAND -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo" aria-label="DRIVEPRO Home">
+            <div class="logo-icon-wrapper">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="20" cy="20" r="6" fill="#F47732" />
+                <path d="M20 2V14M20 26V38M2 20H14M26 20H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+          </a>
+          <p class="footer-about-text">
+            Setting the benchmark in professional driver training, safety education, and road test certification for over 12 years.
+          </p>
+          <div class="footer-social-links" aria-label="Social media channels">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 02 – QUICK LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="index.html" class="footer-link">Home 1</a>
+            </li>
+            <li>
+              <a href="home2.html" class="footer-link">Home 2</a>
+            </li>
+            <li>
+              <a href="about.html" class="footer-link">About Us</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link active-footer-link">Services</a>
+            </li>
+            <li>
+              <a href="pricing.html" class="footer-link">Pricing</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Journal</a>
+            </li>
+            <li>
+              <a href="contact.html" class="footer-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 03 – SERVICES -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="service details.html?course=beginner-driving" class="footer-link">Beginner Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=car-license" class="footer-link">Car License Training</a>
+            </li>
+            <li>
+              <a href="service details.html?course=advanced-driving" class="footer-link">Advanced Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=mock-test-refresher" class="footer-link">Test Preparation</a>
+            </li>
+            <li>
+              <a href="service details.html?course=intensive-fast-track" class="footer-link">Highway Driving</a>
+            </li>
+            <li>
+              <a href="service details.html?course=automatic-license" class="footer-link">Refresher Lessons</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 04 – ADDITIONAL LINKS -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Additional Links</h4>
+          <ul class="footer-links-list">
+            <li>
+              <a href="contact.html" class="footer-link">Driving Test Booking</a>
+            </li>
+            <li>
+              <a href="journal.html" class="footer-link">Theory Test Prep</a>
+            </li>
+            <li>
+              <a href="services.html" class="footer-link">Dual-Control Fleet</a>
+            </li>
+            <li>
+              <a href="pricing.html#pricing-faq" class="footer-link">Student FAQ Guide</a>
+            </li>
+            <li>
+              <a href="404.html" class="footer-link">404 Page</a>
+            </li>
+            <li>
+              <a href="coming-soon.html" class="footer-link">Coming Soon</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 05 – CONTACT & SUPPORT -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">Contact &amp; Support</h4>
+          <ul class="contact-info-list">
+            <li class="contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+18005553748" class="contact-link">+1 (800) 555-3748</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:admissions@drivepro-academy.com" class="contact-link">admissions@drivepro-academy.com</a>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>742 Automotive Blvd, Metro City, ST 90210</span>
+            </li>
+            <li class="contact-item">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon – Sat: 7:00 AM – 8:00 PM</span>
+            </li>
+          </ul>
+          <div class="support-action">
+            <a href="contact.html" class="footer-support-btn" id="contact-support-btn">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <span>Contact Support Team</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 DRIVEPRO Academy. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#" class="legal-link placeholder-link" data-page-name="Privacy Policy">Privacy Policy</a>
+          <span class="legal-separator">•</span>
+          <a href="#" class="legal-link placeholder-link" data-page-name="Terms &amp; Conditions">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- STUDENT LOGIN MODAL                                          -->
+  <!-- ============================================================ -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="login-modal-title">
+            <i class="fa-solid fa-user-shield text-primary" aria-hidden="true"></i>
+            <span>Student Portal Login</span>
+          </h3>
+          <button class="modal-close-btn" id="close-login-modal" aria-label="Close login dialog">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+            Access your lesson schedule, practice theory modules, and track certified road training hours.
+          </p>
+          <form class="modal-form" onsubmit="event.preventDefault(); alert('Logged in successfully!'); document.getElementById('login-modal').classList.remove('is-open');">
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label for="student-email" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Learner Email or License ID</label>
+              <input type="text" id="student-email" class="form-control" placeholder="e.g. learner@drivepro.com" required value="alex.learner@drivepro.com" />
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="student-password" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Password</label>
+              <input type="password" id="student-password" class="form-control" placeholder="••••••••" required value="student123" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+              <span>Enter Portal</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="servicedetails.js"></script>
+</body>
+</html>
+

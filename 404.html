@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="404 Wrong Turn — Road Closed Ahead | DRIVEPRO Driving School & Car License Training Academy." />
+  <title>404 Road Closed — Wrong Turn | DRIVEPRO Driving School &amp; License Academy</title>
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="404.css" />
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- FULL-VIEWPORT 404 SHELL (NO HEADER, NO FOOTER, FITS SCREEN)  -->
+  <!-- ============================================================ -->
+  <main class="error-screen" id="main-content">
+
+    <!-- Subtle Ambient Background Road Grid & Glows -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+    <div class="road-grid-pattern" aria-hidden="true"></div>
+
+    <!-- Centered 404 Card Container -->
+    <section class="error-card" aria-labelledby="error-title">
+
+      <!-- Card Top Utility Bar: Brand Logo (Left) + RTL & Theme Controls (Right) -->
+      <div class="error-card-topbar">
+        <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving School Home">
+          <div class="brand-icon">
+            <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="2.5"></circle>
+              <line x1="12" y1="3" x2="12" y2="9.5"></line>
+              <line x1="4.2" y1="16.5" x2="9.8" y2="13.2"></line>
+              <line x1="19.8" y1="16.5" x2="14.2" y2="13.2"></line>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+            <span class="brand-tag">LICENSE ACADEMY</span>
+          </div>
+        </a>
+
+        <div class="utility-controls">
+          <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction" aria-label="Toggle text direction between LTR and RTL">
+            <span id="rtl-label">RTL</span>
+          </button>
+
+          <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle visual theme between light and dark">
+            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main 404 Visual & Copy -->
+      <div class="error-body">
+
+        <!-- Road Test Detour Badge -->
+        <div class="detour-badge">
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          <span>DMV Route Alert &bull; Detour Ahead</span>
+        </div>
+
+        <!-- Giant 404 With Animated Steering Wheel / Traffic Cone Centerpiece -->
+        <div class="error-code-display" aria-hidden="true">
+          <span class="digit">4</span>
+          <div class="zero-wheel-badge">
+            <div class="wheel-ring"></div>
+            <svg class="center-wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="2.5"></circle>
+              <line x1="12" y1="3" x2="12" y2="9.5"></line>
+              <line x1="4.2" y1="16.5" x2="9.8" y2="13.2"></line>
+              <line x1="19.8" y1="16.5" x2="14.2" y2="13.2"></line>
+            </svg>
+          </div>
+          <span class="digit">4</span>
+        </div>
+
+        <h1 class="error-headline" id="error-title">
+          Oops! You Took a <span class="text-gradient">Wrong Turn</span> Off the Training Route.
+        </h1>
+
+        <p class="error-description">
+          Even our 98.4% first-attempt pass graduates miss an exit sometimes! The driving course, permit checklist, or license portal page you are looking for has been moved or closed for roadwork.
+        </p>
+
+        <!-- Simulated Telemetry / Examiner Status Strip -->
+        <div class="telemetry-strip">
+          <div class="telemetry-pill">
+            <i class="fa-solid fa-traffic-light" aria-hidden="true"></i>
+            <span>Signal: <strong>Red Light (404)</strong></span>
+          </div>
+          <div class="telemetry-pill">
+            <i class="fa-solid fa-car-On" aria-hidden="true"></i>
+            <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+            <span>Dual-Control Assist: <strong>Active</strong></span>
+          </div>
+          <div class="telemetry-pill">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span>GPS Recalculation: <strong>Ready</strong></span>
+          </div>
+        </div>
+
+        <!-- Primary Action CTA Buttons -->
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-primary">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>U-Turn Back to Home</span>
+          </a>
+
+          <a href="services.html" class="btn btn-secondary">
+            <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+            <span>Explore License Courses</span>
+          </a>
+
+          <a href="dashboard.html" class="btn btn-outline">
+            <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+            <span>Student Dashboard</span>
+          </a>
+        </div>
+
+        <!-- Quick Route Shortcuts -->
+        <div class="quick-routes">
+          <span class="quick-routes-label">Quick Detour Routes:</span>
+          <div class="quick-routes-links">
+            <a href="about.html">About Academy</a>
+            <span class="dot">&bull;</span>
+            <a href="pricing.html">Tuition &amp; Pricing</a>
+            <span class="dot">&bull;</span>
+            <a href="contact.html">Book Road Test</a>
+            <span class="dot">&bull;</span>
+            <a href="login.html">Student Login</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Custom Script -->
+  <script src="404.js"></script>
+</body>
+</html>
+

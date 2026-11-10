@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Coming Soon — Next-Gen AI Driving Simulator & DMV Fast-Track Licensing Portal | DRIVEPRO Driving School & Car License Training Academy." />
+  <title>Coming Soon — AI Simulator &amp; License Hub | DRIVEPRO Driving School</title>
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="coming-soon.css" />
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- FULL-VIEWPORT COMING SOON SHELL (NO HEADER, NO FOOTER)       -->
+  <!-- ============================================================ -->
+  <main class="coming-soon-screen" id="main-content">
+
+    <!-- Ambient Background Glows & Grid -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+    <div class="road-grid-pattern" aria-hidden="true"></div>
+
+    <!-- Centered Card Container Fitting Screen -->
+    <section class="coming-soon-card" aria-labelledby="coming-soon-title">
+
+      <!-- Card Top Utility Bar: Brand Logo (Left) + RTL & Theme Controls (Right) -->
+      <div class="card-topbar">
+        <a href="index.html" class="brand-logo" aria-label="DRIVEPRO Driving School Home">
+          <div class="brand-icon">
+            <svg class="wheel-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="2.5"></circle>
+              <line x1="12" y1="3" x2="12" y2="9.5"></line>
+              <line x1="4.2" y1="16.5" x2="9.8" y2="13.2"></line>
+              <line x1="19.8" y1="16.5" x2="14.2" y2="13.2"></line>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">DRIVE<span class="brand-accent">PRO</span></span>
+            <span class="brand-tag">LICENSE ACADEMY</span>
+          </div>
+        </a>
+
+        <div class="utility-controls">
+          <button class="control-btn" id="rtl-toggle-btn" title="Toggle RTL/LTR Direction" aria-label="Toggle text direction between LTR and RTL">
+            <span id="rtl-label">RTL</span>
+          </button>
+
+          <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle visual theme between light and dark">
+            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Body Content -->
+      <div class="coming-soon-body">
+
+        <!-- Launch Status Badge -->
+        <div class="launch-badge">
+          <span class="pulse-dot"></span>
+          <span>New Licensing Track &bull; Launching Soon</span>
+        </div>
+
+        <h1 class="coming-soon-headline" id="coming-soon-title">
+          Our Next-Gen <span class="text-gradient">360° VR Road Test Simulator</span> &amp; EV License Track Is Almost Ready.
+        </h1>
+
+        <p class="coming-soon-description">
+          We are upgrading our DMV-certified academy with live AI hazard-perception cockpits, electric dual-control fleet telemetry, and instant digital permit verification.
+        </p>
+
+        <!-- Live Countdown Timer Grid -->
+        <div class="countdown-grid" role="timer" aria-label="Launch countdown timer">
+          <div class="countdown-box">
+            <strong class="countdown-num" id="cd-days">14</strong>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-box">
+            <strong class="countdown-num" id="cd-hours">08</strong>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <strong class="countdown-num" id="cd-minutes">45</strong>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-box">
+            <strong class="countdown-num" id="cd-seconds">30</strong>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <!-- Upcoming Feature Highlights Strip -->
+        <div class="feature-pills-row">
+          <div class="feature-pill">
+            <i class="fa-solid fa-vr-cardboard" aria-hidden="true"></i>
+            <span>VR Highway &amp; Night Simulator</span>
+          </div>
+          <div class="feature-pill">
+            <i class="fa-solid fa-charging-station" aria-hidden="true"></i>
+            <span>2025 Electric Dual-Control Fleet</span>
+          </div>
+          <div class="feature-pill">
+            <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+            <span>24-Hr Priority DMV Examiner Slots</span>
+          </div>
+        </div>
+
+        <!-- Early-Bird Priority Waitlist Form -->
+        <form id="notify-form" class="notify-form" novalidate>
+          <div class="notify-input-wrap">
+            <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+            <input
+              type="email"
+              id="notify-email"
+              placeholder="Enter your student email for 20% Early-Bird Tuition Off..."
+              required
+              aria-label="Student email address"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary notify-btn">
+            <span>Notify Me at Launch</span>
+            <i class="fa-solid fa-bell" aria-hidden="true"></i>
+          </button>
+        </form>
+        <p class="form-feedback" id="notify-feedback" role="status" aria-live="polite"></p>
+
+        <!-- Quick Navigation Links Bar -->
+        <div class="quick-nav-strip">
+          <span class="quick-nav-label">Need lessons today? Explore active portal pages:</span>
+          <div class="quick-nav-links">
+            <a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+            <span class="dot">&bull;</span>
+            <a href="services.html">License Courses</a>
+            <span class="dot">&bull;</span>
+            <a href="pricing.html">Tuition Plans</a>
+            <span class="dot">&bull;</span>
+            <a href="dashboard.html">Student Dashboard</a>
+            <span class="dot">&bull;</span>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Custom Script -->
+  <script src="coming-soon.js"></script>
+</body>
+</html>
+
