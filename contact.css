@@ -381,31 +381,43 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   letter-spacing: -0.03em;
   flex-shrink: 0;
 }
 
 .logo-icon-wrapper {
-  width: 38px;
-  height: 38px;
+  width: auto;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  flex-shrink: 0;
 }
 
-.logo-icon {
-  width: 100%;
+.logo-icon,
+.logo-icon-img {
   height: 100%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-base);
 }
 
-.brand-logo:hover .logo-icon {
-  transform: rotate(45deg);
+.brand-logo:hover .logo-icon-img {
+  transform: scale(1.05);
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .brand-accent {
@@ -785,16 +797,19 @@ body.drawer-scroll-lock {
 }
 
 /* --------------------------------------------------------------------------
-   6. SECTION 01 – PREMIUM HERO BANNER PAGE
+   6. SECTION 01 – PREMIUM HERO BANNER PAGE (Fit to Screen)
    -------------------------------------------------------------------------- */
 .contact-hero-section {
   position: relative;
+  min-height: calc(100vh - 82px);
   min-height: calc(100dvh - 82px);
+  height: auto;
   display: flex;
   align-items: center;
-  padding: 72px 0;
+  padding: clamp(20px, 3.6dvh, 48px) 0;
   overflow: hidden;
   color: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .hero-bg-wrapper {
@@ -831,13 +846,13 @@ body.drawer-scroll-lock {
 .contact-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
+  gap: clamp(24px, 3.5vw, 52px);
   align-items: center;
 }
 
 /* Breadcrumb Navigation */
 .hero-breadcrumb {
-  margin-bottom: 16px;
+  margin-bottom: clamp(8px, 1.4dvh, 14px);
 }
 
 .breadcrumb-list {
@@ -876,7 +891,7 @@ body.drawer-scroll-lock {
 }
 
 .hero-eyebrow {
-  margin-bottom: 14px;
+  margin-bottom: clamp(8px, 1.4dvh, 14px);
 }
 
 .badge-primary {
@@ -886,36 +901,37 @@ body.drawer-scroll-lock {
   background-color: rgba(244, 119, 50, 0.2);
   color: #F47732;
   border: 1px solid rgba(244, 119, 50, 0.4);
-  padding: 6px 14px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
-  font-size: 0.8125rem;
+  font-size: clamp(0.72rem, 1vw, 0.8125rem);
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  max-width: 100%;
 }
 
 .hero-title {
-  font-size: clamp(2.15rem, 3.8vw, 3.45rem);
+  font-size: clamp(1.85rem, min(3.5vw, 5.2dvh), 3.35rem);
   font-weight: 700;
-  line-height: 1.14;
-  margin-bottom: 18px;
+  line-height: 1.12;
+  margin-bottom: clamp(8px, 1.5dvh, 16px);
   color: #FFFFFF;
 }
 
 .hero-description {
-  font-size: clamp(0.95rem, 1.1vw, 1.0625rem);
-  line-height: 1.62;
+  font-size: clamp(0.9rem, min(1.08vw, 1.95dvh), 1.04rem);
+  line-height: 1.54;
   color: #D1D5DB;
-  margin-bottom: 26px;
+  margin-bottom: clamp(12px, 2dvh, 22px);
   max-width: 600px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: clamp(12px, 2dvh, 22px);
 }
 
 .hero-actions .btn-secondary {
@@ -934,14 +950,14 @@ body.drawer-scroll-lock {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 10px 16px;
+  padding: clamp(7px, 1dvh, 10px) 16px;
   background-color: rgba(23, 28, 36, 0.68);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
   backdrop-filter: blur(10px);
   width: fit-content;
   max-width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: clamp(12px, 2dvh, 22px);
 }
 
 .avatar-stack {
@@ -950,8 +966,8 @@ body.drawer-scroll-lock {
 }
 
 .avatar-stack img {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 2px solid #171C24;
   object-fit: cover;
@@ -988,8 +1004,8 @@ body.drawer-scroll-lock {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 22px;
-  padding: 14px 24px;
+  gap: clamp(12px, 1.6vw, 22px);
+  padding: clamp(9px, 1.4dvh, 14px) clamp(14px, 1.8vw, 22px);
   background-color: rgba(28, 35, 45, 0.78);
   border: 1px solid rgba(244, 119, 50, 0.28);
   border-radius: var(--radius-lg);
@@ -1001,19 +1017,19 @@ body.drawer-scroll-lock {
 .stat-card {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .stat-icon {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-md);
   background-color: rgba(244, 119, 50, 0.16);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   flex-shrink: 0;
 }
 
@@ -1024,21 +1040,21 @@ body.drawer-scroll-lock {
 
 .stat-value {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: clamp(1.05rem, min(1.45vw, 2.3dvh), 1.35rem);
   font-weight: 700;
   color: #FFFFFF;
   line-height: 1.1;
 }
 
 .stat-label {
-  font-size: 0.775rem;
+  font-size: 0.76rem;
   color: #9DA6B2;
   white-space: nowrap;
 }
 
 .stat-divider {
   width: 1px;
-  height: 32px;
+  height: 30px;
   background-color: rgba(255, 255, 255, 0.14);
 }
 
@@ -1051,7 +1067,7 @@ body.drawer-scroll-lock {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: visible;
-  padding: 12px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(12px);
@@ -1060,7 +1076,7 @@ body.drawer-scroll-lock {
 
 .hero-showcase-img {
   width: 100%;
-  height: 450px;
+  height: clamp(235px, 46dvh, 430px);
   object-fit: cover;
   border-radius: var(--radius-lg);
 }
@@ -1069,10 +1085,10 @@ body.drawer-scroll-lock {
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background-color: rgba(23, 28, 36, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 12px 18px;
+  padding: 10px 15px;
   border-radius: var(--radius-md);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
@@ -1080,13 +1096,13 @@ body.drawer-scroll-lock {
 }
 
 .top-floating-badge {
-  top: 24px;
-  left: -24px;
+  top: 18px;
+  left: -16px;
 }
 
 .bottom-floating-badge {
-  bottom: 24px;
-  right: -20px;
+  bottom: 18px;
+  right: -14px;
 }
 
 .floating-icon {
@@ -2633,11 +2649,15 @@ a.contact-value:hover {
 /* Standard Laptops (1024px - 1366px) */
 @media (max-width: 1366px) {
   .contact-hero-section {
-    padding: clamp(40px, 5.5vh, 64px) 0;
+    padding: clamp(14px, 2.6dvh, 36px) 0;
   }
 
   .contact-hero-grid {
-    gap: 36px;
+    gap: clamp(20px, 2.8vw, 36px);
+  }
+
+  .hero-showcase-img {
+    height: clamp(220px, 43dvh, 380px);
   }
 
   .top-floating-badge {
@@ -2660,65 +2680,29 @@ a.contact-value:hover {
 }
 
 @media (max-width: 1024px) {
-  /* Hero Center Alignment */
+  /* Keep Compact 2-Column Hero Fit-to-Screen on 1024px Landscape Viewports */
   .contact-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 44px;
-    max-width: 740px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 24px;
   }
 
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-trust {
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .star-rating {
-    justify-content: center;
+  .hero-title {
+    font-size: clamp(1.75rem, min(2.9vw, 4.6dvh), 2.5rem);
   }
 
   .hero-stats-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
+    gap: 10px;
+    padding: 9px 12px;
   }
 
-  .contact-hero-visual {
-    max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
   }
 
-  .top-floating-badge {
-    left: 12px;
-  }
-
-  .bottom-floating-badge {
-    right: 12px;
+  .hero-showcase-img {
+    height: clamp(210px, 40dvh, 340px);
   }
 
   /* Section 02: Contact Channel Cards Center Alignment */
@@ -2994,6 +2978,73 @@ a.contact-value:hover {
   }
 }
 
+/* Portrait Tablet & Stacked Hero (<= 900px) */
+@media (max-width: 900px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-trust {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .star-rating {
+    justify-content: center;
+  }
+
+  .hero-stats-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .contact-hero-visual {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .hero-showcase-img {
+    height: clamp(190px, 28dvh, 260px);
+  }
+
+  .top-floating-badge {
+    left: 12px;
+  }
+
+  .bottom-floating-badge {
+    right: 12px;
+  }
+}
+
 /* Tablet (768px) */
 @media (max-width: 768px) {
   .main-nav {
@@ -3013,8 +3064,14 @@ a.contact-value:hover {
     padding-bottom: 72px;
   }
 
+  .contact-hero-section {
+    min-height: calc(100vh - 82px);
+    min-height: calc(100dvh - 82px);
+    padding: clamp(16px, 2.8dvh, 28px) 0;
+  }
+
   .hero-showcase-img {
-    height: 340px;
+    height: clamp(170px, 24dvh, 230px);
   }
 
   .contact-cards-grid {
@@ -3073,14 +3130,17 @@ a.contact-value:hover {
   .hero-trust {
     flex-direction: column;
     text-align: center;
-    padding: 12px 16px;
+    padding: 10px 14px;
+    gap: 8px;
+    margin-bottom: 12px;
   }
 
   .hero-stats-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 8px;
+    padding: 10px;
     width: 100%;
   }
 
@@ -3088,20 +3148,37 @@ a.contact-value:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 6px;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .stat-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    white-space: normal;
+    font-size: 0.7rem;
+    line-height: 1.25;
   }
 
   .stat-divider {
-    width: 60%;
-    height: 1px;
+    display: none;
   }
 
   .hero-showcase-badge {
     position: static;
-    margin-top: 10px;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
+    margin-top: 8px;
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row;
+    padding: 8px 12px;
   }
 }
 
@@ -3127,13 +3204,32 @@ a.contact-value:hover {
     height: 72px;
   }
 
+  .contact-hero-section {
+    min-height: calc(100vh - 72px);
+    min-height: calc(100dvh - 72px);
+    padding: clamp(14px, 2.2dvh, 22px) 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 6.5vw, 2rem);
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.46;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
   .brand-name {
     font-size: 1.25rem;
   }
 
   .logo-icon-wrapper {
-    width: 32px;
-    height: 32px;
+    width: auto;
+    height: 34px;
   }
 
   .header-actions {
@@ -3183,14 +3279,36 @@ a.contact-value:hover {
     height: 64px;
   }
 
+  .contact-hero-section {
+    min-height: calc(100vh - 64px);
+    min-height: calc(100dvh - 64px);
+    padding: 12px 0;
+  }
+
+  .hero-stats-wrapper {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .stat-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    gap: 7px;
+  }
+
   .brand-name {
     font-size: 1.0625rem;
   }
 
   .logo-icon-wrapper {
-    width: 28px;
+    width: auto;
     height: 28px;
-    font-size: 0.85rem;
   }
 
   .header-actions {
@@ -3232,6 +3350,75 @@ a.contact-value:hover {
 
   .cta-content-side {
     padding: 30px 16px;
+  }
+}
+
+/* Landscape & Low Height Viewports (1280x720, 1366x768, etc.) */
+@media (max-height: 760px) and (min-width: 901px) {
+  .contact-hero-section {
+    padding: clamp(10px, 2dvh, 22px) 0;
+  }
+
+  .contact-hero-section .hero-eyebrow {
+    margin-bottom: 6px;
+  }
+
+  .contact-hero-section .hero-title {
+    font-size: clamp(1.7rem, 4.4dvh, 2.6rem);
+    margin-bottom: 8px;
+  }
+
+  .contact-hero-section .hero-description {
+    margin-bottom: 12px;
+    line-height: 1.46;
+  }
+
+  .contact-hero-section .hero-actions {
+    margin-bottom: 12px;
+  }
+
+  .contact-hero-section .hero-actions .btn {
+    padding: 10px 20px;
+  }
+
+  .contact-hero-section .hero-trust {
+    padding: 7px 14px;
+    margin-bottom: 12px;
+  }
+
+  .contact-hero-section .hero-stats-wrapper {
+    padding: 9px 16px;
+  }
+
+  .contact-hero-section .hero-showcase-img {
+    height: clamp(210px, 42dvh, 330px);
+  }
+}
+
+@media (max-height: 620px) and (min-width: 901px) {
+  .contact-hero-section {
+    min-height: calc(100vh - 82px);
+    min-height: calc(100dvh - 82px);
+    padding: 8px 0;
+  }
+
+  .contact-hero-section .hero-title {
+    font-size: clamp(1.55rem, 4.1dvh, 2.15rem);
+    margin-bottom: 6px;
+  }
+
+  .contact-hero-section .hero-description {
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-hero-section .hero-actions,
+  .contact-hero-section .hero-trust {
+    margin-bottom: 10px;
+  }
+
+  .contact-hero-section .hero-showcase-img {
+    height: clamp(180px, 38dvh, 260px);
   }
 }
 

@@ -381,31 +381,43 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   letter-spacing: -0.03em;
   flex-shrink: 0;
 }
 
 .logo-icon-wrapper {
-  width: 38px;
-  height: 38px;
+  width: auto;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  flex-shrink: 0;
 }
 
-.logo-icon {
-  width: 100%;
+.logo-icon,
+.logo-icon-img {
   height: 100%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-base);
 }
 
-.brand-logo:hover .logo-icon {
-  transform: rotate(45deg);
+.brand-logo:hover .logo-icon-img {
+  transform: scale(1.05);
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .brand-accent {
@@ -785,16 +797,19 @@ body.drawer-scroll-lock {
 }
 
 /* --------------------------------------------------------------------------
-   6. SECTION 01 – PREMIUM HERO BANNER PAGE
+   6. SECTION 01 – PREMIUM HERO BANNER PAGE (Fit to Screen)
    -------------------------------------------------------------------------- */
 .pricing-hero-section {
   position: relative;
+  min-height: calc(100vh - 82px);
   min-height: calc(100dvh - 82px);
+  height: auto;
   display: flex;
   align-items: center;
-  padding: 72px 0;
+  padding: clamp(20px, 3.6dvh, 48px) 0;
   overflow: hidden;
   color: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .hero-bg-wrapper {
@@ -848,7 +863,7 @@ body.drawer-scroll-lock {
 
 /* Breadcrumb Navigation */
 .hero-breadcrumb {
-  margin-bottom: 16px;
+  margin-bottom: clamp(8px, 1.4dvh, 14px);
 }
 
 .breadcrumb-list {
@@ -887,7 +902,7 @@ body.drawer-scroll-lock {
 }
 
 .hero-eyebrow {
-  margin-bottom: 14px;
+  margin-bottom: clamp(8px, 1.4dvh, 14px);
 }
 
 .badge-primary {
@@ -897,28 +912,29 @@ body.drawer-scroll-lock {
   background-color: rgba(244, 119, 50, 0.2);
   color: #F47732;
   border: 1px solid rgba(244, 119, 50, 0.4);
-  padding: 6px 14px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
-  font-size: 0.8125rem;
+  font-size: clamp(0.72rem, 1vw, 0.8125rem);
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  max-width: 100%;
 }
 
 .hero-title {
-  font-size: clamp(2.15rem, 3.8vw, 3.45rem);
+  font-size: clamp(1.85rem, min(3.6vw, 5.4dvh), 3.35rem);
   font-weight: 700;
-  line-height: 1.14;
-  margin-bottom: 18px;
+  line-height: 1.12;
+  margin-bottom: clamp(8px, 1.6dvh, 18px);
   color: #FFFFFF;
 }
 
 .hero-description {
-  font-size: clamp(0.95rem, 1.1vw, 1.0625rem);
-  line-height: 1.62;
+  font-size: clamp(0.9rem, min(1.1vw, 2dvh), 1.05rem);
+  line-height: 1.54;
   color: #D1D5DB;
-  margin-bottom: 26px;
+  margin-bottom: clamp(12px, 2.2dvh, 24px);
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
@@ -928,8 +944,8 @@ body.drawer-scroll-lock {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: clamp(12px, 2.1dvh, 22px);
 }
 
 .hero-actions .btn-secondary {
@@ -949,14 +965,14 @@ body.drawer-scroll-lock {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  padding: 10px 18px;
+  padding: clamp(7px, 1.1dvh, 10px) 16px;
   background-color: rgba(23, 28, 36, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-md);
   backdrop-filter: blur(10px);
   width: fit-content;
   max-width: 100%;
-  margin: 0 auto 24px;
+  margin: 0 auto clamp(12px, 2.1dvh, 22px);
 }
 
 .avatar-stack {
@@ -965,8 +981,8 @@ body.drawer-scroll-lock {
 }
 
 .avatar-stack img {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 2px solid #171C24;
   object-fit: cover;
@@ -1009,8 +1025,8 @@ body.drawer-scroll-lock {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 22px;
-  padding: 14px 28px;
+  gap: clamp(14px, 1.8vw, 22px);
+  padding: clamp(9px, 1.5dvh, 14px) clamp(16px, 2.2vw, 26px);
   background-color: rgba(28, 35, 45, 0.82);
   border: 1px solid rgba(244, 119, 50, 0.32);
   border-radius: var(--radius-lg);
@@ -1032,15 +1048,15 @@ body.drawer-scroll-lock {
 }
 
 .stat-icon {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-md);
   background-color: rgba(244, 119, 50, 0.16);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   flex-shrink: 0;
 }
 
@@ -1051,7 +1067,7 @@ body.drawer-scroll-lock {
 
 .stat-value {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: clamp(1.1rem, min(1.5vw, 2.4dvh), 1.35rem);
   font-weight: 700;
   color: #FFFFFF;
   line-height: 1.1;
@@ -1065,7 +1081,7 @@ body.drawer-scroll-lock {
 
 .stat-divider {
   width: 1px;
-  height: 32px;
+  height: 30px;
   background-color: rgba(255, 255, 255, 0.14);
 }
 
@@ -2696,11 +2712,11 @@ a.contact-value:hover {
 /* Standard Laptops (1024px - 1366px) */
 @media (max-width: 1366px) {
   .pricing-hero-section {
-    padding: clamp(40px, 5.5vh, 64px) 0;
+    padding: clamp(16px, 2.8dvh, 36px) 0;
   }
 
   .pricing-hero-grid {
-    gap: 36px;
+    gap: 28px;
   }
 
   .top-floating-badge {
@@ -3093,6 +3109,12 @@ a.contact-value:hover {
     padding-bottom: 72px;
   }
 
+  .pricing-hero-section {
+    min-height: calc(100vh - 82px);
+    min-height: calc(100dvh - 82px);
+    padding: clamp(18px, 3dvh, 32px) 0;
+  }
+
   .hero-showcase-img {
     height: 340px;
   }
@@ -3129,14 +3151,21 @@ a.contact-value:hover {
   .hero-trust {
     flex-direction: column;
     text-align: center;
-    padding: 12px 16px;
+    padding: 10px 14px;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .trust-text {
+    text-align: center;
   }
 
   .hero-stats-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 8px;
+    padding: 12px 10px;
     width: 100%;
   }
 
@@ -3144,12 +3173,28 @@ a.contact-value:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 6px;
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .stat-value {
+    font-size: 1.05rem;
+  }
+
+  .stat-label {
+    white-space: normal;
+    font-size: 0.72rem;
+    line-height: 1.25;
   }
 
   .stat-divider {
-    width: 60%;
-    height: 1px;
+    display: none;
   }
 
   .transmission-toggle-wrapper {
@@ -3197,13 +3242,32 @@ a.contact-value:hover {
     height: 72px;
   }
 
+  .pricing-hero-section {
+    min-height: calc(100vh - 72px);
+    min-height: calc(100dvh - 72px);
+    padding: clamp(16px, 2.5dvh, 24px) 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.65rem, 6.8vw, 2.05rem);
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.48;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
   .brand-name {
     font-size: 1.25rem;
   }
 
   .logo-icon-wrapper {
-    width: 32px;
-    height: 32px;
+    width: auto;
+    height: 34px;
   }
 
   .header-actions {
@@ -3255,14 +3319,40 @@ a.contact-value:hover {
     height: 64px;
   }
 
+  .pricing-hero-section {
+    min-height: calc(100vh - 64px);
+    min-height: calc(100dvh - 64px);
+    padding: 14px 0;
+  }
+
+  .hero-stats-wrapper {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .stat-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+
+  [dir="rtl"] .stat-card {
+    text-align: right;
+  }
+
+  .brand-logo {
+    gap: 7px;
+  }
+
   .brand-name {
     font-size: 1.0625rem;
   }
 
   .logo-icon-wrapper {
-    width: 28px;
+    width: auto;
     height: 28px;
-    font-size: 0.85rem;
   }
 
   .header-actions {
@@ -3306,6 +3396,67 @@ a.contact-value:hover {
 
   .cta-content-side {
     padding: 30px 16px;
+  }
+}
+
+/* Landscape & Low Height Viewports (1280x720, 1366x768, etc.) */
+@media (max-height: 760px) and (min-width: 769px) {
+  .pricing-hero-section {
+    padding: clamp(12px, 2dvh, 24px) 0;
+  }
+
+  .pricing-hero-section .hero-eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .pricing-hero-section .hero-title {
+    font-size: clamp(1.85rem, 4.8dvh, 2.75rem);
+    margin-bottom: 10px;
+  }
+
+  .pricing-hero-section .hero-description {
+    margin-bottom: 14px;
+    line-height: 1.48;
+  }
+
+  .pricing-hero-section .hero-actions {
+    margin-bottom: 14px;
+  }
+
+  .pricing-hero-section .hero-actions .btn {
+    padding: 11px 22px;
+  }
+
+  .pricing-hero-section .hero-trust {
+    padding: 7px 14px;
+    margin-bottom: 14px;
+  }
+
+  .pricing-hero-section .hero-stats-wrapper {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-height: 620px) {
+  .pricing-hero-section {
+    min-height: calc(100vh - 82px);
+    min-height: calc(100dvh - 82px);
+    padding: 10px 0;
+  }
+
+  .pricing-hero-section .hero-title {
+    font-size: clamp(1.65rem, 4.4dvh, 2.25rem);
+    margin-bottom: 8px;
+  }
+
+  .pricing-hero-section .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .pricing-hero-section .hero-actions,
+  .pricing-hero-section .hero-trust {
+    margin-bottom: 10px;
   }
 }
 

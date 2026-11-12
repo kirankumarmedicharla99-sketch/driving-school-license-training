@@ -196,51 +196,44 @@ button {
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
 }
 
-.brand-icon {
-  width: 40px;
+.logo-icon-wrapper {
+  width: auto;
   height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(244, 119, 50, 0.3);
+  flex-shrink: 0;
 }
 
-.wheel-svg {
-  width: 22px;
-  height: 22px;
+.logo-icon-img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.28s ease;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1.1;
+.brand-logo:hover .logo-icon-img {
+  transform: scale(1.05);
 }
 
 .brand-name {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
   color: var(--text-main);
 }
 
 .brand-accent {
   color: var(--primary);
-}
-
-.brand-tag {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
-  margin-top: 2px;
 }
 
 .utility-controls {
@@ -602,17 +595,17 @@ button {
     padding: 1rem 0.85rem;
   }
 
+  .brand-logo {
+    gap: 8px;
+  }
+
   .brand-name {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
-  .brand-tag {
-    display: none;
-  }
-
-  .brand-icon {
-    width: 34px;
-    height: 34px;
+  .logo-icon-wrapper {
+    width: auto;
+    height: 32px;
   }
 
   .error-card-topbar {
