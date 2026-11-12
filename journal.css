@@ -16,6 +16,7 @@
 
   --secondary: #1F2937;
   --secondary-hover: #111827;
+  --secondary-border: var(--secondary);
 
   /* Typography */
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -75,6 +76,7 @@
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
+  --secondary-border: var(--text-secondary);
   --bg-body: #11151C;
   --bg-surface: #171C24;
   --bg-surface-elevated: #1C232D;
@@ -221,7 +223,7 @@ ul, ol {
 .btn-secondary {
   background-color: transparent;
   color: var(--text-primary);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--secondary-border);
 }
 
 .btn-secondary:hover {
@@ -477,7 +479,7 @@ ul, ol {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--secondary-border);
   background-color: var(--bg-surface);
   color: var(--text-primary);
   display: flex;
@@ -1069,6 +1071,7 @@ body.drawer-scroll-lock {
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   border: 1.5px solid var(--primary);
 }
 
@@ -1280,7 +1283,7 @@ body.drawer-scroll-lock {
 
 .cta-btn-secondary {
   color: #FFFFFF !important;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(203, 213, 225, 0.65);
   background: rgba(255, 255, 255, 0.08);
 }
 

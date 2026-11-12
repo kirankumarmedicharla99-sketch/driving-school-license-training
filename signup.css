@@ -12,6 +12,7 @@
 
   --secondary: #171C24;
   --secondary-light: #232A36;
+  --secondary-border: var(--secondary);
 
   /* Status Colors */
   --success: #16A34A;
@@ -54,6 +55,7 @@
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
+  --secondary-border: var(--text-secondary);
   --bg-body: #0B0F17;
   --bg-surface: #151C28;
   --bg-elevated: #1E2736;
@@ -167,7 +169,7 @@ input {
   height: 40px;
   padding: 0 0.9rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--secondary-border);
   background-color: var(--bg-surface);
   color: var(--text-main);
   font-size: 0.8125rem;
@@ -378,6 +380,7 @@ input {
   border-radius: 50%;
   border: 2px solid #171C24;
   object-fit: cover;
+  object-position: center top;
   margin-left: -10px;
 }
 
@@ -611,6 +614,11 @@ input {
 
 .input-with-icon input.input-error {
   border-color: var(--danger);
+}
+
+.input-with-icon input::-ms-reveal,
+.input-with-icon input::-ms-clear {
+  display: none;
 }
 
 .password-toggle-btn {

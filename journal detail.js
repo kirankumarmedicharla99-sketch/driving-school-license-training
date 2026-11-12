@@ -868,7 +868,6 @@
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     applyTheme(newTheme);
-    showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'info');
   }
 
   function initDirection() {
@@ -902,7 +901,6 @@
     const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
     const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
     applyDirection(newDir);
-    showToast(`Switched text layout to ${newDir.toUpperCase()}`, 'info');
   }
 
   // -------------------------------------------------------------------------

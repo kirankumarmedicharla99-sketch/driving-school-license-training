@@ -13,6 +13,7 @@
 
   --secondary: #171C24;
   --secondary-light: #232A36;
+  --secondary-border: var(--secondary);
 
   /* Light Mode Surfaces & Typography */
   --bg-body: #F4F6F9;
@@ -47,6 +48,7 @@
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
+  --secondary-border: var(--text-secondary);
   --bg-body: #0B0F17;
   --bg-surface: #151C28;
   --bg-elevated: #1E2736;
@@ -250,7 +252,7 @@ button {
   height: 36px;
   padding: 0 0.8rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--secondary-border);
   background-color: var(--bg-elevated);
   color: var(--text-main);
   font-size: 0.8rem;
@@ -442,6 +444,7 @@ button {
 .btn-secondary {
   background-color: var(--secondary);
   color: #FFFFFF;
+  border: 1.5px solid var(--secondary-border);
 }
 
 .btn-secondary:hover {
@@ -451,13 +454,13 @@ button {
 
 [data-theme="dark"] .btn-secondary {
   background-color: var(--bg-elevated);
-  border: 1px solid var(--border-strong);
+  border: 1.5px solid var(--secondary-border);
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--text-main);
-  border: 1.5px solid var(--border-strong);
+  border: 1.5px solid var(--secondary-border);
 }
 
 .btn-outline:hover {

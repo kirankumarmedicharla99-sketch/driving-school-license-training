@@ -598,7 +598,6 @@
     const current = document.documentElement.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     applyTheme(next);
-    showToast(`Switched to ${next.toUpperCase()} theme`);
   }
 
   function initDirection() {
@@ -631,7 +630,6 @@
     const current = document.documentElement.getAttribute('dir') || 'ltr';
     const next = current === 'rtl' ? 'ltr' : 'rtl';
     applyDirection(next);
-    showToast(`Layout switched to ${next.toUpperCase()} mode`);
   }
 
   // -------------------------------------------------------------------------

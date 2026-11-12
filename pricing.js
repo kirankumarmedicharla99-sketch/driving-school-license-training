@@ -118,10 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleThemeToggle() {
     const nextTheme = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     applyTheme(nextTheme);
-    showToast(
-      `Switched to ${nextTheme === 'dark' ? 'Dark' : 'Light'} Mode`,
-      nextTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun'
-    );
   }
 
   if (themeToggleBtn) themeToggleBtn.addEventListener('click', handleThemeToggle);
@@ -150,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleDirectionToggle() {
     const nextDir = htmlEl.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
     applyDirection(nextDir);
-    showToast(`Layout direction set to ${nextDir.toUpperCase()}`, 'fa-solid fa-right-left');
   }
 
   if (rtlToggleBtn) rtlToggleBtn.addEventListener('click', handleDirectionToggle);

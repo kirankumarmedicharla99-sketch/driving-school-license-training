@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', () => {
       const nextTheme = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       applyTheme(nextTheme);
-      showToast(`Switched to ${nextTheme === 'dark' ? 'Dark' : 'Light'} Mode`);
     });
   }
 
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     rtlToggleBtn.addEventListener('click', () => {
       const nextDir = htmlEl.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
       applyDirection(nextDir);
-      showToast(`Layout direction set to ${nextDir.toUpperCase()}`);
     });
   }
 

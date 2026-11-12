@@ -202,7 +202,6 @@
     const currentTheme = htmlEl.getAttribute('data-theme') || 'light';
     const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
     applyTheme(nextTheme);
-    showToast(`Switched to ${nextTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'fa-circle-half-stroke');
   }
 
   // -------------------------------------------------------------------------
@@ -228,7 +227,6 @@
     const currentDir = htmlEl.getAttribute('dir') || 'ltr';
     const nextDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
     applyDirection(nextDir);
-    showToast(`Switched text direction to ${nextDir.toUpperCase()}`, 'fa-right-left');
   }
 
   // -------------------------------------------------------------------------
